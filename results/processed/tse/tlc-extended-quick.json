@@ -1,0 +1,241 @@
+{
+ "results": [
+  {
+   "id": "base-x_chain2-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 292,
+   "generated_states": 1307,
+   "trace_states": null,
+   "seconds": 1.0,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-cancel-x_chain2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 319,
+   "generated_states": 1400,
+   "trace_states": null,
+   "seconds": 0.7,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-recheck-x_chain2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 292,
+   "generated_states": 1487,
+   "trace_states": null,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-obsolete-both-x_chain2",
+   "status": "counterexample",
+   "violated": "CurrentCommit",
+   "distinct_states": 326,
+   "generated_states": 1586,
+   "trace_states": 4,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "CurrentCommit",
+   "invariants": [
+    "CurrentCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-budget-reset-x_chain2",
+   "status": "counterexample",
+   "violated": "BudgetSafety",
+   "distinct_states": 100,
+   "generated_states": 238,
+   "trace_states": 5,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "BudgetSafety",
+   "invariants": [
+    "BudgetSafety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-publish-suspended-x_chain2",
+   "status": "counterexample",
+   "violated": "SuspensionPublication",
+   "distinct_states": 157,
+   "generated_states": 486,
+   "trace_states": 3,
+   "seconds": 0.7,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "SuspensionPublication",
+   "invariants": [
+    "SuspensionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-revoked-authority-x_chain2",
+   "status": "counterexample",
+   "violated": "AuthorityCommit",
+   "distinct_states": 277,
+   "generated_states": 1810,
+   "trace_states": 4,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "AuthorityCommit",
+   "invariants": [
+    "AuthorityCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-stale-publication-x_chain2",
+   "status": "counterexample",
+   "violated": "RevisionPublication",
+   "distinct_states": 164,
+   "generated_states": 465,
+   "trace_states": 7,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "RevisionPublication",
+   "invariants": [
+    "RevisionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-contract-omitted-x_chain2",
+   "status": "counterexample",
+   "violated": "ContractCommit",
+   "distinct_states": 252,
+   "generated_states": 1094,
+   "trace_states": 4,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContractCommit",
+   "invariants": [
+    "ContractCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-membership-omitted-x_chain2",
+   "status": "counterexample",
+   "violated": "ContextCommit",
+   "distinct_states": 252,
+   "generated_states": 1094,
+   "trace_states": 4,
+   "seconds": 0.7,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContextCommit",
+   "invariants": [
+    "ContextCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "refine-obsolete-both-x_chain2",
+   "status": "counterexample",
+   "violated": "refinement",
+   "distinct_states": 162,
+   "generated_states": 700,
+   "trace_states": 4,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "refinement",
+   "invariants": [],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  }
+ ],
+ "all_met": true,
+ "tla2tools_sha256": "fdffef247f563ef6edbfd44958d2a82db79e7564e07cb673262d896353fa6713",
+ "tlc_version": "TLC2 Version 2026.11.19.180144 (rev: bc1b506)",
+ "workers": 16
+}

@@ -50,6 +50,8 @@ ABLATIONS = {
     "no-budget": (("budget",), "Persistent episode budget"),
     "no-candidate": (("structure",), "Candidate normalization"),
     "no-global": (("global",), "Global publication predicate"),
+    # Not a removal: the original semantics that checked only enabled consumers.
+    "enabled-only": (("enabled-only",), "Structural checks on enabled consumers only"),
 }
 PROPERTIES = {
     "stale": "Obsolete or unavailable input exposed as usable",
@@ -59,6 +61,9 @@ PROPERTIES = {
     "structure": "Ill-typed structure installed",
     "budget": "More than k requests in one dependency episode",
     "publish": "Snapshot published that violates the barrier",
+    # Liveness hazard, not safety: an authorized input or context change is refused
+    # because a previously committed generated value makes normalization fail.
+    "reactivation": "Authorized change refused by a committed generated value",
 }
 
 
@@ -67,6 +72,7 @@ class Lean(Controller):
 
     def _event(self, action, before, outcome, **data):
         self.events.append(action)
+        self.last_reason = data.get("reason")
         return outcome
 
     def _candidate(self):
@@ -165,10 +171,8 @@ class Ablated(Lean):
                     old.attempts, old.failed = 0, False
                 keys.append((b.stage, document))
                 refs[(b.stage, document)] = tuple((p, document) for p in b.prerequisites)
-                if b.stage == "implementation" and "structure" not in self.flags:
-                    architecture = self.records[self.key("architecture", document)].value
-                    if architecture["id_type"] != "string":
-                        raise ValueError("document identity expression requires string")
+        if "structure" not in self.flags:
+            self._check_structure(by_stage, enabled_only="enabled-only" in self.flags)
         self.targets, self.references = allocate_resolve(keys, refs)
         if "cancel" in self.flags:
             return
@@ -393,7 +397,7 @@ def ablation_run(variant, seed, steps, budget=2, max_documents=3):
     c = Lean(documents, budget) if variant == "full" else Ablated(documents, budget, ABLATIONS[variant][0])
     oracle = Oracle(budget)
     oracle.advance(c)
-    inflight, first, publications, dispatches, exceptions = [], {}, 0, 0, 0
+    inflight, first, publications, dispatches, exceptions, refusals = [], {}, 0, 0, 0, 0
     names, weights = zip(*ACTIONS)
     next_doc = len(documents) + 1
 
@@ -421,6 +425,14 @@ def ablation_run(variant, seed, steps, budget=2, max_documents=3):
     def resolve(identity, value=None, timeout=False):
         c.resolve(identity, value, timeout)
         judge()
+
+    def hazard(outcome):
+        # An authorized change refused only because a committed generated value
+        # violates a structural expression of a (re)activated consumer.
+        nonlocal refusals
+        if outcome == "rejected" and "requires string" in (getattr(c, "last_reason", None) or ""):
+            refusals += 1
+            first.setdefault("reactivation", step)
 
     def publish():
         nonlocal publications
@@ -476,7 +488,7 @@ def ablation_run(variant, seed, steps, budget=2, max_documents=3):
             else:
                 d = rng.choice(sorted(docs))
                 docs[d]["strict"] = not docs[d]["strict"]
-            c.edit_source(docs)
+            hazard(c.edit_source(docs))
         elif action == "context":
             context = deepcopy(c.context)
             roll = rng.random()
@@ -492,16 +504,16 @@ def ablation_run(variant, seed, steps, budget=2, max_documents=3):
                 available = not available
             version = c.context_version if rng.random() < 0.9 else c.context_version - 1
             try:
-                c.update_context(version, context, available)
+                hazard(c.update_context(version, context, available))
             except ValueError:
                 # A public action must record a rejection, never raise (see report).
                 exceptions += 1
         elif action == "contract":
             stage = rng.choice([b.stage for b in c.bindings])
-            c.reconfigure([replace(b, contract="v%d" % rng.randint(1, 3)) if b.stage == stage else b
-                           for b in c.bindings])
+            hazard(c.reconfigure([replace(b, contract="v%d" % rng.randint(1, 3)) if b.stage == stage else b
+                                  for b in c.bindings]))
         elif action == "revoke":
-            c.reconfigure(revoked=set() if c.revoked else {rng.choice(OWNERS)})
+            hazard(c.reconfigure(revoked=set() if c.revoked else {rng.choice(OWNERS)}))
         elif action == "reviewer":
             stages = {b.stage for b in c.bindings}
             c.reconfigure([b for b in c.bindings if b.stage != "security"] if "security" in stages
@@ -510,7 +522,8 @@ def ablation_run(variant, seed, steps, budget=2, max_documents=3):
             publish()
         judge()
     return {"variant": variant, "seed": seed, "first_violation": first, "publications": publications,
-            "dispatches": dispatches, "documents": len(documents), "api_exceptions": exceptions}
+            "dispatches": dispatches, "documents": len(documents), "api_exceptions": exceptions,
+            "refused_changes": refusals}
 
 
 def ablation_campaign(runs, steps, seed0=20261027):
@@ -529,6 +542,7 @@ def ablation_campaign(runs, steps, seed0=20261027):
             "publications": sum(r["publications"] for r in rows),
             "dispatches": sum(r["dispatches"] for r in rows),
             "runs_with_api_exception": sum(r["api_exceptions"] > 0 for r in rows),
+            "refused_changes": sum(r["refused_changes"] for r in rows),
             "elapsed_seconds": time.monotonic() - started,
         }
         print("ablation", variant, results[variant]["runs_with_any_violation"], "/", runs, flush=True)

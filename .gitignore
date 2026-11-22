@@ -61,3 +61,8 @@ Desktop.ini
 .env.*
 !.env.example
 *.key
+
+# HPC session sockets and fetched outputs (this project only)
+hpc/.ssh/
+hpc/fetched/
+.tools/

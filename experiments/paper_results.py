@@ -101,6 +101,14 @@ def derive(reports, sources, summary):
             report = json.loads(read(report_path))
             if any(r["status"] == "failed" for r in report.get("lemmas", [])):
                 for r in report["lemmas"]:
+                    if not (p.parent / r["log"]).exists():
+                        # Raw logs are not versioned (*.log is git-ignored); reuse the values derived
+                        # when the log was present, from the committed detailed-results.json.
+                        old = json.loads((ROOT / "results/processed/document-service-v1/detailed-results.json")
+                                         .read_text()).get("historical_proofs", [])
+                        historical_proofs += [h for h in old if h["run"] == manifest["run_id"] and
+                                              h["module"] == r["module"]]
+                        continue
                     log = read(p.parent / r["log"])
                     failed = re.search(r"(\d+)/(\d+) obligations failed", log)
                     proved = re.search(r"All (\d+) obligations proved", log)
@@ -282,6 +290,8 @@ def render(d):
 def update_paper(paper, detail):
     source = paper.read_text(encoding="utf-8")
     start,end="% BEGIN GENERATED TLC RESULTS","% END GENERATED TLC RESULTS"
+    if start not in source:
+        return  # TSE manuscript: fragments come from experiments/tse_paper.py instead
     prefix,tail=source.split(start,1);_,suffix=tail.split(end,1)
     source=prefix+start+"\n"+model_table(detail)+"\n"+end+suffix
     start,end="% BEGIN GENERATED DETAILED RESULTS","% END GENERATED DETAILED RESULTS"

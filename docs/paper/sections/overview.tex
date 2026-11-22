@@ -1,0 +1,109 @@
+% =====================================================================
+\section{Approach Overview}\label{sec:overview}
+
+\subsection{Design Principles and Their Lineage}
+The approach rests on four principles. Each refines an established idea for the setting of generated artifacts.
+\begin{enumerate}
+\item \emph{Agents propose, the controller disposes.} Agents never create objects, references or completion verdicts; they return a primitive value for a slot that the controller created. This is objective coordination through an artifact~\cite{omicini2001tuple,omicini2008artifacts}: the coordination laws live in the controller, not in the agents' prompts.
+\item \emph{Depend on exactly what was observed.} Each request is rendered from an explicit observation: the read set, selected context and contract. Its exact encoding is the job's dependency key, as in content-addressed build systems~\cite{mokhov}. Because the agent sees nothing else, its input dependencies are exact by construction; what remains to be shown for correctness is that the validator judges the right relation (Definition~\ref{def:adequate}).
+\item \emph{Commit atomically and only if current.} The check ``is this reply still the answer to the current question?'' and the write form one transaction, as in OCC~\cite{occ}. Like an institutional governor~\cite{esteva2001institutions}, the controller judges an action in the current state, not in the state in which it was requested.
+\item \emph{Separate accepted, usable and publishable.} A value accepted earlier may become outdated after an edit. It remains as history, but consumers read only \emph{usable} values, and release happens only through a global \emph{publication barrier}.
+\end{enumerate}
+
+\subsection{Who Specifies What}\label{sec:roles}
+A recurring concern with formally grounded coordination is that someone must write the specifications. Table~\ref{tab:roles} separates the roles. The TLA$^+$ model, its refinement mapping and the proofs concern the \emph{generic} protocol. Framework builders write and check them once, as they would for any concurrency-control algorithm. A workflow author never writes TLA$^+$. They declare jobs in ordinary code: stage, prerequisites, owner, read-set function, context selector, contract and validator. The controller derives structure, keys, episodes and publication from these declarations. For the two LLM studies of Section~\ref{sec:evaluation}, the complete workflow declarations take \WorkflowDeclLines{} and \BenchDeclLines{} lines of Python, and their validators \WorkflowValidatorLines{} lines plus a \SandboxLines-line sandboxed property checker. The cost of a workflow therefore lies in its validators, which a team that tests its software already writes. The coordination guarantees do not depend on how strong those validators are. The correctness of the released artifacts does (Corollary~\ref{cor:domain}), and RQ6 measures that gap on standard benchmarks.
+
+\begin{table}[!t]
+\centering
+\caption{Division of labor. Only the first row involves formal methods, and it is independent of any particular workflow.}\label{tab:roles}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}P{17mm}P{39mm}P{25mm}@{}}\toprule
+Role & Writes & In this paper\\\midrule
+Framework builder (once) & Controller kernel; TLA$^+$ model, refinement mapping, proofs & \texttt{src/vgc} (\GraphLines{} lines for the generic kernel); \TLALines{} lines of TLA$^+$\\
+Workflow author (per workflow) & Jobs: stage, prerequisites, owner, read set, context selector, contract, validator; global predicate $G$ & \WorkflowDeclLines{} + \WorkflowValidatorLines{} lines (RQ5); \BenchDeclLines{} lines (RQ6)\\
+Editors, administrators & Inputs, context, configuration changes & Change streams\\
+Agents & Primitive values only & LLMs or scripts\\\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure*}[!t]
+\centering
+\colorlet{inkblue}{black}\colorlet{pale}{gray!12}\colorlet{resultamber}{gray}% grayscale figure
+\begin{tikzpicture}[font=\footnotesize,
+  comp/.style={draw=inkblue,rounded corners=2pt,fill=white,align=center,minimum height=12mm,text width=27mm},
+  agent/.style={draw=resultamber!80!black,fill=resultamber!10,rounded corners=2pt,align=center,text width=19mm,minimum height=7mm,font=\scriptsize},
+  lab/.style={font=\scriptsize,align=left,inner sep=1.5pt,fill=pale}]
+% row 1: structure and records
+\node[comp] (norm) at (0,0) {\textbf{Structural normalizer}\\\scriptsize matches $\to$ targets,\\traces, jobs};
+\node[comp] (obs)  at (3.9,0) {\textbf{Observations and}\\\textbf{dependency keys}\\\scriptsize $o_j$, $\Sig_j=\operatorname{enc}(o_j)$};
+\node[comp] (rec)  at (7.8,0) {\textbf{Job records}\\\scriptsize value, validated key,\\episode, attempts};
+\node[comp] (pub)  at (11.7,0) {\textbf{Publication barrier}\\\scriptsize nothing stale or pending,\\joint predicate $G$};
+% row 2: interaction with agents
+\node[comp] (disp)  at (5.85,-2.3) {\textbf{Dispatch}\\\scriptsize request $u=(j,e,n)$,\\only if $n<k$};
+\node[comp] (guard) at (9.75,-2.3) {\textbf{Commit guard}\\\scriptsize current, authorized,\\valid, normalizes};
+% controller boundary
+\begin{scope}[on background layer]
+\node[draw=inkblue,thick,rounded corners=4pt,fill=pale,fit=(norm)(pub)(disp)(guard),inner xsep=9pt,inner ysep=9pt] (ctrl) {};
+\end{scope}
+\node[anchor=south west,font=\footnotesize\bfseries,align=left] at ([xshift=6pt,yshift=6pt]ctrl.south west) {Deterministic controller\\\normalfont\scriptsize coordination artifact (trusted)};
+% outside
+\node[draw=inkblue,fill=pale,align=center,text width=31mm,minimum height=9mm] (inp) at (0,2.35) {\textbf{Authoritative inputs}\\\scriptsize sources, context, configuration};
+\node[draw=inkblue,fill=pale,align=center,text width=19mm,minimum height=12mm] (snap) at (15.4,0) {\textbf{Published}\\\textbf{snapshot}\\\scriptsize revision $\rho$};
+\node[agent] (a1) at (4.35,-4.75) {Requirements agent};
+\node[agent] (a2) at (6.75,-4.75) {Design agent};
+\node[agent] (a3) at (9.15,-4.75) {Coding agent};
+\node[agent] (a4) at (11.55,-4.75) {Test agent};
+\begin{scope}[on background layer]
+\node[draw=resultamber!80!black,dashed,rounded corners=3pt,fit=(a1)(a4),inner sep=4pt] (agents) {};
+\end{scope}
+\node[anchor=east,font=\scriptsize,align=right] at ([xshift=-5pt]agents.west) {Generative agents (untrusted):\\may return anything,\\late, twice, or never};
+% numbered flow
+\draw[arr] (inp) -- node[lab,right,fill=none]{\step{1} edit or reconfigure} (norm);
+\draw[arr] (norm) -- node[lab,above=2pt]{\step{2}} (obs);
+\draw[arr] (obs) -- node[lab,above=2pt]{\step{3}} (rec);
+\draw[arr] (rec.south) ++(-0.5,0) coordinate (r1) -- (r1 |- disp.north) node[lab,midway,left]{\step{4}};
+\draw[arr] (disp.south) -- node[lab,left,fill=white]{\step{5} observation $o_j$ only} (disp.south |- agents.north);
+\draw[arr] (guard.south |- agents.north) -- node[lab,right,fill=white]{\step{6} proposal $(u,v)$} (guard.south);
+\draw[arr] (guard.north) ++(-1.45,0) coordinate (g1) -- (g1 |- rec.south) node[lab,midway,right]{\step{7}};
+\draw[arr] (rec) -- node[lab,above=2pt]{\step{8}} (pub);
+\draw[arr] (pub) -- node[lab,above=2pt,fill=white]{\step{9}} (snap);
+\end{tikzpicture}
+\caption{Architecture. Agents (bottom) receive only a declared observation and return a primitive proposal. Structure, dependency keys, attempt budgets, acceptance and publication belong to the controller. The numbered steps are explained in Section~\ref{sec:walkthrough}.}\label{fig:overview}
+\end{figure*}
+
+\subsection{Walk-Through of One Change}\label{sec:walkthrough}
+Fig.~\ref{fig:overview} shows the architecture. We follow the tightened R02 clause and the patch job of Fig.~\ref{lst:job} through it; Fig.~\ref{fig:sequence} shows the same run as a message sequence, including a stale reply.
+\begin{steps}
+\item[\step{1}] An authorized editor changes R02. Every input change and every configuration change is one atomic controller transaction.
+\item[\step{2}] The \emph{structural normalizer} recomputes the matches of $T_1$ and $T_2$ and creates or deletes targets and traces. Here no object changes, because the request still exists.
+\item[\step{3}] For each job the controller recomputes the observation. The patch job's observation contains the clause text, so its key changes; jobs of unrelated requests keep their keys and their values remain usable.
+\item[\step{4}] A job whose key changed starts a new \emph{episode} with a fresh attempt budget, and any request still in flight for the old episode is cancelled. Jobs whose prerequisites are unusable are suspended, not dispatched.
+\item[\step{5}] The controller dispatches a request with a fresh identity $u=(j,e,n)$; the prompt is rendered from $o_j$ only.
+\item[\step{6}] The agent returns a proposal, perhaps late, perhaps twice, perhaps malformed.
+\item[\step{7}] The \emph{commit guard} checks atomically that $u$ is still active, that its recorded key equals the job's current key, that the owner is still authorized, that the validator accepts the value, and that the resulting structure normalizes. Only then does the value become \emph{usable}. The stale reply in Fig.~\ref{fig:sequence} fails the first two checks and is discarded.
+\item[\step{8}] The \emph{publication barrier} releases a snapshot only if no required stage is suspended, no job is stale or pending, and the global predicate $G$ holds; for example, $G$ requires design and verification to agree on the identifier type (F2). Publication \step{9} installs the snapshot with its revision.
+\end{steps}
+
+\begin{figure}[!t]
+\centering
+\colorlet{inkblue}{black}\colorlet{pale}{gray!12}\colorlet{resultamber}{gray}% grayscale figure
+\begin{tikzpicture}[font=\footnotesize,
+  msg/.style={-{Stealth[length=1.8mm]},thick,draw=inkblue},
+  bad/.style={-{Stealth[length=1.8mm]},thick,draw=black!55,dashed},
+  note/.style={font=\scriptsize,align=left,fill=white,inner sep=1.5pt}]
+\foreach \x/\n in {0/Editor,3.4/Controller,6.8/Coding agent} {
+  \node[box,text width=19mm,minimum height=5.5mm] at (\x,0) {\n};
+  \draw[gray!55] (\x,-0.32) -- (\x,-5.55);}
+\draw[msg] (3.4,-0.8) -- node[above]{dispatch $u_1$ on $o_0$} (6.8,-0.8);
+\draw[msg] (0,-1.45) -- node[above]{edit R02} (3.4,-1.45);
+\node[note,anchor=west,draw=black!40,fill=pale] at (3.55,-1.95) {reconcile $o_0\to o_1$:\\cancel $u_1$, new episode};
+\draw[bad] (6.8,-2.85) -- node[above]{late reply $(u_1,v_0)$} (3.4,-2.85);
+\node[note,anchor=east] at (3.3,-2.85) {$u_1$ cancelled:\\discarded};
+\draw[msg] (3.4,-3.55) -- node[above]{dispatch $u_2$ on $o_1$} (6.8,-3.55);
+\draw[msg] (6.8,-4.25) -- node[above]{reply $(u_2,v_1)$} (3.4,-4.25);
+\node[note,anchor=east] at (3.3,-4.25) {guard holds:\\commit $v_1$};
+\draw[msg] (3.4,-5.15) -- node[above]{publish revision $\rho$} (0,-5.15);
+\node[note,anchor=north west] at (3.55,-5.0) {barrier: nothing stale\\or pending, $G$ holds};
+\end{tikzpicture}
+\caption{Failure F1 handled by the controller. The edit cancels $u_1$; its late reply cannot commit even if it passes the old validator. If R02 later reverts to $o_0$, a new episode starts and $u_1$ remains cancelled. RQ5 measures this situation with real LLMs.}\label{fig:sequence}
+\end{figure}

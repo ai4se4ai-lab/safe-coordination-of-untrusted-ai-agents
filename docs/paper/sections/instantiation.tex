@@ -1,0 +1,72 @@
+% =====================================================================
+\section{Instantiation}\label{sec:instantiation}
+We instantiate the semantics at three levels of fidelity: a TLA$^+$ protocol model, two executable controllers, and three workflows. The scripted document-service case study exercises every mechanism with adversarial providers. The LLM document-service workflow (RQ5) generates free-form code and tests with real models. The benchmark workflow (RQ6) wraps HumanEval+ and MBPP+.
+
+\subsection{Scripted Document-Service Case Study}\label{sec:case-study}
+The scripted case study instantiates the running example as a ranked chain of four views per source document (requirements, architecture, implementation, verification); a fifth security-review view can be added at run time. Each view has one target and one generated JSON attribute per document (Table~\ref{tab:bindings}). Requirement R01 requires stable string document identities, R02 specifies the lifecycle behavior, and R03 requires complete view metadata and matching identifier types in architecture and verification.
+
+Two choices make the case study deliberately adversarial. The architecture validator \emph{locally} accepts a string or an integer identifier type, but the downstream structural expression requires strings, so an integer proposal is locally valid yet must be rejected by candidate normalization (F2 at the structural level). This is also the expression that exposed the deferred-check hazard of Section~\ref{sec:deferred}. Independently, verification may choose an integer type, which only the global predicate catches (F2 at publication).
+
+\begin{table}[!t]
+\centering
+\caption{Scripted case-study bindings, their observations and validator strength}\label{tab:bindings}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lP{26mm}P{30mm}@{}}\toprule
+View & Observation (inputs) & Local validator\\\midrule
+Requirements & Source policy & Clause IDs; exact Boolean policy\\
+Architecture & Usable requirements & Operation list; typed ID choice (string or integer)\\
+Implementation & Interface, clause, selected findings & Sound and complete: exact six-row policy table (Thm.~\ref{thm:table})\\
+Verification & Table, clause, selected findings & Coverage and typed ID metadata\\
+Security (added) & Verification, findings & Operation-assessment coverage\\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{A Finite Artifact Language with a Sound Validator}\label{sec:discharged}
+Corollary~\ref{cor:domain} needs a sound validator. The implementation view of the scripted case study shows the extreme end of the spectrum: the artifact language is restricted until the validator is provably sound and complete. A document has a state in $D=\{\mathsf{open},\mathsf{archived}\}$ and receives events in $E=\{\mathsf{read},\mathsf{put},\mathsf{archive}\}$. A proposal is a total decision table $t:D\times E\to\{200,409\}\times D$ that a small trusted interpreter executes. The observation contains a policy bit $h$; $h=1$ requires rejecting \textsf{put} on archived documents. The reference behavior is
+\begin{equation}\label{eq:reference}
+f_h(d,e)=\begin{cases}
+(200,\mathsf{archived}) & e=\mathsf{archive},\\
+(409,\mathsf{archived}) & h=1,\,d=\mathsf{archived},\,e=\mathsf{put},\\
+(200,d) & \text{otherwise}.
+\end{cases}
+\end{equation}
+The validator checks the table's domain and types and that $t(d,e)=f_h(d,e)$ for all six inputs; it rejects duplicate or missing rows.
+
+\begin{theorem}[Sound table generation and trace behavior]\label{thm:table}
+For this artifact language the read set is adequate for extensional equality to $f_h$, and the validator is sound and complete for it. If a published table has $h=1$, every finite execution of the interpreter from \textsf{open} satisfies: an archived document stays archived; every \textsf{put} on an archived document returns 409; and \textsf{archive} leads to \textsf{archived} from either state.
+\end{theorem}
+\begin{proof}
+The domain relation is $R(Z,t)\iff\forall(d,e)\in D\times E.\ t(d,e)=f_{h(Z)}(d,e)$ on a total typed domain. It depends only on $h$, the fixed schema and the interpreter, which gives adequacy. The validator enumerates exactly the six domain elements, so it accepts exactly this relation, which gives soundness and completeness. By Theorem~\ref{thm:safety}, usable tables satisfy the validator. For traces, induct on the length of the event word: each step produces the response and successor given by $f_{h=1}$. From \textsf{open}, \textsf{read} and \textsf{put} stay \textsf{open} and \textsf{archive} yields \textsf{archived}. From \textsf{archived}, \textsf{read} and \textsf{archive} stay \textsf{archived}, and \textsf{put} returns 409 and stays \textsf{archived}.
+\end{proof}
+
+\begin{figure}[!t]
+\centering
+\colorlet{inkblue}{black}\colorlet{pale}{gray!12}\colorlet{resultamber}{gray}% grayscale figure
+\begin{tikzpicture}[every state/.style={draw=inkblue,fill=pale,font=\footnotesize,minimum size=14mm}]
+\node[state,initial,initial text={}] (o) at (0,0) {open};
+\node[state] (a) at (4.2,0) {archived};
+\draw[arr] (o) edge[loop above] node[above,font=\scriptsize]{read, put / 200}(o);
+\draw[arr] (o)--node[above,font=\scriptsize]{archive / 200}(a);
+\draw[arr] (a) edge[loop above] node[above,font=\scriptsize]{read, archive / 200}(a);
+\draw[arr] (a) edge[loop below] node[below,font=\scriptsize]{put / 409}(a);
+\end{tikzpicture}
+\caption{Checked document policy for $h=1$ (event / status). Every usable table induces exactly this machine.}\label{fig:policy}
+\end{figure}
+
+This construction is deliberately extreme, and we do not present it as a model of practice. The validator already contains the unique correct answer $f_h$, so an agent adds nothing that the controller could not compute itself. Its purpose is to show that Corollary~\ref{cor:domain} can be discharged \emph{completely}: when the validator is the specification, the coordination guarantees become a correctness guarantee for every published artifact. The LLM workflows below take the opposite position. Their validators do not contain a solution, many different artifacts are accepted, and the gap between acceptance and correctness is measured rather than proved away.
+
+\subsection{Controllers, Formal Model and Proofs}\label{sec:artifact}
+\emph{Reference controller.} A Python implementation (\texttt{src/vgc/controller.py}, about 350 lines with its kernel) realizes the transitions of Table~\ref{tab:rules} for the scripted case study. It serializes public actions with one lock. Every action copies a private candidate, installs effects there, recomputes the complete downstream structure (for all configured consumers), and installs the candidate only on success. Observations are canonical JSON that contains the owner, contract, source clause, usable predecessor values and the full membership of the selected findings; context version numbers are excluded because agents do not see them. A separately implemented \emph{trace checker} replays recorded events and re-evaluates state continuity, ranked availability, exact observations, dispatch identities and counters, provenance, authority, rollback and publication snapshots.
+
+\emph{Generic kernel.} A second implementation (\texttt{src/vgc/graph.py}, \GraphLines{} lines) applies the same discipline to an arbitrary ranked DAG of jobs. A job is declared by its rank, prerequisites, owner, contract, read-set function, context selector and validator. Validation runs outside the lock on the immutable dispatched observation, and the currentness and authority guard is rechecked atomically before the write (OCC). The kernel also implements the coarser strategies of RQ2 and an ungated scheduler for Proposition~\ref{prop:eager}. We tested it \emph{differentially} against the reference controller. On all \DiffRuns{} RQ2 change streams (\DiffChanges{} changes, five strategies), both implementations dispatched exactly the same number of requests after every change and accepted identical values.
+
+\emph{Formal model.} \texttt{Core.tla} and \texttt{AsyncController.tla} formalize ranked prerequisites, exact observations, historical acceptance, episode counters, request history, suspension, contract and authority changes, and publication evidence. The value relation is abstract: a proposal is valid when it equals the observed source value. This abstraction is sufficient because the protocol properties quantify over the validator, so any total validator yields the same transition structure. \texttt{AtomicController.tla} specifies $\mathcal A$, and \texttt{Refinement.tla} defines the mapping $\alpha$ of~\eqref{eq:alpha} and the property that \texttt{AsyncController} implements $\mathcal A$ under $\alpha$.
+
+\emph{Mechanized lemmas and their limits.} Four TLAPS modules check individual proof steps. \texttt{Budget} bounds the counter within one episode. \texttt{ControllerSafety} shows that the commit guard implies a current, authorized, valid commit. \texttt{StructuralKernelProofs} establishes coverage, unique producers and reference range under the hypotheses of Theorem~\ref{thm:kernel}. \texttt{DocumentPolicyProofs} establishes validator equivalence, archive absorption and the archived-\textsf{put} conflict. These are single-step lemmas, not the inductive invariant. Three technical obstacles stand in the way of a parameterized TLAPS proof of Theorem~\ref{thm:safety}. First, usability~\eqref{eq:usable} is defined by a \texttt{RECURSIVE} operator over the prerequisite relation, which the TLAPS back ends do not support; it must be rewritten as a recursive function over a well-founded rank and accompanied by an induction principle. Second, the budget invariant counts history elements per (job, episode) with \texttt{Cardinality}, which requires finite-set reasoning that the SMT back ends handle poorly. Third, \texttt{Reconcile} updates seven nested record fields at once, which produces large proof obligations. We therefore check the refinement and the invariants with TLC on instances much larger than in the original submission (RQ4), and leave the parameterized proof as the main verification task (Section~\ref{sec:limitations}).
+
+\subsection{Workflows with Real LLM Proposers}\label{sec:llm-workflows}
+\emph{LLM document-service workflow (RQ5).} For each service document $d$ the generic kernel creates three jobs. \emph{design/$d$} returns a JSON object with the identifier type, the five operation names and the HTTP status code for each of five situations. Its validator checks the schema and that every status code agrees with the clauses. \emph{implementation/$d$} returns free-form Python source code for a class \texttt{DocumentStore}. \emph{verification/$d$} returns a free-form test suite \texttt{test\_*(make)}. The authoritative inputs are four natural-language clauses per service, one of which (R03) states whether overwriting an archived document is refused with 409 or allowed. A shared context holds path-traversal findings for some services and, after a feedback epoch, workspace conventions. The global predicate requires one identifier convention across all services, a joint constraint that independently working design agents can violate.
+
+The validators do not contain a solution. Code is checked by property-based testing~\cite{claessen2000quickcheck}: 120 seeded random operation sequences, including invalid and malicious identifiers, are run against the generated class and against a 43-line abstract model of the clauses. The first divergence is shrunk by delta debugging~\cite{zeller2002simplifying} to a minimal failing sequence and returned to the agent as feedback. Tests must pass on the abstract model and on the accepted implementation, and they must fail on at least three of four seeded mutants of the model (policy inverted, \texttt{put} ignored, missing document reported as 200, duplicate creation allowed). All generated code runs in a separate interpreter with memory, CPU and file-descriptor limits; it is never imported into the controller. Many different programs pass. Section~\ref{sec:rq5} reports how many structurally distinct implementations were accepted.
+
+\emph{Benchmark workflow (RQ6).} For each task of HumanEval+ (164 tasks) and MBPP+ (378 tasks)~\cite{evalplus,chen2021humaneval,austin2021mbpp}, the kernel creates \emph{code/$t$} and \emph{tests/$t$}. The declared validator of \emph{code/$t$} is the benchmark's \emph{base} test inputs: outputs of the reference solution, computed in the sandbox before any generated code is loaded, compared as in EvalPlus. The first failing case is returned as feedback. \emph{tests/$t$} must define at least three assertion-based tests that pass on the reference solution and on the accepted code. The benchmark's \emph{plus} inputs (up to \BenchMaxPlus{} per task) are never seen by the controller. They serve only as the ground truth with which we measure how often a validator-accepted value is wrong.

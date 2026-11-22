@@ -201,6 +201,46 @@ bytes.
 - `all` therefore exits nonzero. Read its JSON summary: every other stage should
   report `0`.
 
+## Revision R1: new experiments
+
+The TSE revision (manuscript in [docs/paper/](docs/paper/), response in
+[docs/paper/response-to-reviewers.md](docs/paper/response-to-reviewers.md)) adds:
+
+| Experiment | Command | Output |
+|---|---|---|
+| RQ1 incl. the deferred-check liveness hazard (`enabled-only` variant) | `python experiments/tse_campaign.py` | `results/processed/tse/campaign.json` |
+| Generic kernel: differential test, coupled workspaces, gated vs. ungated scheduling | `python experiments/graph_experiments.py` | `results/processed/tse/graph.json` |
+| Extended TLC: 3-5 jobs, environmental changes, all mutants on multi-job models, **checked refinement mapping** (`specification/Refinement.tla`) | `python scripts/run_models_extended.py` | `results/processed/tse/tlc-extended.json` |
+| RQ5: real LLMs coordinating design, code and tests | `python experiments/llm_study.py --part all --models <m>` | `results/raw/*-llm-all/` (every call logged) |
+| RQ6: HumanEval+ and MBPP+ (EvalPlus) | `python experiments/benchmark_study.py --benchmark humaneval --model <m>` | per-run `results-*.json`, `calls-*.jsonl` |
+| Paper fragments | `python experiments/tse_paper.py && python experiments/revision_paper.py` | `docs/paper/generated/` |
+
+RQ5/RQ6 need an [Ollama](https://github.com/ollama/ollama) server (`VGC_OLLAMA` or
+`--host`). Generated code is executed only in a separate, resource-limited
+interpreter (`experiments/llm/sandbox_runner.py`, `experiments/bench/sandbox_bench.py`).
+The EvalPlus datasets are in `data/benchmarks/` (HumanEvalPlus v0.1.10, MbppPlus v0.2.0).
+
+### Running on the Alliance (Compute Canada) clusters
+
+Everything for this project lives in [hpc/](hpc/) and under the project's own work
+directory on the cluster (`/scratch/<user>/vgc`, see `hpc/config/clusters.json`).
+
+```text
+bash hpc/scripts/ssh-session.sh connect rorqual     # interactive MFA once; socket in hpc/.ssh
+python3 hpc/scripts/fleet.py probe   --sites rorqual,narval
+python3 hpc/scripts/fleet.py setup   --sites rorqual,narval   # copy Ollama runtime + models into <work>/ollama
+python3 hpc/scripts/fleet.py deploy  --sites rorqual,narval   # rsync src/, experiments/, data/
+python3 hpc/scripts/fleet.py submit --site rorqual --model qwen2.5-coder:7b --study benchmark \
+        --args="--benchmark;humaneval;--limit;12" --tag smoke --time 0:30:00     # smoke test
+python3 hpc/scripts/fleet.py submit --site rorqual --model qwen2.5-coder:7b --study benchmark \
+        --args="--benchmark;humaneval" --tag full --time 5:00:00                 # full run
+python3 hpc/scripts/fleet.py status
+python3 hpc/scripts/fleet.py fetch                               # -> hpc/fetched/<site>/
+```
+
+Each job starts a node-local Ollama server on one GPU and refuses to run unless the
+model is fully GPU-resident.
+
 ## Clean-room reproduction
 
 To check that the artifact works outside this checkout:

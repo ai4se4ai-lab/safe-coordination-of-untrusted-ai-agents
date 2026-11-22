@@ -1,0 +1,22 @@
+Associate Editor
+Comments to the Author:
+The article proposes a technique to guarantee the safe coordination among independent AI agents. The work starts from the premise that in a multi-LLM agentic architecture, each LLM operates independently and, as such, conflicts may arise when they deliver making different assumptions, answers are delayed, etc. The basis for the work is sensible.
+
+However, the literature on multiagent systems and multiagent coordination is extremely rich and spans across at least three decades. The article does not show any knowledge (or any recognition) of the literature in that field, where coordination among agents has been studied in terms of concepts like agent protocols, commitments, shared artifacts, dependencies and delegation, and more. A few classic references are listed below; these are just a starter for a very vast area.
+
+Omicini, Andrea, Franco Zambonelli, Matthias Klusch, and Robert Tolksdorf, eds. Coordination of Internet agents: Models, technologies, and applications. Springer Science & Business Media, 2013.
+
+Singh, Munindar P. "Agent communication languages: Rethinking the principles." Computer 31, no. 12 (1998): 40-47.
+
+Lomuscio, Alessio, Hongyang Qu, and Franco Raimondi. "MCMAS: an open-source model checker for the verification of multi-agent systems." International Journal on Software Tools for Technology Transfer 19, no. 1 (2017): 9-30.
+
+Dastani, Mehdi, Koen V. Hindriks, and John-Jules Meyer, eds. Specification and verification of multi-agent systems. Springer Science & Business Media, 2010.
+
+Wooldridge, Michael, Michael Fisher, Marc-Philippe Huget, and Simon Parsons. "Model checking multi-agent systems with MABLE." In Proceedings of the first international joint conference on Autonomous agents and multiagent systems: part 2, pp. 952-959. 2002.
+
+
+While investigating the problem may be worthwhile, ignoring all the existing literature and reinventing the wheel poses significant challenges, as the work fails to build on existing, solid literature that has examined coordination challenges and put forward numerous solutions.
+
+Furthermore, I find the article largely unintelligible, due to the over-reliance on hard-to-grasp terms that are unnecessary and only diminish readability. For example, dependency signature, shape of the system, source footprint, pre-episode budget, intake, contract identity (also applied to requests, by the way), and many more. These are not standard and their presentation is confusing, as no examples are provided in Section II. In essence, rather than building the formal framework on top of the rich literature, the author constructs a formal framework from scratch in a rather ad-hoc manner. This challenges understandability.
+
+Moreover, the practical value, or significance, of the article is questionable. The authors include an implementation that relies on TLA+ for verifying specifications. But the key question here is: who will create these specifications? Perhaps the theoretical contribution could be of interest to formal methods venues, but I do not find it of value for the broad SE community.

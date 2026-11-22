@@ -82,17 +82,32 @@ class BoundaryTests(unittest.TestCase):
         self.assertTrue(repair(c))
         self.assertEqual(len(c.history), count)
 
-    def test_context_reactivation_failure_is_recorded_not_raised(self):
-        # Found by the randomized campaign: an integer architecture is admissible while
-        # implementation is suspended, so re-enabling context must fail normalization.
+    def test_suspended_consumer_still_constrains_commits_and_reactivation_succeeds(self):
+        # Found by the randomized campaign: with checks on *enabled* consumers only, an
+        # integer architecture was admissible while implementation was suspended, and
+        # every later reactivation then failed normalization (a liveness hazard). The
+        # revised semantics checks every *configured* consumer, so the commit is refused
+        # and the context-restoring change succeeds.
         c = Controller()
         u = c.dispatch(c.key("requirements", "d1"))
         c.resolve(u, valid_proposal(c.pending[u]))
         c.update_context(0, {}, available=False)
+        self.assertIn(c.key("implementation", "d1"), c.suspended)
         u = c.dispatch(c.key("architecture", "d1"))
-        self.assertEqual(c.resolve(u, valid_proposal(c.pending[u], "integer")), "committed")
+        self.assertEqual(c.resolve(u, valid_proposal(c.pending[u], "integer")), "rejected")
+        u = c.dispatch(c.key("architecture", "d1"))
+        self.assertEqual(c.resolve(u, valid_proposal(c.pending[u])), "committed")
+        self.assertEqual(c.update_context(1, {}, available=True), "committed")
+        self.assertTrue(repair(c))
+
+    def test_failed_reactivation_is_recorded_not_raised(self):
+        # A public action records a rejection instead of raising (regression for the
+        # original exception path), using a structurally invalid configuration.
+        c = Controller()
+        repair(c)
         before = c.snapshot()
-        self.assertEqual(c.update_context(1, {}, available=True), "rejected")
+        bad = [replace(b, prerequisites=()) if b.stage == "implementation" else b for b in c.bindings]
+        self.assertEqual(c.reconfigure(bad), "rejected")
         self.assertEqual(c.snapshot(), before)
 
     def test_zero_match_workflow_can_publish(self):

@@ -124,11 +124,11 @@ class Controller:
                     self.records[key] = record
                 keys.append((b.stage, document))
                 refs[(b.stage, document)] = tuple((p, document) for p in b.prerequisites)
-                # Concrete downstream structural condition, checked on every candidate.
-                if b.stage == "implementation":
-                    architecture = self.records[self.key("architecture", document)].value
-                    if architecture["id_type"] != "string":
-                        raise ValueError("document identity expression requires string")
+        # Concrete downstream structural condition, checked on every candidate against
+        # every *configured* consumer, whether or not that consumer is currently enabled.
+        # Checking only enabled consumers lets a value admitted while its consumer is
+        # suspended block every later reactivation (the deferred-check liveness hazard).
+        self._check_structure(by_stage, enabled_only=False)
         self.targets, self.references = allocate_resolve(keys, refs)
         for identity, request in list(self.pending.items()):
             r = self.records.get(request.job)
@@ -136,6 +136,24 @@ class Controller:
                     r.signature != request.observation or request.owner in self.revoked or
                     request.owner != self._binding(self.split(request.job)[0]).owner):
                 del self.pending[identity]
+
+    def _check_structure(self, by_stage, enabled_only=False):
+        """Structural expression of the implementation view: document ids are strings.
+
+        It reads the architecture value. With enabled_only=False (the semantics of the
+        paper) it is evaluated whenever the consumer is configured; enabled_only=True
+        reproduces the original, hazardous behaviour and is used only by ablations.
+        """
+        if "implementation" not in by_stage:
+            return
+        for document in sorted(self.documents):
+            consumer = self.key("implementation", document)
+            if enabled_only and consumer not in self.active:
+                continue
+            record = self.records.get(self.key("architecture", document))
+            value = None if record is None else record.value
+            if isinstance(value, dict) and value.get("id_type") != "string":
+                raise ValueError("document identity expression requires string")
 
     def snapshot(self):
         with self.lock:

@@ -1,0 +1,233 @@
+% =====================================================================
+\section{Guarantees}\label{sec:guarantees}
+This section states and proves the guarantees, organized by the requirements of Section~\ref{sec:requirements}. Several results hold \emph{by construction}: the guards were designed so that they hold, and their proofs are short. We state them as theorems because each one is a contract that an implementation must preserve and that the evaluation tests. The substance lies in identifying a set of guards that is sufficient, which the proofs show, and in which each guard is necessary, which the counterexamples of Table~\ref{tab:boundaries} and RQ1 show. The results whose proofs need more than unfolding definitions are Theorems~\ref{thm:refinement}, \ref{thm:single}, \ref{thm:termination} and~\ref{thm:reconfig}. Table~\ref{tab:evidence} at the end maps every result to its assumptions and evidence.
+
+\subsection{Safety (R1--R3)}
+A committed value need not remain fresh after an edit; the controller must instead prevent its \emph{use} until it is repaired. We therefore distinguish a historical acceptance invariant from current usability.
+
+\begin{theorem}[Controller safety]\label{thm:safety}
+Under A0--A4, from a normalized initial state with no accepted values, every reachable state satisfies:
+(i) active targets and traces have unique producers and valid structural references;
+(ii) each accepted record carries evidence of an authorized successful validation against its recorded observation and contract;
+(iii) every usable value satisfies the current validator for the current observation;
+(iv) every committed reply was current and authorized at its commit linearization point; and
+(v) every installed publication satisfied~\eqref{eq:publish} at installation.
+\end{theorem}
+\begin{proof}
+By induction on run length. Initially (i) holds by A1 and the rest is vacuous. \emph{Edit} preserves (i) by A1 and rule (b) of Section~\ref{sec:deferred}; it keeps acceptance evidence only as retained history and recomputes usability, so a changed observation cannot make an old value usable unless its validated key equals the new key. \emph{Dispatch} changes no accepted value or structure. A successful \emph{Resolve} writes the owned slot in a candidate and normalizes the dependent structure, for all configured consumers, before admitting it; Theorem~\ref{thm:kernel} or A1 gives (i), and a rejected candidate changes nothing. Request identity and authorization give the provenance part of (ii); the validator and exact-key tests give (iii) and (iv). Failed and discarded replies write no accepted value. \emph{Publish} tests the exact snapshot it installs, which gives (v). \emph{Reconfigure} normalizes under the new admissible configuration, invalidates incompatible evidence (owner changes alter $\eta$ by A2) and cancels obsolete authority, so it preserves (i)--(iv) and never relabels a historical publication as current. In (iii), equality of encoded observations implies equality of validator inputs and contract by A2 and A4.
+\end{proof}
+
+\begin{corollary}[Validator-relative domain correctness]\label{cor:domain}
+If a usable value $v$ has an adequate read set and a sound validator (Definition~\ref{def:adequate}), then $R_j(Z,v)$ holds. If $G$ is sound for a snapshot relation $R_G$, every published snapshot satisfies $R_G$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:safety}(iii) gives $V_j(o_j,v)$; soundness gives $\widehat R_j(o_j,v)$; adequacy identifies it with $R_j(Z,v)$. The second claim applies soundness of $G$ to the publication guard.
+\end{proof}
+
+Corollary~\ref{cor:domain} is the precise boundary between the two kinds of guarantee of Section~\ref{sec:intro}. Theorem~\ref{thm:safety} holds for any validator. Behavioral correctness is inherited from the validator and no more. RQ6 measures the gap on standard benchmarks, where the declared validator is a base test suite and the desired relation is a much larger hidden one.
+
+\begin{example}[Limits of parsing and test evidence]\label{ex:limits}
+A patch that returns 200 for every request may parse and type-check while violating R02; such a validator is not sound for R02. A test that fails on one empty stub need not detect an incorrect implementation. Locally accepted endpoints with different identifier types can violate a joint constraint, which $G$ must check. Rejection at the barrier is an honest blocked outcome, not a promise that repair will succeed.
+\end{example}
+
+\subsection{Asynchronous Refinement (R2)}\label{sec:refinement}
+Theorem~\ref{thm:safety} concerns the concrete, asynchronous controller. We now show that asynchrony adds no behavior beyond an atomic specification. The abstract machine $\mathcal A$ has the same configuration, inputs, structure, accepted records, attempt and failure records, and publication, but no remote requests. Its actions are those in the last column of Table~\ref{tab:rules}. \emph{Accept} may choose any value that satisfies the current observation's validator and ownership condition, provided the candidate normalizes; \emph{Publish} requires $Q=\emptyset\land O=\emptyset$ (Remark~\ref{rem:pending}). The refinement mapping is the projection
+\begin{equation}\label{eq:alpha}
+\begin{split}
+&\alpha(C,X,Y,L,B,P,A,H,Q,\nu,\rho)\\&\quad=(C,X,Y,L,B^{\circ},H,Q,\nu,\rho),
+\end{split}
+\end{equation}
+where $B^{\circ}$ replaces the evidence component $\gamma$ of each accepted triple by a placeholder. Thus $\alpha$ erases requests ($P$, $A$) and delivery evidence, and retains every semantic and budget component. Concrete Dispatch maps to the abstract budget increment Attempt, not to a stutter: claiming that dispatch stutters while an incremented counter remains visible would be incorrect.
+
+\begin{theorem}[Forward simulation]\label{thm:refinement}
+Under A0--A4, every concrete run projects through $\alpha$ to a run of $\mathcal A$, allowing stuttering. Hence asynchronous replies cannot introduce a value forbidden by the atomic specification.
+\end{theorem}
+\begin{proof}
+We map each concrete transition. Dispatch maps to Attempt: both require a dirty, unfailed job with $n<k$ and increment the same counter. A successful Resolve maps to Accept: the concrete key test implies that the recorded observation is exactly the current abstract observation, the remaining tests imply the abstract validator and ownership guards, a current request implies $n>0$ in the current episode, and both machines apply the same candidate reconciliation. A current rejection or timeout maps to Fail, including the exhaustion mark; a current request's job is dirty, because reconciliation would otherwise have started a new episode and cancelled it. Obsolete and duplicate deliveries change only $P$ and map to stutters. Edit, Reconfigure and Publish use the same normalized snapshots, and concrete Publish implies abstract Publish. Initial projections agree, so induction yields a projected run. We do not claim the converse or any liveness correspondence~\cite{lynch1995simulations,abadi1991refinement}.
+\end{proof}
+
+The proof is checked mechanically for bounded instances: \texttt{Refinement.tla} instantiates \texttt{AtomicController} with $a\gets\alpha(s)$, and TLC verifies the temporal property ``\texttt{AsyncController} implements \texttt{AtomicController}'' on \TLCRefineConfigs{} configurations of up to \TLCExtMaxJobs{} jobs (RQ4). The check is not vacuous: with both obsolete-reply defenses removed, TLC finds a behavior whose projection leaves $\mathcal A$.
+
+The guards are not redundant in general. If both cancellation of obsolete requests and the commit-time key check are removed, the sequence ``dispatch on $o_0$, edit to $o_1$, deliver the old valid answer'' commits obsolete provenance. Either defense alone suffices. A check-then-write race outside the transaction bypasses both, and without unique request identities a duplicated reply can overwrite a newer value after deletion and recreation of a job.
+
+\subsection{Locality (R4)}
+For two normalized snapshots with the same job identities, the \emph{direct impact set} is
+\begin{equation}\label{eq:impact}
+D(Z,Z')=\{j : o_j(Z)\ne o_j(Z')\}.
+\end{equation}
+
+\begin{lemma}[Exact direct invalidation]\label{thm:local}
+Assume all surviving jobs are usable before one authorized edit and no job is pending. For each surviving job whose prerequisites remain usable, its stored value becomes stale if and only if $j\in D(Z,Z')$; jobs outside $D$ retain their validator-relative value.
+\end{lemma}
+\begin{proof}
+Before the edit $a_j=\operatorname{enc}(o_j(Z))$, and afterwards the current key is $\operatorname{enc}(o_j(Z'))$. Injectivity of $\operatorname{enc}$ gives $a_j\ne\Sig_j(Z')$ exactly when $o_j(Z)\ne o_j(Z')$. If the observations agree, validator input and contract agree, so the earlier validation still applies.
+\end{proof}
+
+Lemma~\ref{thm:local} is an immediate consequence of injectivity. Its practical content lies in what must be \emph{inside} $o_j$ for it to be useful: membership queries, selected context, contracts and owners, not only the text a prompt quotes. Each omission yields a counterexample in Table~\ref{tab:boundaries}. Similarly, two states that agree on a job's observation, attempt record, request activity and prerequisite usability admit the same dispatch decisions and the same locally valid proposals for that job, because every local guard is a function of these data (\emph{observation-relative isolation}). This concerns the controller's inputs, not information-theoretic confidentiality: pretraining or tool access may reveal more unless they are controlled separately.
+
+An unchanged upstream output permits \emph{early cutoff}: after an upstream job is repaired to an \emph{equal} value, an observation-equal descendant becomes usable again from its retained evidence without a request. Equality is exact equality of encoded values. RQ5 and RQ6 measure how often regenerated LLM outputs are equal, and how much a normalizing slot type (canonical JSON, or a structure-only normal form of code) increases that rate.
+
+\subsection{Bounded Generation and Scheduling (R5)}
+Let $E_j$ be the number of episodes of job $j$ during a finite interval, counting episodes started by edits, by reactivation, by a change of $\eta$, or by deletion and recreation.
+
+\begin{theorem}[Generation bound]\label{thm:cost}
+For any finite execution interval that starts with fresh episode budgets,
+\begin{equation}\label{eq:calls}
+N_{\mathrm{dispatch}}\le k\textstyle\sum_j E_j.
+\end{equation}
+If each request $u$ has at most $p_u$ input tokens and a provider-enforced output cap $\ell_u$, the generation tokens satisfy $T\le\sum_{u}(p_u+\ell_u)$, which is at most $k(p+\ell)\sum_jE_j$ for common caps $p,\ell$.
+\end{theorem}
+\begin{proof}
+Within an episode, $n$ starts at zero and Dispatch increments it. Rejections, timeouts and obsolete replies neither decrement nor reset it, so the guard $n<k$ admits at most $k$ dispatches per episode. Summing over episodes gives~\eqref{eq:calls}; summing per-request caps, including those of discarded requests, gives the token bound.
+\end{proof}
+
+Theorem~\ref{thm:cost} charges \emph{episodes}, which depend on the schedule: if a job is dispatched while one of its prerequisites is still being repaired, the prerequisite's later commit changes the job's observation and starts another episode. The next theorem shows that the upstream gate of~\eqref{eq:usable} rules this out. With the gate, the repair cost of a revision is independent of the order in which an asynchronous scheduler dispatches and delivers requests.
+
+\begin{theorem}[Single-episode repair]\label{thm:single}
+Assume A0--A5 and a stable revision: after some state $S_0$ no input or configuration changes. Then, for every interleaving of dispatches, deliveries, timeouts and discards after $S_0$, every job starts at most one new episode in which its retained value is stale. Consequently
+\begin{equation}\label{eq:single}
+\begin{split}
+&N_{\mathrm{dispatch}}\le k\,|W|,\quad\text{where}\\
+&W=\{j : j\text{ starts a stale episode after }S_0\},
+\end{split}
+\end{equation}
+and $W$ is contained in the downstream closure of the jobs that are stale or suspended at $S_0$.
+\end{theorem}
+\begin{proof}
+We first show that, in a stable revision, a usable job stays usable. A usable job is never dispatched, so its value, validated key and record do not change. By A0 its observation is a function of inputs, which are stable, and of the values of its prerequisites. By~\eqref{eq:usable} the prerequisites are usable. Induction on rank shows that their values, and hence the observation and key, are constant.
+
+Now consider a job $j$ and the first state after $S_0$ in which $j$ is active with a stale key. Its prerequisites are usable at that state, by~\eqref{eq:usable} and the definition of an active job. By the claim above they remain usable, with constant values. The inputs are stable, so $o_j$ and $\Sig_j$ remain constant from then on. A new episode requires a change of key, a deactivation or a deletion, and none can occur: deactivation requires a prerequisite to become unusable, and deletion requires a structural change, which by A1 and A5 depends only on inputs and usable predecessor values. Hence $j$ starts at most one stale episode, and Theorem~\ref{thm:cost} gives~\eqref{eq:single}. A job outside the downstream closure of the jobs stale or suspended at $S_0$ is usable at $S_0$ and stays usable, so it is not in $W$.
+\end{proof}
+
+Without the gate, the cost depends on the schedule, and the following tight construction shows by how much.
+
+\begin{proposition}[Schedule-dependent cost without the gate]\label{prop:eager}
+Let the upstream gate be removed, so that a job may be dispatched on the stored (possibly stale) values of its prerequisites. For every $w\ge1$ there is a two-layer workflow and an interleaving after a single edit in which one job starts $w$ stale episodes and is dispatched $w$ times, whereas Theorem~\ref{thm:single} bounds the gated controller by one episode.
+\end{proposition}
+\begin{proof}
+Let jobs $i_1,\ldots,i_w$ read the edited input and let $j$ read all $i_m$. The edit makes every $i_m$ stale. Under the ungated scheduler, $j$ reads the stored values and is not yet stale. The adversary delivers $i_1$'s new value; $j$'s observation changes, so a new episode starts and $j$ is dispatched and answered before $i_2$ is delivered. Repeating this for $i_2,\ldots,i_w$ yields $w$ stale episodes and $w$ dispatches of $j$. Under the gate, $j$ is suspended until all $i_m$ are usable.
+\end{proof}
+
+In layered workflows, the effect compounds over depth. RQ2 measures it under random asynchronous latencies: on lattices of depth up to \SchedMaxDepth{} and width up to \SchedMaxWidth, the ungated scheduler needed up to \SchedEagerReqRatioMax$\times$ the requests of the gated one and up to \SchedEagerMaxEpisodes{} episodes for a single job, while the gated scheduler never needed more than one. The gate also excludes reading stale predecessors, which is a safety matter (property P3 in RQ1). Its price is latency: the gated scheduler cannot speculate past an unrepaired predecessor.
+
+\subsection{Terminal Outcomes (R5)}
+Acyclicity must hold for all data dependencies, not merely for arrows between agent names. Assumption A5 partitions jobs and structural stages into a finite directed acyclic graph. Jobs in one stage are mutually independent, each node has one producer, and no output influences its own or an earlier stage's existence, validation or selection policy. Algorithm~\ref{alg:schedule} processes the stages of one frozen revision in topological order and retains usable values whose observations are unchanged. Jobs within a stage are independent, so the inner loop may run in parallel. A job still unusable after the loop is classified as \emph{failed}, either because it exhausted its budget or because its observation is unavailable. Dependents of failed prerequisites are classified as \emph{blocked} without calling an agent. Blocked is an explicit terminal verdict, not a satisfied requirement.
+
+\begin{algorithm}[!t]
+\caption{Topological repair of a stable revision}\label{alg:schedule}
+\footnotesize
+\begin{algorithmic}[1]
+\Require admissible $C$ satisfying A1 (configured-consumer checks), frozen revision $X$, budget $k\ge1$
+\For{stage $s$ in topological order}
+  \If{a required predecessor of $s$ is failed or blocked}
+    \State classify $s$ as blocked; \textbf{continue}
+  \EndIf
+  \State normalize $s$ \Comment{cannot fail on committed values (Lemma~\ref{lem:reactivation})}
+  \State create/delete jobs; reconcile keys \Comment{Eq.~\eqref{eq:recon}}
+  \For{each job $j$ in $s$ with $\neg U_j$}
+    \While{$\neg U_j\land n_j<k\land o_j\ne\nodata$}
+      \State guarded Dispatch$(j)$; await reply or timeout
+      \State guarded Resolve$(u_j,v)$
+    \EndWhile
+    \If{$\neg U_j$} classify $j$ as failed \EndIf
+  \EndFor
+\EndFor
+\If{$\Pub(S)$}
+  \State publish the snapshot
+\Else
+  \State report failure, blockage or global conflict
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\begin{lemma}[Reactivation cannot fail on committed values]\label{lem:reactivation}
+Under A1, in a stable revision, normalizing a stage cannot fail because of a value committed by an earlier stage, whether or not that stage was suspended when the value was committed.
+\end{lemma}
+\begin{proof}
+Every committed value passed, on its candidate, every structural expression of every configured consumer (rule (a)). It was checked against the inputs current at commit time, and in a stable revision those are the current inputs. Rule (b) ensures that an edit which invalidates a committed value demotes it instead of leaving it in place. Hence every committed value present in a stable revision satisfies all configured structural expressions. Normalization of a stage reads only stable inputs and such values (A0), so it succeeds.
+\end{proof}
+
+\begin{theorem}[Terminal outcome]\label{thm:termination}
+Under A0--A6 and Algorithm~\ref{alg:schedule}, once external input and configuration stabilize, the controller eventually reports either a publishable snapshot or an explicit failure, blockage or global conflict. A topological pass dispatches at most $k|\Jobs_*|$ requests, where $\Jobs_*$ contains all job instances that appear during the pass. Publication follows if every required observation is available, every stale job obtains a committed proposal within its budget, and the resulting snapshot satisfies $G$.
+\end{theorem}
+\begin{proof}
+At the first stage the inputs are stable, so normalization produces finitely many jobs. A usable job needs no request. Every other available job either succeeds or exhausts its finite budget, because the controller progresses fairly and every dispatch eventually resolves or times out (A6); unavailable jobs are classified directly. Inductively, the predecessors of each later stage are stable. If one has failed, the stage is blocked. Otherwise, by Lemma~\ref{lem:reactivation}, normalization succeeds and yields a fixed finite job set with fixed keys, and the same argument applies. This step was missing in the original submission: there, a predecessor value committed while the stage was suspended could make the stage's normalization fail, so that neither publication nor an explicit verdict was reached. Independence within a stage ensures that a sibling cannot change a job's observation. With finitely many stages, the global predicate is eventually evaluated. Summing at most $k$ dispatches per instantiated job gives the request bound, and the additional hypotheses exclude every failure case.
+\end{proof}
+
+Finite budgets guarantee termination, not successful synthesis. Unrestricted cyclic dependencies lie outside A0: a Boolean updated by $v\gets\neg v$ along a feedback edge oscillates forever although each proposal is locally valid. Convergence for cyclic consistency restoration requires an independent well-founded ranking~\cite{klare,stevens}. The next subsection gives one such ranking for the most common cycle in software engineering workflows.
+
+\subsection{Bounded Feedback Epochs}\label{sec:epochs}
+Test-and-fix loops are cyclic: a failing check downstream should inform a new attempt upstream. We admit such feedback by unrolling it into \emph{epochs}. At the end of epoch $t$, when Algorithm~\ref{alg:schedule} reports failure or a global conflict, a deterministic \emph{promotion policy} $\pi$ maps the epoch's verdict and diagnostics to a context delta $\Delta_t$. The controller applies $\Delta_t$ as an ordinary authorized Edit that starts epoch $t+1$. An epoch counter bounds the loop by $K_{\mathrm{ep}}$, and the promoted items are selected only by jobs that declare them in their selection policy.
+
+\begin{proposition}[Bounded feedback epochs]\label{prop:epochs}
+Under A0--A6, with a deterministic promotion policy and at most $K_{\mathrm{ep}}$ epochs, every run terminates with a publishable snapshot or an explicit verdict after at most $(K_{\mathrm{ep}}{+}1)\,k\,|\Jobs_*|$ dispatches, and every reachable state satisfies the invariant of Theorem~\ref{thm:safety}.
+\end{proposition}
+\begin{proof}
+Each epoch is a stable revision of an acyclic workflow: the promoted diagnostics are authoritative \emph{inputs} of epoch $t+1$, not generated values of the same epoch, so A0 and A5 hold within the epoch. Theorem~\ref{thm:termination} bounds each epoch by $k|\Jobs_*|$ dispatches, and the epoch counter bounds the number of epochs. Promotion is an Edit, which preserves the invariant by Theorem~\ref{thm:safety}.
+\end{proof}
+
+Within one episode, a rejected attempt may also pass the validator's diagnostic to the next attempt as \emph{feedback}. Feedback is attached to the request, not to the observation: it does not change the key, and validity is still judged against $o_j$ alone. RQ5 uses both mechanisms. Validator diagnostics are fed back within episodes, and one feedback epoch promotes a barrier conflict to a workspace convention selected by every design job.
+
+\subsection{Safe Reconfiguration (R6)}
+Adding an agent, changing a rule, revoking a permission or replacing a validator is a configuration transformation $h:C\mapsto C'$. Adding a security reviewer, for instance, creates new targets and obligations and extends $G$. This is the analogue, for generative workflows, of safe dynamic change in component systems~\cite{kramer1990evolving,vandewoude2007tranquility}.
+
+\begin{theorem}[Transactional reconfiguration]\label{thm:reconfig}
+Let $S$ satisfy the invariant of Theorem~\ref{thm:safety}. A configuration transaction that checks A0--A4 for $C'$, invalidates every changed observation or owner, reconciles structure and jobs, and recomputes completion yields a state that satisfies the invariant under $C'$. If it also preserves A5 and configuration changes eventually stop, Theorem~\ref{thm:termination} applies to the new revision.
+\end{theorem}
+\begin{proof}
+The installed structure is in the range of $N_{C'}$, which gives (i). A retained usable record has the same observation, including the owner by A2, so its evidence still proves (ii)--(iii); every other record is historical or invalidated and cannot pass the usability gate. Requests whose job, contract or owner changed are cancelled, and unchanged ones must still pass the current commit guard, which gives (iv). No historical publication is relabeled current, and any new publication must pass the recomputed predicate, which gives (v). Atomic installation prevents readers from observing mixed configurations.
+\end{proof}
+
+Revocation cancels future commitment but cannot recall data already sent to an agent; rollback of external side effects needs additional protocols.
+
+\subsection{Extensions}\label{sec:extensions}
+\emph{Structured ingress.} Natural-language input, and structural change proposals in general, can enter through a separate \emph{lifting} agent that proposes a typed source delta $\Delta$. Treating $\Delta$ as an untrusted Edit, checked for ownership, types, source invariants and the absence of writes into controller-owned namespaces, preserves Theorem~\ref{thm:safety} (scenario S27). Fidelity of $\Delta$ to the user's intent needs an explicit relation and a checker or human confirmation.
+
+\emph{Shared writers.} A shared-context update is an authorized Edit with an expected-version check: of two writers starting from the same version, only the first to commit succeeds (scenario S24). This prevents lost updates but does not resolve semantic disagreement.
+
+\emph{External observation.} Committed events may be copied into an outbox $W$ read by remote observers. Admission guards and evidence never read $W$, so erasing $W$ maps every run of the extended system to a run of the controller, allowing stutters: observer transport cannot falsify the controller's safety invariant (scenario S26).
+
+\subsection{Boundary Cases and Summary}
+Table~\ref{tab:boundaries} lists counterexamples that delimit the results; each identifies an obligation, and the last column shows where the evaluation exercises it. Table~\ref{tab:evidence} maps every result to its assumptions and evidence.
+
+\begin{table}[!t]
+\centering
+\caption{Counterexamples, the discipline that excludes them, and where the evaluation exercises them (M: TLC mutant; Ab: implementation ablation; S: scenario; L: LLM study)}\label{tab:boundaries}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}P{30mm}P{29mm}P{17mm}@{}}\toprule
+Counterexample & Required discipline & Exercised\\\midrule
+Clause changes, interface equal & Adequate read set (A7) & S03, S17\\
+Reply arrives after a source edit & Cancellation or atomic recheck & M, Ab, S11, L\\
+Two locally valid outputs disagree & Global predicate $G$ & Ab, S18, L\\
+Exhausted request retried every pass & Persistent per-episode budget & M, Ab, S14\\
+New matching context item added & Membership in read set & M, Ab, S09\\
+Prompt or validator changes, input does not & Contract $\eta$ in key & M, Ab, S23, L\\
+Revoked owner's reply arrives & Owner in key and guard & M, Ab, S22\\
+Locally valid value breaks structure & Candidate normalization & Ab, S19\\
+Value committed while consumer suspended & Configured-consumer checks & Ab\\
+Value read while prerequisite is stale & Upstream gate in $U_j$ & Ab, S15\\
+Ungated scheduling multiplies episodes & Upstream gate (Thm.~\ref{thm:single}) & RQ2\\
+Feedback edge flips a value forever & Acyclic epochs (A5, Prop.~\ref{prop:epochs}) & Thm.~\ref{thm:termination}\\
+Old request arrives after recreation & Never-reused request identities & Test T02\\\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[!t]
+\centering
+\caption{Guarantees, assumptions and evidence. $\bullet$: complete for the stated scope; $\circ$: partial or scoped (a lemma used by the proof, or a bounded instance); --: none. \emph{Exec.} denotes executable checks on the reference controllers (Section~\ref{sec:evaluation}).}\label{tab:evidence}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llcccccP{56mm}@{}}\toprule
+Guarantee & Req. & Assumptions & Paper proof & TLAPS & TLC & Exec. & Remaining obligation\\\midrule
+Thm.~\ref{thm:kernel} Structural kernel & R1 & -- & $\bullet$ & $\circ$ & -- & $\bullet$ & Connect typed kernel to the protocol model\\
+Thm.~\ref{thm:safety} Controller safety & R1--R3 & A0--A4 & $\bullet$ & $\circ$ & $\circ$ & $\bullet$ & Parameterized machine proof of the inductive invariant\\
+Cor.~\ref{cor:domain} Domain correctness & R2 & A7 & $\bullet$ & $\circ$ & -- & $\circ$ & Adequacy and soundness beyond the finite language; gap measured in RQ6\\
+Thm.~\ref{thm:refinement} Forward simulation & R2 & A0--A4 & $\bullet$ & -- & $\circ$ & $\circ$ & Parameterized machine proof (TLC-checked up to \TLCExtMaxJobs{} jobs)\\
+Lem.~\ref{thm:local} Exact invalidation & R4 & A2 & $\bullet$ & -- & -- & $\bullet$ & Machine proof\\
+Thm.~\ref{thm:cost} Generation bound & R5 & A3 & $\bullet$ & $\circ$ & $\circ$ & $\bullet$ & History-counting induction across episodes\\
+Thm.~\ref{thm:single} Single-episode repair & R5 & A0--A5 & $\bullet$ & -- & -- & $\bullet$ & Machine proof; exhaustive check on lattices\\
+Thm.~\ref{thm:termination} Terminal outcome & R5 & A0--A6 & $\bullet$ & -- & $\circ$ & $\circ$ & Unbounded temporal mechanization\\
+Prop.~\ref{prop:epochs} Feedback epochs & R5 & A0--A6 & $\bullet$ & -- & -- & $\circ$ & Policy-specific progress argument\\
+Thm.~\ref{thm:reconfig} Reconfiguration & R6 & A0--A5 & $\bullet$ & -- & $\circ$ & $\bullet$ & Parameterized preservation proof\\
+Thm.~\ref{thm:table} Policy table & R2 & A7 & $\bullet$ & $\circ$ & -- & $\bullet$ & Refinement of the Python interpreter\\\bottomrule
+\end{tabular}
+\end{table*}

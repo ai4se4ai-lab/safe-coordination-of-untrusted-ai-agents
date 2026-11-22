@@ -12,7 +12,7 @@ import hashlib
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs/paper-tse/generated"
+OUT = ROOT / "docs/paper/generated"
 DETAIL = ROOT / "results/processed/document-service-v1/detailed-results.json"
 
 MODEL_NAMES = {"one-k1": "One job", "one-k2": "One job", "chain-k1": "Two-job chain",
@@ -21,7 +21,7 @@ MODEL_NAMES = {"one-k1": "One job", "one-k2": "One job", "chain-k1": "Two-job ch
                "parallel-delivery": "Reordered delivery", "chain-terminal": "Chain, liveness"}
 FAULTS = {"no-cancel": ("Cancellation removed", "Current observation"),
           "no-recheck": ("Commit recheck removed", "Current observation"),
-          "obsolete-both": ("Both obsolete defences removed", "Current observation"),
+          "obsolete-both": ("Both obsolete defenses removed", "Current observation"),
           "budget-reset": ("Exhausted budget reset", "Episode accounting"),
           "publish-suspended": ("Suspension ignored", "No suspended stage"),
           "revoked-authority": ("Authority ignored", "Current authority"),
@@ -32,31 +32,32 @@ WITNESSES = {"reach-acceptance": "Acceptance", "reach-exhaustion": "Budget exhau
              "reach-suspension": "Suspension", "reach-publication": "Publication (empty workflow)",
              "reach-contractchange": "Contract change"}
 SCENARIO_CLASSES = [
-    ("Initial completion and no-op repair", ["S01", "S02"], r"Thm.~\ref{thm:safety}, \ref{thm:local}"),
-    ("Source edits, additions, deletions", ["S03", "S04", "S05", "S06", "S17"], r"Thm.~\ref{thm:kernel}, \ref{thm:local}"),
-    ("Shared-context changes and writers", ["S07", "S08", "S09", "S10", "S24"], r"Thm.~\ref{thm:local}, Prop.~\ref{prop:isolation}"),
+    ("Initial completion and no-op repair", ["S01", "S02"], r"Thm.~\ref{thm:safety}, Lem.~\ref{thm:local}"),
+    ("Source edits, additions, deletions", ["S03", "S04", "S05", "S06", "S17"], r"Thm.~\ref{thm:kernel}, Lem.~\ref{thm:local}"),
+    ("Shared-context changes and writers", ["S07", "S08", "S09", "S10", "S24"], r"Lem.~\ref{thm:local}"),
     ("Obsolete, late, duplicate replies", ["S11", "S12", "S13"], r"Thm.~\ref{thm:safety}(iv), \ref{thm:refinement}"),
     ("Budget exhaustion and blocking", ["S14", "S15"], r"Thm.~\ref{thm:cost}, \ref{thm:termination}"),
-    ("Contract change and early cutoff", ["S16", "S23"], r"Thm.~\ref{thm:local}, \ref{thm:reconfig}"),
+    ("Contract change and early cutoff", ["S16", "S23"], r"Lem.~\ref{thm:local}, Thm.~\ref{thm:reconfig}"),
     ("Joint conflict, rollback, stale check", ["S18", "S19", "S25"], r"Thm.~\ref{thm:safety}(i),(v)"),
     ("Reviewer and authority changes", ["S20", "S21", "S22"], r"Thm.~\ref{thm:reconfig}"),
-    ("Untrusted ingress, observer loss", ["S26", "S27"], r"Prop.~\ref{prop:observation}"),
+    ("Untrusted ingress, observer loss", ["S26", "S27"], r"Sec.~\ref{sec:extensions}"),
     ("Finite policy language (exhaustive)", ["S28"], r"Thm.~\ref{thm:table}"),
 ]
 MODULE_SCOPE = {"Budget": "Counter bound for one episode", "ControllerSafety": "Commit guard implies current, authorized, valid commit",
                 "StructuralKernelProofs": "Kernel coverage, unique producers, reference range",
                 "DocumentPolicyProofs": "Validator equivalence; archived-put conflict"}
 ABLATION_ORDER = ["full", "no-cancel", "no-recheck", "no-obsolete", "no-contract", "no-context",
-                  "no-upstream", "no-authority", "no-budget", "no-candidate", "no-global"]
+                  "no-upstream", "no-authority", "no-budget", "no-candidate", "no-global", "enabled-only"]
 ABLATION_LABELS = {"full": "None (reference)", "no-cancel": "Cancellation",
                    "no-recheck": "Commit recheck", "no-obsolete": "Cancellation + recheck",
                    "no-contract": "Contract in signature", "no-context": "Context in footprint",
                    "no-upstream": "Upstream gate", "no-authority": "Authority check",
                    "no-budget": "Episode budget", "no-candidate": "Candidate normalization",
-                   "no-global": "Global predicate"}
-PROPERTY_ORDER = ["stale", "invalid", "upstream", "authority", "structure", "budget", "publish"]
+                   "no-global": "Global predicate", "enabled-only": "Configured-consumer checks"}
+PROPERTY_ORDER = ["stale", "invalid", "upstream", "authority", "structure", "budget", "publish", "reactivation"]
 PROPERTY_LABELS = {"stale": "P1 Stale", "invalid": "P2 Invalid", "upstream": "P3 Upstream", "authority": "P4 Authority",
-                   "structure": "P5 Structure", "budget": "P6 Budget", "publish": "P7 Publish"}
+                   "structure": "P5 Structure", "budget": "P6 Budget", "publish": "P7 Publish",
+                   "reactivation": "L1 Refusal"}
 STRATEGY_ORDER = ["exact", "no-cutoff", "version", "workspace", "full"]
 STRATEGY_LABELS = {"exact": "Exact (ours)", "no-cutoff": "No early cutoff", "version": "Version-keyed context",
                    "workspace": "Whole workspace", "full": "Full regeneration"}
@@ -109,7 +110,7 @@ def tlc_table(d):
 Configuration & $J$ & $k$ & $m$ & Distinct & Total & Path & Result\\\midrule
 """ % (len(rows), seconds) + "\n".join(lines) + r"""
 \bottomrule\end{tabular*}
-\par\smallskip\raggedright\footnotesize\textsuperscript{a}Survives because the other obsolete-response defence still blocks the stale commit; see RQ1.
+\par\smallskip\raggedright\footnotesize\textsuperscript{a}Survives because the other obsolete-response defense still blocks the stale commit; see RQ1.
 \end{table}""")
 
 
@@ -154,7 +155,7 @@ def assurance_table(d):
               f"Trace checker & Recorded scenario traces admitted & {sum(t['status'] == 'passed' for t in traces)}/{len(traces)} & --" + r"\\",
               f"Trace checker & Deliberately corrupted traces rejected & {rejected}/{len(d['conformance']['corruptions'])} & --" + r"\\",
               f"Regression tests & Transaction-boundary unit tests & {sum(t['status'] == 'ok' for t in tests)}/{len(tests)} & --" + r"\\",
-              f"Reproduction & Clean re-runs of packaged archives matched (pre-fix snapshots) & {sum(c['matched'] for c in clean)}/{len(clean)} & --" + r"\\"]
+              f"Reproduction & Clean re-runs of packaged archives matched (before the revision) & {sum(c['matched'] for c in clean)}/{len(clean)} & --" + r"\\"]
     return (r"""\begin{table}[!t]
 \centering
 \caption{Assurance evidence. For proofs, \emph{Final} counts proved/total obligations in the clean run and \emph{First trial} the preserved failed development run. Executable counts are exhaustive where stated; the other checks cover the recorded executions only.}\label{tab:assurance}
@@ -192,15 +193,16 @@ def ablation_figure(c):
             shown = ("%.0f" % pct) if count else "0"
             lines.append(r"\node[font=\tiny,text=%s] at (%.2f,%.2f) {%s};" % (text, j * w, y, shown))
         if i == 0:
-            lines.append(r"\draw[inkblue!60,densely dotted] (-3.3,%.2f) -- (%.2f,%.2f);" % (-h, 7.5 * w, -h))
+            lines.append(r"\draw[inkblue!60,densely dotted] (-3.3,%.2f) -- (%.2f,%.2f);" % (-h, 8.5 * w, -h))
     lines.append(r"\draw[inkblue!40] (%.2f,0.02) -- (%.2f,%.2f);" % (6.5 * w, 6.5 * w, -len(ABLATION_ORDER) * h))
+    lines.append(r"\draw[inkblue!40] (%.2f,0.02) -- (%.2f,%.2f);" % (7.5 * w, 7.5 * w, -len(ABLATION_ORDER) * h))
     return (r"""\begin{figure}[!t]
 \centering
 \begin{tikzpicture}
 """ + "\n".join(lines) + r"""
 \node[anchor=south east,font=\scriptsize\bfseries] at (-0.33,0.02) {Mechanism removed};
 \end{tikzpicture}
-\caption{RQ1: implementation-level guard ablation under %s seeded adversarial executions per variant (%s steps each). Cells give the percentage of runs in which the independent oracle observed at least one violation of property P1--P7 (Section~\ref{sec:rq1}); the last column gives the percentage of runs that published at least once. The reference controller (top row) shows no violation. Removing either obsolete-response defence alone is masked by the other.}\label{fig:ablation}
+\caption{RQ1: implementation-level guard ablation under %s seeded adversarial executions per variant (%s steps each). Cells give the percentage of runs in which the independent oracle observed at least one violation of property P1--P7 (Section~\ref{sec:rq1}); L1 is the liveness hazard of Section~\ref{sec:deferred} (an authorized change refused because of a committed generated value); the last column gives the percentage of runs that published at least once. The reference controller (top row) shows no violation and no refusal. Removing either obsolete-response defense alone is masked by the other. The bottom row is not a removal but the original semantics, which checked structural expressions only for enabled consumers.}\label{fig:ablation}
 \end{figure}""" % (fmt(runs), c["config"]["ablation_steps"]))
 
 
@@ -243,10 +245,11 @@ def cost_table(c):
     lines.append(r"\midrule All changes & " + " & ".join("%.1f" % s[n][m]["requests_per_change"] for m in STRATEGY_ORDER) + r"\\")
     lines.append(r"Bytes per request & " + " & ".join("%s" % fmt(round(
         1000 * s[n][m]["kbytes_per_change"] / s[n][m]["requests_per_change"])) for m in STRATEGY_ORDER) + r"\\")
+    lines.append(r"Total kB per change & " + " & ".join("%.1f" % s[n][m]["kbytes_per_change"] for m in STRATEGY_ORDER) + r"\\")
     head = " & ".join(r"\rotatebox{70}{%s}" % STRATEGY_LABELS[m] for m in STRATEGY_ORDER)
     return (r"""\begin{table}[!t]
 \centering
-\caption{RQ2: mean generation requests per change by change type for $N=%s$ documents. Exact signatures make the cost of source and context changes independent of $N$; contract changes necessarily touch every job of the changed stage.}\label{tab:cost}
+\caption{RQ2: mean generation requests per change by change type for $N=%s$ documents. Exact signatures make the cost of source and context changes independent of $N$; contract changes necessarily touch every job of the changed stage. The $N$ documents are mutually independent (no cross-document dependency); Table~\ref{tab:coupled} adds coupling.}\label{tab:cost}
 \scriptsize\setlength{\tabcolsep}{2pt}
 \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrrrr@{}}\toprule
 Change type & %s\\\midrule
@@ -298,6 +301,12 @@ def numbers(d, c):
         "EventWords": fmt(d["policy_metrics"]["policy_event_words"]),
         "RegressionTests": len(d["tests"]),
         "PythonVersion": c["python"],
+        "EnabledOnlyRuns": a["enabled-only"]["runs_violating"]["reactivation"],
+        "EnabledOnlyRefusals": a["enabled-only"]["refused_changes"],
+        "FullRefusals": a["full"]["refused_changes"],
+        "ExactKBMaxN": "%.1f" % s[n]["exact"]["kbytes_per_change"],
+        "WorkspaceKBMaxN": "%.1f" % s[n]["workspace"]["kbytes_per_change"],
+        "FullKBMaxN": "%.1f" % s[n]["full"]["kbytes_per_change"],
     }
     prefix = ROOT / "results/processed/tse/prefix-defect.json"
     if prefix.is_file():
