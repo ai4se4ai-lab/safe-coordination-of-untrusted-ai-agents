@@ -182,7 +182,7 @@ def main():
     p = sub.add_parser("submit")
     p.add_argument("--site", required=True)
     p.add_argument("--model", required=True)
-    p.add_argument("--study", choices=["benchmark", "llm"], required=True)
+    p.add_argument("--study", choices=["benchmark", "llm", "sosym"], required=True)
     p.add_argument("--args", default="")
     p.add_argument("--tag", required=True)
     p.add_argument("--parallel", type=int, default=6)

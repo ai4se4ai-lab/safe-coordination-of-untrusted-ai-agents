@@ -3,6 +3,7 @@
 # Required env (sbatch --export): VGC_ROOT MODEL STUDY ARGS OUT PARALLEL
 #   STUDY=benchmark -> experiments/benchmark_study.py --model $MODEL $ARGS --out $OUT
 #   STUDY=llm       -> experiments/llm_study.py       --models $MODEL $ARGS (results under $VGC_ROOT/results/raw)
+#   STUDY=sosym     -> experiments/sosym/run_case.py llm --model $MODEL $ARGS (results under repo/results/raw/sosym)
 # ARGS uses ';' instead of spaces (sbatch --export splits on commas).
 #SBATCH --job-name=vgc-llm
 #SBATCH --cpus-per-task=8
@@ -44,6 +45,8 @@ args=${ARGS//;/ }
 if [[ "$STUDY" == "benchmark" ]]; then
   python3 experiments/benchmark_study.py --model "$MODEL" --host "http://$OLLAMA_HOST" \
       --parallel "${PARALLEL:-4}" --out "$OUT" $args
+elif [[ "$STUDY" == "sosym" ]]; then
+  python3 experiments/sosym/run_case.py llm --model "$MODEL" --host "http://$OLLAMA_HOST" $args
 else
   VGC_OLLAMA="http://$OLLAMA_HOST" python3 experiments/llm_study.py --models "$MODEL" $args
 fi
