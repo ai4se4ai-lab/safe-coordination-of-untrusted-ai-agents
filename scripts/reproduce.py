@@ -37,7 +37,7 @@ def stage(name, args):
         return run(args.timeout)
     if name in ("tse-campaign", "tse-paper"):
         # TSE manuscript: RQ1/RQ2 campaign and generated evaluation fragments.
-        script = "experiments/tse_campaign.py" if name == "tse-campaign" else "experiments/tse_paper.py"
+        script = "experiments/scientific_campaign.py" if name == "tse-campaign" else "experiments/scientific_paper.py"
         return subprocess.run([sys.executable, str(ROOT / script)], cwd=ROOT).returncode
     directory, manifest = new_run(name)
     if name == "baseline":

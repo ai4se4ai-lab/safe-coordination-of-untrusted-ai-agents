@@ -62,7 +62,7 @@ records where the artifact departs from the original development plan.
 | [src/vgc/](src/vgc/) | Reference controller: observations, scheduler, structure kernel, validators, scripted providers |
 | [case-study/document-service/](case-study/document-service/) | Five-stage ranked workflow, requirements, policies, fixtures and the 28 pre-registered scenarios (`scenarios/campaign.json`) |
 | [verification/](verification/) | Independent trace-conformance oracle; `baseline/` holds the original user-supplied sources |
-| [experiments/](experiments/) | Campaign protocol, analysis, RQ1/RQ2 campaign (`tse_campaign.py`), TSE fragment generator (`tse_paper.py`) |
+| [experiments/](experiments/) | Campaign protocol, analysis, RQ1/RQ2 campaign (`scientific_campaign.py`), TSE fragment generator (`scientific_paper.py`) |
 | [tests/](tests/) | Regression tests (`unittest`) |
 | [scripts/](scripts/) | `reproduce.py` (single entry point), tool bootstrap, packaging, clean-room verification |
 | [environment/](environment/) | Pinned toolchain lock file (URLs and SHA-256) and the TLAPS proof container |
@@ -99,7 +99,7 @@ git clone <this repository> && cd verified-generative-coordination
 python scripts/reproduce.py tests          # 13 regression tests
 python scripts/reproduce.py case-study     # 28 scenarios, records traces
 python scripts/reproduce.py conformance    # independent oracle replays those traces
-python experiments/tse_campaign.py --quick # small RQ1/RQ2 smoke run
+python experiments/scientific_campaign.py --quick # small RQ1/RQ2 smoke run
 ```
 
 Each command prints the run directory it created and `passed` or `failed`.
@@ -208,12 +208,12 @@ The TSE revision (manuscript in [docs/paper/](docs/paper/), response in
 
 | Experiment | Command | Output |
 |---|---|---|
-| RQ1 incl. the deferred-check liveness hazard (`enabled-only` variant) | `python experiments/tse_campaign.py` | `results/processed/tse/campaign.json` |
+| RQ1 incl. the deferred-check liveness hazard (`enabled-only` variant) | `python experiments/scientific_campaign.py` | `results/processed/tse/campaign.json` |
 | Generic kernel: differential test, coupled workspaces, gated vs. ungated scheduling | `python experiments/graph_experiments.py` | `results/processed/tse/graph.json` |
 | Extended TLC: 3-5 jobs, environmental changes, all mutants on multi-job models, **checked refinement mapping** (`specification/Refinement.tla`) | `python scripts/run_models_extended.py` | `results/processed/tse/tlc-extended.json` |
 | RQ5: real LLMs coordinating design, code and tests | `python experiments/llm_study.py --part all --models <m>` | `results/raw/*-llm-all/` (every call logged) |
 | RQ6: HumanEval+ and MBPP+ (EvalPlus) | `python experiments/benchmark_study.py --benchmark humaneval --model <m>` | per-run `results-*.json`, `calls-*.jsonl` |
-| Paper fragments | `python experiments/tse_paper.py && python experiments/revision_paper.py` | `docs/paper/generated/` |
+| Paper fragments | `python experiments/scientific_paper.py && python experiments/revision_paper.py` | `docs/paper/generated/` |
 
 RQ5/RQ6 need an [Ollama](https://github.com/ollama/ollama) server (`VGC_OLLAMA` or
 `--host`). Generated code is executed only in a separate, resource-limited

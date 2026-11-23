@@ -99,7 +99,7 @@ def regenerate(tex):
 def manual_macros():
     """Recompute the macros above '%% BEGIN GENERATED macros' (first TLC campaign, proofs,
     trace validation, differential test, code size) from their records, using the same
-    formulas as experiments/tse_paper.py and experiments/revision_paper.py."""
+    formulas as experiments/scientific_paper.py and experiments/revision_paper.py."""
     d = load(EVIDENCE / "results/processed/document-service-v1/detailed-results.json")
     t = load(EVIDENCE / "results/processed/tse/tlc-extended.json")
     g = load(EVIDENCE / "results/processed/tse/graph.json")
@@ -282,7 +282,7 @@ def main():
     src = {**{k: ("summarize.py", "results/raw/sosym, results/processed/sosym") for k in gen_names},
            **{k: ("revision_paper.py: tlc_fragment", "results/processed/tse/tlc-extended.json")
               for k in man if k.startswith("TLCExt")},
-           **{k: ("tse_paper.py formulas", "results/processed/document-service-v1/detailed-results.json")
+           **{k: ("scientific_paper.py formulas", "results/processed/document-service-v1/detailed-results.json")
               for k in ("ProvedObligations", "PolicyTables", "EventWords", "Scenarios", "Corruptions", "RegressionTests")},
            "DiffRuns": ("revision_paper.py: graph_fragments", "results/processed/tse/graph.json"),
            "DiffChanges": ("revision_paper.py: graph_fragments", "results/processed/tse/graph.json"),

@@ -5659,7 +5659,7 @@
  "python": "3.12.3",
  "quick": false,
  "source_sha256": {
-  "experiments/tse_campaign.py": "f15c1fec41496f844f04d411db457481bf9d21c8e1e9b194522b7b030f444c8a",
+  "experiments/scientific_campaign.py": "f15c1fec41496f844f04d411db457481bf9d21c8e1e9b194522b7b030f444c8a",
   "src/vgc/__init__.py": "78e18666013b59a6bfb5b3c0347eb24f76b111c6a2f74349d4c79ce720f27832",
   "src/vgc/controller.py": "a4a3963f48c2f372adf6f1e55e12da4383b27f09be8e36d4cd9a3f5b2e268765",
   "src/vgc/graph.py": "ae43fa3ca2b20687f1921fc6326966b06553b55908567802f1157b7cf109bb6c",

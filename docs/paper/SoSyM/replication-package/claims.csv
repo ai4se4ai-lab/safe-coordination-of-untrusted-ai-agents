@@ -8,12 +8,12 @@ TLCExtMutantsCaught,21,Mechanization and Evidence,results/processed/tse/tlc-exte
 TLCExtRuns,43,(not used in text),results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
 TLCExtSeconds,303,(not used in text),results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
 TLCExtVersion,2026.11.19.180144 (rev.\ bc1b506),First TLC Campaign; Mechanization and Evidence,results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
-ProvedObligations,25,Introduction; Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,tse_paper.py formulas
-PolicyTables,"8,192",Finite Behavioral Models,results/processed/document-service-v1/detailed-results.json,tse_paper.py formulas
-EventWords,"1,093",Finite Behavioral Models,results/processed/document-service-v1/detailed-results.json,tse_paper.py formulas
-Scenarios,28,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,tse_paper.py formulas
-Corruptions,9,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,tse_paper.py formulas
-RegressionTests,14,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,tse_paper.py formulas
+ProvedObligations,25,Introduction; Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+PolicyTables,"8,192",Finite Behavioral Models,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+EventWords,"1,093",Finite Behavioral Models,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+Scenarios,28,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+Corruptions,9,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+RegressionTests,14,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
 DiffRuns,150,Mechanization and Evidence,results/processed/tse/graph.json,revision_paper.py: graph_fragments
 DiffChanges,"6,000",Mechanization and Evidence,results/processed/tse/graph.json,revision_paper.py: graph_fragments
 TLALines,186,Mechanization and Evidence,"specification/{Core,AsyncController,AtomicController,Refinement}.tla",revision_paper.py: effort

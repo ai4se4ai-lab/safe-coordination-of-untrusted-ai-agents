@@ -1,62 +1,62 @@
 macro,value,used_in_sections,evidence,generator (experiments/),evidence produced by
-\AblRuns,300,Procedures; RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\AblSteps,120,Procedures,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\AblVariants,11,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\AblTotalRuns,"3,600",Abstract; Procedures; Conclusion,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\AblDetected,9,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\AblMasked,2,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\FullViolRuns,0,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\FullPubRuns,206,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\FullPublications,776,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\FullDispatches,"8,382",(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\FullApiExceptionRuns,0,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\GlobalPublishPct,35,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\ObsoleteStalePct,35,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\ObsoleteInvalidPct,25,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\ContractStalePct,81,RQ1: Necessity of Each Mechanism; What the Evidence Adds,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\ContextStalePct,44,RQ1: Necessity of Each Mechanism; What the Evidence Adds,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\BudgetPct,28,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\CandidatePct,44,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\UpstreamPct,99,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\AuthorityPct,93,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\CostMaxN,32,Abstract; Procedures; RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\CostSizes,6,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\CostSeeds,5,Procedures,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\CostChanges,40,Procedures,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\ExactReqMaxN,10.8,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\FullReqMaxN,128.0,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\RatioFull,11.9,Abstract; RQ2: Cost and Scheduling; Conclusion,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\RatioWorkspace,8.1,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\RatioVersion,3.0,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\RatioCutoff,2.3,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\BytesRatioWorkspace,52,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\BytesRatioFull,9,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\ExactReqMinN,1.8,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\CostEquivalent,all,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\CampaignMinutes,9,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\TLCMaxStates,"1,028",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCMutants,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCMutantsCaught,7,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCBaselines,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCWitnesses,5,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\Scenarios,28,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\ScenarioPasses,28,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\Corruptions,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\ProvedObligations,25,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\PolicyTables,"8,192",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\EventWords,"1,093",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\RegressionTests,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\PythonVersion,3.12.3,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\EnabledOnlyRuns,14,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\EnabledOnlyRefusals,22,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\FullRefusals,0,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\ExactKBMaxN,3.4,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\WorkspaceKBMaxN,177.7,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
-\FullKBMaxN,30.8,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
-\PreFixApiRuns,7,RQ1: Necessity of Each Mechanism,results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
-\PreFixApiExceptions,10,(not used in the JSS text),results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
-\PreFixRuns,300,RQ1: Necessity of Each Mechanism,results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
-\PreFixViolRuns,0,(not used in the JSS text),results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
+\AblRuns,300,Procedures; RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\AblSteps,120,Procedures,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\AblVariants,11,(not used in the JSS text),results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\AblTotalRuns,"3,600",Abstract; Procedures; Conclusion,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\AblDetected,9,(not used in the JSS text),results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\AblMasked,2,(not used in the JSS text),results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\FullViolRuns,0,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\FullPubRuns,206,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\FullPublications,776,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\FullDispatches,"8,382",(not used in the JSS text),results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\FullApiExceptionRuns,0,(not used in the JSS text),results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\GlobalPublishPct,35,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\ObsoleteStalePct,35,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\ObsoleteInvalidPct,25,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\ContractStalePct,81,RQ1: Necessity of Each Mechanism; What the Evidence Adds,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\ContextStalePct,44,RQ1: Necessity of Each Mechanism; What the Evidence Adds,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\BudgetPct,28,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\CandidatePct,44,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\UpstreamPct,99,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\AuthorityPct,93,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\CostMaxN,32,Abstract; Procedures; RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\CostSizes,6,(not used in the JSS text),results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\CostSeeds,5,Procedures,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\CostChanges,40,Procedures,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\ExactReqMaxN,10.8,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\FullReqMaxN,128.0,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\RatioFull,11.9,Abstract; RQ2: Cost and Scheduling; Conclusion,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\RatioWorkspace,8.1,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\RatioVersion,3.0,(not used in the JSS text),results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\RatioCutoff,2.3,(not used in the JSS text),results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\BytesRatioWorkspace,52,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\BytesRatioFull,9,(not used in the JSS text),results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\ExactReqMinN,1.8,(not used in the JSS text),results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\CostEquivalent,all,(not used in the JSS text),results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\CampaignMinutes,9,(not used in the JSS text),results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\TLCMaxStates,"1,028",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCMutants,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCMutantsCaught,7,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCBaselines,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCWitnesses,5,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\Scenarios,28,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\ScenarioPasses,28,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\Corruptions,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\ProvedObligations,25,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\PolicyTables,"8,192",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\EventWords,"1,093",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\RegressionTests,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\PythonVersion,3.12.3,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\EnabledOnlyRuns,14,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\EnabledOnlyRefusals,22,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\FullRefusals,0,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\ExactKBMaxN,3.4,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\WorkspaceKBMaxN,177.7,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],scientific_paper.py,experiments/scientific_campaign.py
+\FullKBMaxN,30.8,(not used in the JSS text),results/processed/tse/campaign.json [ablation],scientific_paper.py,experiments/scientific_campaign.py
+\PreFixApiRuns,7,RQ1: Necessity of Each Mechanism,results/processed/tse/prefix-defect.json,scientific_paper.py,experiments/scientific_campaign.py run on the pre-fix controller
+\PreFixApiExceptions,10,(not used in the JSS text),results/processed/tse/prefix-defect.json,scientific_paper.py,experiments/scientific_campaign.py run on the pre-fix controller
+\PreFixRuns,300,RQ1: Necessity of Each Mechanism,results/processed/tse/prefix-defect.json,scientific_paper.py,experiments/scientific_campaign.py run on the pre-fix controller
+\PreFixViolRuns,0,(not used in the JSS text),results/processed/tse/prefix-defect.json,scientific_paper.py,experiments/scientific_campaign.py run on the pre-fix controller
 \BenchAcceptedPct,84,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
 \BenchAcceptedWrongCI,12--14,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
 \BenchAcceptedWrongHE,7.1,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
@@ -135,15 +135,15 @@ macro,value,used_in_sections,evidence,generator (experiments/),evidence produced
 \SchedMaxWidth,4,Procedures,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
 \SchedSeeds,30,Procedures,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
 \TLALines,186,(not used in the JSS text),"source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"
-\TLCExtBaselines,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtMaxGenerated,"7,483,518",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtMaxJobs,5,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtMaxStates,"718,672",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtMutants,27,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtMutantsCaught,21,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtRuns,43,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtSeconds,303,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCExtVersion,2026.11.19.180144 (rev: bc1b506),(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
-\TLCRefineConfigs,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtBaselines,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMaxGenerated,"7,483,518",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMaxJobs,5,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMaxStates,"718,672",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMutants,27,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMutantsCaught,21,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtRuns,43,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtSeconds,303,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtVersion,2026.11.19.180144 (rev: bc1b506),(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCRefineConfigs,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",scientific_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
 \WorkflowDeclLines,22,"Who Specifies What, and Implementation","source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"
 \WorkflowValidatorLines,43,"Who Specifies What, and Implementation","source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"

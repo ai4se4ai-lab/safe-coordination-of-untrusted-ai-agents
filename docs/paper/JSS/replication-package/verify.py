@@ -6,7 +6,7 @@ evidence in this package, then compare the result with ../main.tex.
 
 Needs only the Python standard library (3.10+). Nothing is re-run: the script re-reads the
 recorded logs under evidence/ and executes the repository's own generators
-(experiments/tse_paper.py and experiments/revision_paper.py) on them. The regenerated
+(experiments/scientific_paper.py and experiments/revision_paper.py) on them. The regenerated
 TeX fragments and their provenance hashes are written to generated/.
 
 Exit code 0 means that all checks passed.
@@ -49,7 +49,7 @@ def build_root(tmp):
 
 def run_generators(root):
     OUT.mkdir(exist_ok=True)
-    for name in ("tse_paper", "revision_paper"):
+    for name in ("scientific_paper", "revision_paper"):
         spec = importlib.util.spec_from_file_location(name, REPO / "experiments" / f"{name}.py")
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -110,13 +110,13 @@ def prune_generated():
 
 # macro-name prefix -> (evidence file, generator function, what produced the evidence)
 SOURCES = [
-    (("PreFix",), "results/processed/tse/prefix-defect.json", "tse_paper.py",
-     "experiments/tse_campaign.py run on the pre-fix controller"),
+    (("PreFix",), "results/processed/tse/prefix-defect.json", "scientific_paper.py",
+     "experiments/scientific_campaign.py run on the pre-fix controller"),
     (("Abl", "Full", "GlobalPublish", "Obsolete", "ContractStale", "ContextStale", "Budget", "Candidate", "Upstream",
-      "Authority", "EnabledOnly"), "results/processed/tse/campaign.json [ablation]", "tse_paper.py",
-     "experiments/tse_campaign.py"),
+      "Authority", "EnabledOnly"), "results/processed/tse/campaign.json [ablation]", "scientific_paper.py",
+     "experiments/scientific_campaign.py"),
     (("Cost", "Ratio", "BytesRatio", "ExactReq", "FullReq", "ExactKB", "WorkspaceKB", "FullKB", "Campaign"),
-     "results/processed/tse/campaign.json [cost]", "tse_paper.py", "experiments/tse_campaign.py"),
+     "results/processed/tse/campaign.json [cost]", "scientific_paper.py", "experiments/scientific_campaign.py"),
     (("Coupled", "Sched", "Diff"), "results/processed/tse/graph.json", "revision_paper.py",
      "experiments/graph_experiments.py"),
     (("Llm",), "runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl)", "revision_paper.py",
@@ -127,7 +127,7 @@ SOURCES = [
      "source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)", "revision_paper.py",
      "non-blank, non-comment line count"),
     (("TLC", "Scenario", "Corruptions", "Proved", "Policy", "EventWords", "Regression", "Python"),
-     "results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json", "tse_paper.py / revision_paper.py",
+     "results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json", "scientific_paper.py / revision_paper.py",
      "formal companion paper (not cited in the JSS text)"),
 ]
 

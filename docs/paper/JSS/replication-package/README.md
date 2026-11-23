@@ -20,7 +20,7 @@ python3 docs/paper/JSS/replication-package/verify.py      # Python >= 3.10, no p
 `verify.py` calls no model and runs no experiment again. It does the following:
 
 1. It builds a temporary, repository-shaped tree from the recorded evidence in [`./evidence/`](evidence/) and runs the
-   repository's own generators on it ([`experiments/tse_paper.py`](../../../../experiments/tse_paper.py) and
+   repository's own generators on it ([`experiments/scientific_paper.py`](../../../../experiments/scientific_paper.py) and
    [`experiments/revision_paper.py`](../../../../experiments/revision_paper.py)).
 2. It compares **all 148 number macros** defined in `main.tex` (100 of them appear in the JSS text) with the regenerated
    values.
@@ -87,16 +87,16 @@ The line counts quoted in the paper (`\GraphLines`, `\WorkflowDeclLines`, `\Work
 
 | RQ | What is measured | Driver (re-run command) | Evidence | Paper artifacts |
 |---|---|---|---|---|
-| **RQ1** necessity | 12 controllers (reference + 11 variants) × 300 seeds × 120 adversarial actions = 3,600 runs; independent oracle for P1–P7, L1 | `python3 experiments/tse_campaign.py` (about 9 min; no LLM) → `results/processed/tse/campaign.json` | `evidence/results/processed/tse/campaign.json` → `ablation` | Table 4 (variants), Fig. 4 (ablation heat map), RQ1 prose |
+| **RQ1** necessity | 12 controllers (reference + 11 variants) × 300 seeds × 120 adversarial actions = 3,600 runs; independent oracle for P1–P7, L1 | `python3 experiments/scientific_campaign.py` (about 9 min; no LLM) → `results/processed/tse/campaign.json` | `evidence/results/processed/tse/campaign.json` → `ablation` | Table 4 (variants), Fig. 4 (ablation heat map), RQ1 prose |
 | RQ1 defect | pre-fix controller: 7 of 300 runs with API exceptions | earlier controller version, same campaign driver | `evidence/results/processed/tse/prefix-defect.json` | "A defect found by the campaign" |
-| **RQ2** independent cost | 5 strategies, N ∈ {1…32}, 5 seeds × 40 changes | `experiments/tse_campaign.py` (same run) | `campaign.json` → `cost` | Fig. 5 (cost) |
+| **RQ2** independent cost | 5 strategies, N ∈ {1…32}, 5 seeds × 40 changes | `experiments/scientific_campaign.py` (same run) | `campaign.json` → `cost` | Fig. 5 (cost) |
 | RQ2 coupled, scheduling, differential | 32 modules / 8 shared models / f ∈ {0,1,2,4,8}; layered graphs d ≤ 6, w ≤ 4, 30 seeds; kernel vs. reference on 150 streams | `python3 experiments/graph_experiments.py` (about 31 min; no LLM) → `results/processed/tse/graph.json` | `evidence/results/processed/tse/graph.json` | Table "coupled", Table "scheduling", §3.7 differential claim |
 | **RQ3** real LLMs | completion (42 trials), stale (77), cutoff, cost (3 models); 7 models, 3,437 logged calls | `python3 experiments/llm_study.py --part all --models <m>` (needs Ollama); on the clusters through `hpc/slurm/vgc_llm.sbatch` with `STUDY=llm` (submitted with `hpc/scripts/fleet.py`) | the 6 runs listed in `evidence/results/processed/tse/llm-runs.json` | Tables "llm", "llm-cutoff", "llm-cost"; RQ3 prose |
 | **RQ4** benchmarks | 5 models × 542 tasks (164 HumanEval+, 378 MBPP+), 14,069 calls; base tests as validator, plus tests as ground truth | `python3 experiments/benchmark_study.py --benchmark {humaneval,mbpp} --model <m>`; on the clusters through `vgc_llm.sbatch` with `STUDY=benchmark` | `evidence/hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json` | Table "bench"; RQ4 prose |
-| Tables/figures/macros | rendering only | `python3 experiments/tse_paper.py && python3 experiments/revision_paper.py` (writes `docs/paper/generated/`); `verify.py` does the same from this package | `./generated/`, `./generated/provenance*.json` | inlined into `main.tex` between `% BEGIN inlined generated/...` markers |
+| Tables/figures/macros | rendering only | `python3 experiments/scientific_paper.py && python3 experiments/revision_paper.py` (writes `docs/paper/generated/`); `verify.py` does the same from this package | `./generated/`, `./generated/provenance*.json` | inlined into `main.tex` between `% BEGIN inlined generated/...` markers |
 
 RQ1/RQ2 are deterministic functions of their seeds (`seed0` arguments in the drivers): rerunning them reproduces the
-processed files exactly. RQ1 alone (`tse_campaign.py`) and RQ2's kernel experiments (`graph_experiments.py`) run on a
+processed files exactly. RQ1 alone (`scientific_campaign.py`) and RQ2's kernel experiments (`graph_experiments.py`) run on a
 laptop. Add `--quick` for a smoke run that writes `*-quick.json` and leaves the paper's inputs untouched.
 
 ### RQ3 runs used in the paper
@@ -175,7 +175,7 @@ with the current checkout:
 | Directory | Role | Used by the JSS paper |
 |---|---|---|
 | `src/vgc/` | reference controller (`controller.py`), generic kernel (`graph.py`), validators, structural normalizer, scripted providers | yes: all RQs |
-| `experiments/` | drivers: `tse_campaign.py` (RQ1, RQ2 independent), `graph_experiments.py` (RQ2 coupled/scheduling/differential), `llm_study.py` + `llm/` (RQ3), `benchmark_study.py` + `bench/` (RQ4); generators `tse_paper.py`, `revision_paper.py` | yes |
+| `experiments/` | drivers: `scientific_campaign.py` (RQ1, RQ2 independent), `graph_experiments.py` (RQ2 coupled/scheduling/differential), `llm_study.py` + `llm/` (RQ3), `benchmark_study.py` + `bench/` (RQ4); generators `scientific_paper.py`, `revision_paper.py` | yes |
 | `case-study/document-service/` | requirements, policies, fixtures, scenarios of the scripted case study | yes: RQ1, RQ2 |
 | `data/benchmarks/` | HumanEval+ and MBPP+ (EvalPlus releases) | yes: RQ4 |
 | `hpc/` | Slurm job script (`slurm/vgc_llm.sbatch`), submit/fetch tool (`scripts/fleet.py`), cluster config | yes: RQ3, RQ4 execution |

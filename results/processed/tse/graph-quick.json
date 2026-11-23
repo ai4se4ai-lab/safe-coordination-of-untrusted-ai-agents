@@ -1084,7 +1084,7 @@
  },
  "source_sha256": {
   "experiments/graph_experiments.py": "3b629b35b79c554959320eda9c9ef14ce60536219524eb65d5be8e8a9eb52671",
-  "experiments/tse_campaign.py": "f15c1fec41496f844f04d411db457481bf9d21c8e1e9b194522b7b030f444c8a",
+  "experiments/scientific_campaign.py": "f15c1fec41496f844f04d411db457481bf9d21c8e1e9b194522b7b030f444c8a",
   "src/vgc/graph.py": "ae43fa3ca2b20687f1921fc6326966b06553b55908567802f1157b7cf109bb6c"
  }
 }

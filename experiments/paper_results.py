@@ -291,7 +291,7 @@ def update_paper(paper, detail):
     source = paper.read_text(encoding="utf-8")
     start,end="% BEGIN GENERATED TLC RESULTS","% END GENERATED TLC RESULTS"
     if start not in source:
-        return  # TSE manuscript: fragments come from experiments/tse_paper.py instead
+        return  # TSE manuscript: fragments come from experiments/scientific_paper.py instead
     prefix,tail=source.split(start,1);_,suffix=tail.split(end,1)
     source=prefix+start+"\n"+model_table(detail)+"\n"+end+suffix
     start,end="% BEGIN GENERATED DETAILED RESULTS","% END GENERATED DETAILED RESULTS"

@@ -5,8 +5,8 @@ subclasses that change exactly one mechanism. Proposals come from scripted or
 adversarial providers; no language model is called. Every number is a
 deterministic function of the recorded seeds.
 
-    python experiments/tse_campaign.py            # full campaign
-    python experiments/tse_campaign.py --quick    # small smoke run
+    python experiments/scientific_campaign.py            # full campaign
+    python experiments/scientific_campaign.py --quick    # small smoke run
 """
 from collections import Counter
 from copy import deepcopy
@@ -699,7 +699,7 @@ def main():
     cost = cost_campaign(config["sizes"], config["seeds"], config["changes"])
     sources = {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest()
                for p in sorted(str(x.relative_to(ROOT).as_posix()) for x in (ROOT / "src/vgc").rglob("*.py"))
-               + ["experiments/tse_campaign.py"]}
+               + ["experiments/scientific_campaign.py"]}
     report = {"config": config, "quick": args.quick, "python": platform.python_version(),
               "platform": platform.platform(), "elapsed_seconds": time.monotonic() - started,
               "source_sha256": sources, "actions": dict(ACTIONS), "properties": PROPERTIES,

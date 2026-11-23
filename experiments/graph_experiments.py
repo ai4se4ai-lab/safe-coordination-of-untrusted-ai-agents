@@ -32,7 +32,7 @@ sys.path[:0] = [str(ROOT / "src"), str(ROOT), str(ROOT / "experiments")]
 
 from vgc.graph import GraphController, Job, MODES, canonical, repair  # noqa: E402
 from vgc.validators import validate, table  # noqa: E402
-import tse_campaign as rq  # noqa: E402
+import scientific_campaign as rq  # noqa: E402
 
 # --------------------------------------------------------------- 1. differential
 
@@ -317,7 +317,7 @@ def main():
     report["elapsed_seconds"] = time.monotonic() - started
     report["source_sha256"] = {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest()
                                for p in ("src/vgc/graph.py", "experiments/graph_experiments.py",
-                                         "experiments/tse_campaign.py")}
+                                         "experiments/scientific_campaign.py")}
     out = ROOT / "results/processed/tse" / ("graph-quick.json" if args.quick else "graph.json")
     out.write_text(json.dumps(report, indent=1, sort_keys=True) + "\n", encoding="utf-8")
     print(out.relative_to(ROOT), "%.0fs" % report["elapsed_seconds"])

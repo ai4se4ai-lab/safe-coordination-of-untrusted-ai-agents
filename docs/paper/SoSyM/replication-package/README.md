@@ -29,7 +29,7 @@ python3 docs/paper/SoSyM/replication-package/verify.py --rerun # also re-execute
    (Tables `sim`, `perchange`, `impact`, `sweep`, `llm`, `tlc-scaling`) with `main.tex`. These must match exactly.
 2. **Hand-maintained macros.** It recomputes the 19 macros above the generated block (first TLC campaign, TLAPS
    obligations, trace validation, differential test, specification size) from their records. It uses the same formulas
-   as `experiments/tse_paper.py` and `experiments/revision_paper.py`.
+   as `experiments/scientific_paper.py` and `experiments/revision_paper.py`.
 3. **Numbers typed in the prose and in Appendix B.** It checks every row of Table `tlc` (first TLC campaign: baselines,
    mutant state counts, counterexample lengths) and the per-module TLAPS obligation counts (8/2/9/6). It also checks the
    one-job campaign ("23 runs, 49 s"), the five reachability witnesses, the "193 runs" of the impact caption, the 13 jobs
@@ -256,7 +256,7 @@ Each run in `runs.json` records `strategy`, `seed`/`rep`, `releases`, `wrong_rel
 | `hpc/slurm/vgc_tlc.sbatch`, `vgc_llm.sbatch` | cluster job scripts for TLC † rows and LLM runs | yes |
 | `environment/` | TLAPS toolchain lock file and Dockerfile | yes: §6.3 |
 | `results/raw/sosym/`, `results/processed/sosym/` | case study and scaling campaign data (copied in `./evidence/`) | yes |
-| `experiments/llm*`, `experiments/bench`, `benchmark_study.py`, `tse_campaign.py`, `data/benchmarks/` | LLM code-generation workflows | **no**: these belong to the companion empirical article (JSS). This paper makes no claim that rests on them. |
+| `experiments/llm*`, `experiments/bench`, `benchmark_study.py`, `scientific_campaign.py`, `data/benchmarks/` | LLM code-generation workflows | **no**: these belong to the companion empirical article (JSS). This paper makes no claim that rests on them. |
 
 ---
 
