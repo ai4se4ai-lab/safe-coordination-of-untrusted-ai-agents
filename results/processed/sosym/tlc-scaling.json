@@ -1,0 +1,423 @@
+{
+ "results": [
+  {
+   "id": "base-s_mde5-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 2792,
+   "generated_states": 19198,
+   "diameter": 22,
+   "trace_states": null,
+   "seconds": 2.9,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-s_mde5-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 234773,
+   "generated_states": 2034437,
+   "diameter": 32,
+   "trace_states": null,
+   "seconds": 108.5,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-s_mde5-k2-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 118033,
+   "generated_states": 1435903,
+   "diameter": 42,
+   "trace_states": null,
+   "seconds": 83.7,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 2,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-s_fanin4-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 123600,
+   "generated_states": 922566,
+   "diameter": 20,
+   "trace_states": null,
+   "seconds": 15.9,
+   "log_tail": null,
+   "topology": "s_fanin4",
+   "jobs": 4,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-s_fanout4-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 683705,
+   "generated_states": 6495888,
+   "diameter": 28,
+   "trace_states": null,
+   "seconds": 97.9,
+   "log_tail": null,
+   "topology": "s_fanout4",
+   "jobs": 4,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-s_chain6-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 2668,
+   "generated_states": 20059,
+   "diameter": 20,
+   "trace_states": null,
+   "seconds": 3.6,
+   "log_tail": null,
+   "topology": "s_chain6",
+   "jobs": 6,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-s_chain5-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 147778,
+   "generated_states": 1248356,
+   "diameter": 24,
+   "trace_states": null,
+   "seconds": 57.7,
+   "log_tail": null,
+   "topology": "s_chain5",
+   "jobs": 5,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-s_chain4-k2-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 23397,
+   "generated_states": 228122,
+   "diameter": 30,
+   "trace_states": null,
+   "seconds": 9.8,
+   "log_tail": null,
+   "topology": "s_chain4",
+   "jobs": 4,
+   "k": 2,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-cancel-s_mde5",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 3173,
+   "generated_states": 21499,
+   "diameter": 23,
+   "trace_states": null,
+   "seconds": 2.3,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-recheck-s_mde5",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 2792,
+   "generated_states": 22120,
+   "diameter": 22,
+   "trace_states": null,
+   "seconds": 2.0,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-obsolete-both-s_mde5",
+   "status": "counterexample",
+   "violated": "CurrentCommit",
+   "distinct_states": 437,
+   "generated_states": 2062,
+   "diameter": 12,
+   "trace_states": 4,
+   "seconds": 1.9,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "CurrentCommit",
+   "invariants": [
+    "CurrentCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-budget-reset-s_mde5",
+   "status": "counterexample",
+   "violated": "BudgetSafety",
+   "distinct_states": 149,
+   "generated_states": 310,
+   "diameter": 8,
+   "trace_states": 5,
+   "seconds": 1.4,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "BudgetSafety",
+   "invariants": [
+    "BudgetSafety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-publish-suspended-s_mde5",
+   "status": "counterexample",
+   "violated": "SuspensionPublication",
+   "distinct_states": 322,
+   "generated_states": 1123,
+   "diameter": 12,
+   "trace_states": 3,
+   "seconds": 1.7,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "SuspensionPublication",
+   "invariants": [
+    "SuspensionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-revoked-authority-s_mde5",
+   "status": "counterexample",
+   "violated": "AuthorityCommit",
+   "distinct_states": 299,
+   "generated_states": 2719,
+   "diameter": 10,
+   "trace_states": 4,
+   "seconds": 1.8,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "AuthorityCommit",
+   "invariants": [
+    "AuthorityCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-stale-publication-s_mde5",
+   "status": "counterexample",
+   "violated": "RevisionPublication",
+   "distinct_states": 1151,
+   "generated_states": 5412,
+   "diameter": 13,
+   "trace_states": 13,
+   "seconds": 1.6,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "RevisionPublication",
+   "invariants": [
+    "RevisionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-contract-omitted-s_mde5",
+   "status": "counterexample",
+   "violated": "ContractCommit",
+   "distinct_states": 1342,
+   "generated_states": 6937,
+   "diameter": 13,
+   "trace_states": 4,
+   "seconds": 1.7,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContractCommit",
+   "invariants": [
+    "ContractCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-membership-omitted-s_mde5",
+   "status": "counterexample",
+   "violated": "ContextCommit",
+   "distinct_states": 1399,
+   "generated_states": 7381,
+   "diameter": 13,
+   "trace_states": 4,
+   "seconds": 1.8,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContextCommit",
+   "invariants": [
+    "ContextCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "refine-obsolete-both-s_mde5",
+   "status": "counterexample",
+   "violated": "refinement",
+   "distinct_states": 589,
+   "generated_states": 3309,
+   "diameter": 13,
+   "trace_states": 4,
+   "seconds": 2.0,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "refinement",
+   "invariants": [],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  }
+ ],
+ "all_met": true,
+ "tla2tools_sha256": "fdffef247f563ef6edbfd44958d2a82db79e7564e07cb673262d896353fa6713",
+ "tlc_version": "TLC2 Version 2026.11.19.180144 (rev: bc1b506)",
+ "workers": 16,
+ "heap_gb": 90,
+ "timeout_s": 10800,
+ "host_cpus": 20
+}

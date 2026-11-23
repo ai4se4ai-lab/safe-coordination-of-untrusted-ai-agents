@@ -1,0 +1,117 @@
+macro,value,used_in_sections,evidence,generator
+TLCExtBaselines,14,Introduction; Mechanization and Evidence,results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtMaxJobs,5,Mechanization and Evidence,results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtMaxStates,"718,672",(not used in text),results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtMaxGenerated,"7,483,518",(not used in text),results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtMutants,27,Mechanization and Evidence,results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtMutantsCaught,21,Mechanization and Evidence,results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtRuns,43,(not used in text),results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtSeconds,303,(not used in text),results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+TLCExtVersion,2026.11.19.180144 (rev.\ bc1b506),First TLC Campaign; Mechanization and Evidence,results/processed/tse/tlc-extended.json,revision_paper.py: tlc_fragment
+ProvedObligations,25,Introduction; Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+PolicyTables,"8,192",Finite Behavioral Models,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+EventWords,"1,093",Finite Behavioral Models,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+Scenarios,28,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+Corruptions,9,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+RegressionTests,14,Mechanization and Evidence,results/processed/document-service-v1/detailed-results.json,scientific_paper.py formulas
+DiffRuns,150,Mechanization and Evidence,results/processed/tse/graph.json,revision_paper.py: graph_fragments
+DiffChanges,"6,000",Mechanization and Evidence,results/processed/tse/graph.json,revision_paper.py: graph_fragments
+TLALines,186,Mechanization and Evidence,"specification/{Core,AsyncController,AtomicController,Refinement}.tla",revision_paper.py: effort
+GraphLines,258,Mechanization and Evidence,src/vgc/graph.py,revision_paper.py: effort
+LlmCalls,"4,549",Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmDataReleases,48,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmDataStale,80,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmDataWrong,27,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmDataWrongPct,56.2,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmDiscarded,673,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExactBound,5.8,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExactFinal,10,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExactReleases,52,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExactStale,0,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExactWrong,0,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExcludedCalls,14,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExcludedMaxMin,14,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmExcludedMinS,74,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmFullWrong,0,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmLwwObsolete,66,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmLwwReleases,51,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmLwwStale,80,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmLwwWrong,30,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmLwwWrongPct,58.8,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmModels,8,Abstract; Case Study: Agents Building an Evolving Multi-View Model; Introduction,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmModelsComplete,1,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmModelsWithRelease,3,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmOtherCalls,40,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmOtherModel,phi4:14b,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmReps,80,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmRequestRatio,2.2,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+LlmRunsPerStrategy,80,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmTokenRatio,1.8,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmTopDataWrong,24,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmTopEmpty,19,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmTopExactReleases,45,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmTopModel,gpt-oss:20b,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+LlmUngatedWrong,0,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimBoundOk,500,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimBudget,4,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataFinalWrong,447,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataPostRel,"1,002",Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataPostWrong,983,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataPreRel,679,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataPreWrong,0,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataReleases,"1,681",Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataShare,59.5,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataShareHi,61.6,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataShareLo,57.4,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataWrong,983,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimDataWrongPct,58.5,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimExactBound,0.6,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimExactDiscarded,"3,768",Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimExactFinal,465,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimExactReleases,"1,709",Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimExactRequests,51.4,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimExactSd,5.6,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimExactWrong,0,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimFullDiffHi,73.5,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimFullDiffLo,71.2,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimFullPexp,-82,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimFullRatio,2.4,Abstract; Case Study: Agents Building an Evolving Multi-View Model; Discussion and Conclusion,"results/raw/sosym, results/processed/sosym",summarize.py
+SimFullRequests,123.8,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimFullSd,13.1,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwFinalWrong,426,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwObsolete,412,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwPostRel,955,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwPostWrong,935,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwPreRel,672,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwPreWrong,8,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwReleases,"1,627",(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwShare,59.1,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwShareHi,61.4,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwShareLo,56.9,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwWrong,943,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimLwwWrongPct,58.0,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SimPerr,0.25,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimPmid,0.6,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimRuns,500,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimUngatedDiffHi,4.7,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimUngatedDiffLo,3.8,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimUngatedMaxEp,3,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimUngatedMultiRuns,499,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimUngatedPexp,-49,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SimUngatedRequests,55.6,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SweepExactWrong,0,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+SweepRatioMax,3.0,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SweepRatioMin,2.2,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+SweepRuns,100,Case Study: Agents Building an Evolving Multi-View Model,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleAllMet,yes,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleBaselines,11,Introduction; Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleHours,3.9,Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleHpcRuns,3,Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleHpcWorkers,62,Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleMaxGenerated,"669,411,948",Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleMaxJobs,6,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleMaxStates,"42,035,622",Abstract; Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleMutants,9,Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleMutantsMet,9,Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleTimeouts,0,(not used in text),"results/raw/sosym, results/processed/sosym",summarize.py
+TLCScaleWorkers,16,Mechanization and Evidence,"results/raw/sosym, results/processed/sosym",summarize.py

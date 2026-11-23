@@ -1,0 +1,204 @@
+{
+ "completion": [
+  {
+   "accepted_ids": {
+    "design/d1": "string",
+    "design/d2": "string",
+    "design/d3": "string",
+    "design/d4": "string"
+   },
+   "barrier_conflict": false,
+   "calls": 20,
+   "documents": 4,
+   "epoch_outcomes": [],
+   "failed": [
+    "implementation/d1",
+    "implementation/d2",
+    "implementation/d3",
+    "implementation/d4"
+   ],
+   "feedback_epoch": false,
+   "implementation_forms": [],
+   "model": "qwen2.5-coder:7b",
+   "model_seconds": 401.6372300280127,
+   "outcomes": [
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d4",
+     "outcome": "rejected",
+     "request": "[\"design/d4\",4,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d1",
+     "outcome": "rejected",
+     "request": "[\"design/d1\",1,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d2",
+     "outcome": "rejected",
+     "request": "[\"design/d2\",2,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d3",
+     "outcome": "rejected",
+     "request": "[\"design/d3\",3,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d4",
+     "outcome": "committed",
+     "request": "[\"design/d4\",4,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d1",
+     "outcome": "committed",
+     "request": "[\"design/d1\",1,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d2",
+     "outcome": "committed",
+     "request": "[\"design/d2\",2,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d3",
+     "outcome": "committed",
+     "request": "[\"design/d3\",3,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(8) expected (400, None) but got 400",
+     "job": "implementation/d4",
+     "outcome": "rejected",
+     "request": "[\"implementation/d4\",5,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(8) expected (400, None) but got 400",
+     "job": "implementation/d1",
+     "outcome": "rejected",
+     "request": "[\"implementation/d1\",6,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(7) expected (400, None) but got 400",
+     "job": "implementation/d2",
+     "outcome": "rejected",
+     "request": "[\"implementation/d2\",7,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "after archive('b'); list(8); list(8); put('a', 'body2'); put('a', 'body1'); put('c', 'body3'); create('a', 'body2'); read('c') expected (404, None) but got (200, None)",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",8,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(8) expected (400, None) but got 400",
+     "job": "implementation/d4",
+     "outcome": "rejected",
+     "request": "[\"implementation/d4\",5,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "after archive('b'); list('../etc'); list('a/b'); put('a', 'body2'); put('a', 'body1'); put('c', 'body3'); create('a', 'body2'); read('c') expected (404, None) but got 404",
+     "job": "implementation/d1",
+     "outcome": "rejected",
+     "request": "[\"implementation/d1\",6,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(7) expected (400, None) but got 400",
+     "job": "implementation/d2",
+     "outcome": "rejected",
+     "request": "[\"implementation/d2\",7,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(7) expected (400, None) but got 400",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",8,2]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(8) expected (400, None) but got 400",
+     "job": "implementation/d4",
+     "outcome": "rejected",
+     "request": "[\"implementation/d4\",5,3]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": "after archive('a/b'); create('a', 'body2'); put('b', 'body1'); list('a/b'); put('b', 'body2'); archive('b') expected 404 but got 200",
+     "job": "implementation/d1",
+     "outcome": "rejected",
+     "request": "[\"implementation/d1\",6,3]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": "after archive('b'); list(8); list(8); put('a', 'body2'); put('a', 'body1'); put('c', 'body3'); create('a', 'body2'); read('c') expected (404, None) but got 404",
+     "job": "implementation/d2",
+     "outcome": "rejected",
+     "request": "[\"implementation/d2\",7,3]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": "after archive('c'); create('b', 'body2'); create('a', 'body2'); put('c', 'body2'); put('b', 'body0'); archive('c'); read('a'); read(7) expected (400, None) but got 400",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",8,3]"
+    }
+   ],
+   "output_tokens": 4952,
+   "prompt_tokens": 7881,
+   "published": false,
+   "seconds": 111.19693874399672,
+   "suspended": [
+    "verification/d1",
+    "verification/d2",
+    "verification/d3",
+    "verification/d4"
+   ],
+   "trial": 0
+  }
+ ],
+ "contracts": {
+  "design-v1": "You are the software architect. From the requirements, decide the service interface. Return ONLY a JSON object with keys: \"id_type\" (\"string\" or \"integer\": the type of document identifiers), \"operations\" (list of operation names), and \"status\" (an object mapping each situation to an HTTP status code: \"created\", \"exists\", \"missing\", \"invalid_id\", \"archived_put\").",
+  "design-v2": "Act as the architect of this service. Read the requirements and specify its interface as a single JSON object (no prose) containing \"id_type\" (either \"string\" or \"integer\"), \"operations\" (the operation names) and \"status\" (HTTP status code for each of the situations \"created\", \"exists\", \"missing\", \"invalid_id\", \"archived_put\").",
+  "impl-v1": "You are the programmer. Implement the service as one Python class named DocumentStore, in memory, standard library only, no input/output. Methods: create(doc_id, body) -> int; read(doc_id) -> tuple (status, body or None); put(doc_id, body) -> int; archive(doc_id) -> int; list() -> sorted list of all identifiers, archived ones included. Use exactly the status codes of the design. Identifiers of the wrong type are invalid. Return ONLY one ```python code block.",
+  "impl-v2": "Write the implementation: a single Python class DocumentStore kept in memory (standard library only, no I/O) with create(doc_id, body) -> int, read(doc_id) -> (status, body or None), put(doc_id, body) -> int, archive(doc_id) -> int and list() -> sorted list of all identifiers (archived included). Status codes must be those of the design; identifiers of the wrong type are invalid. Answer with one ```python code block only.",
+  "tests-v1": "You are the test engineer. Write a Python test suite for the service: at least three functions named test_<something>(make), where make() returns a fresh DocumentStore. Use plain assert statements, no imports, no I/O. Cover every requirement, including the archived-document rule, duplicate creation, missing documents and that put changes the body. Return ONLY one ```python code block."
+ },
+ "elapsed_seconds": 111.19727197400061,
+ "model_digests": {
+  "qwen2.5-coder:7b": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+  "qwen3-coder:30b": "06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca"
+ },
+ "models": [
+  "qwen2.5-coder:7b"
+ ],
+ "part": "completion",
+ "platform": "Linux-6.17.0-1029-nvidia-aarch64-with-glibc2.39",
+ "python": "3.12.3",
+ "run": "20261121T165850-llm-completion",
+ "source_sha256": {
+  "experiments/llm/sandbox_runner.py": "6a0a881e814bc454481ef87c5857f3d8e43114790d42aab6987c7c5b9f327ddb",
+  "experiments/llm/workflow.py": "f19da8d68a8541a5e3cc3495e91de756472fafa9e5fb9a89194056c20e6494e3",
+  "experiments/llm_study.py": "929c3f4db32bf63677e1021f6ee8a7a80da0184326071719b360649ffee67bf1",
+  "src/vgc/graph.py": "ae43fa3ca2b20687f1921fc6326966b06553b55908567802f1157b7cf109bb6c"
+ }
+}

@@ -1,20 +1,24 @@
 {
  "ablation": {
-  "full": {
+  "enabled-only": {
    "dispatches": 8280,
-   "elapsed_seconds": 81.98426739999559,
-   "flags": [],
+   "elapsed_seconds": 18.222103072999744,
+   "flags": [
+    "enabled-only"
+   ],
    "median_first_violation_step": {
     "authority": null,
     "budget": null,
     "invalid": null,
     "publish": null,
+    "reactivation": 62,
     "stale": null,
     "structure": null,
     "upstream": null
    },
    "publications": 769,
-   "removed": "Reference controller (all guards)",
+   "refused_changes": 22,
+   "removed": "Structural checks on enabled consumers only",
    "runs": 300,
    "runs_publishing": 205,
    "runs_violating": {
@@ -22,6 +26,39 @@
     "budget": 0,
     "invalid": 0,
     "publish": 0,
+    "reactivation": 14,
+    "stale": 0,
+    "structure": 0,
+    "upstream": 0
+   },
+   "runs_with_any_violation": 14,
+   "runs_with_api_exception": 0
+  },
+  "full": {
+   "dispatches": 8382,
+   "elapsed_seconds": 20.86486246500135,
+   "flags": [],
+   "median_first_violation_step": {
+    "authority": null,
+    "budget": null,
+    "invalid": null,
+    "publish": null,
+    "reactivation": null,
+    "stale": null,
+    "structure": null,
+    "upstream": null
+   },
+   "publications": 776,
+   "refused_changes": 0,
+   "removed": "Reference controller (all guards)",
+   "runs": 300,
+   "runs_publishing": 206,
+   "runs_violating": {
+    "authority": 0,
+    "budget": 0,
+    "invalid": 0,
+    "publish": 0,
+    "reactivation": 0,
     "stale": 0,
     "structure": 0,
     "upstream": 0
@@ -30,8 +67,8 @@
    "runs_with_api_exception": 0
   },
   "no-authority": {
-   "dispatches": 9955,
-   "elapsed_seconds": 63.837654300034046,
+   "dispatches": 10172,
+   "elapsed_seconds": 24.944202091995976,
    "flags": [
     "authority"
    ],
@@ -39,61 +76,67 @@
     "authority": 30,
     "budget": null,
     "invalid": null,
-    "publish": 48,
-    "stale": 39,
+    "publish": 47,
+    "reactivation": null,
+    "stale": 40,
     "structure": null,
     "upstream": 36
    },
-   "publications": 1245,
+   "publications": 1249,
+   "refused_changes": 0,
    "removed": "Authority check",
    "runs": 300,
    "runs_publishing": 236,
    "runs_violating": {
-    "authority": 275,
+    "authority": 279,
     "budget": 0,
     "invalid": 0,
     "publish": 161,
-    "stale": 247,
+    "reactivation": 0,
+    "stale": 252,
     "structure": 0,
-    "upstream": 252
+    "upstream": 254
    },
-   "runs_with_any_violation": 277,
+   "runs_with_any_violation": 280,
    "runs_with_api_exception": 0
   },
   "no-budget": {
-   "dispatches": 8432,
-   "elapsed_seconds": 58.20527179999044,
+   "dispatches": 8552,
+   "elapsed_seconds": 16.87593037899933,
    "flags": [
     "budget"
    ],
    "median_first_violation_step": {
     "authority": null,
-    "budget": 51,
+    "budget": 52,
     "invalid": null,
     "publish": null,
+    "reactivation": null,
     "stale": null,
     "structure": null,
     "upstream": null
    },
-   "publications": 828,
+   "publications": 846,
+   "refused_changes": 0,
    "removed": "Persistent episode budget",
    "runs": 300,
-   "runs_publishing": 209,
+   "runs_publishing": 215,
    "runs_violating": {
     "authority": 0,
-    "budget": 71,
+    "budget": 85,
     "invalid": 0,
     "publish": 0,
+    "reactivation": 0,
     "stale": 0,
     "structure": 0,
     "upstream": 0
    },
-   "runs_with_any_violation": 71,
+   "runs_with_any_violation": 85,
    "runs_with_api_exception": 0
   },
   "no-cancel": {
-   "dispatches": 8260,
-   "elapsed_seconds": 65.58415160002187,
+   "dispatches": 8379,
+   "elapsed_seconds": 19.620967075003136,
    "flags": [
     "cancel"
    ],
@@ -102,19 +145,22 @@
     "budget": null,
     "invalid": null,
     "publish": null,
+    "reactivation": null,
     "stale": null,
     "structure": null,
     "upstream": null
    },
-   "publications": 755,
+   "publications": 766,
+   "refused_changes": 0,
    "removed": "Request cancellation on reconcile",
    "runs": 300,
-   "runs_publishing": 202,
+   "runs_publishing": 204,
    "runs_violating": {
     "authority": 0,
     "budget": 0,
     "invalid": 0,
     "publish": 0,
+    "reactivation": 0,
     "stale": 0,
     "structure": 0,
     "upstream": 0
@@ -124,7 +170,7 @@
   },
   "no-candidate": {
    "dispatches": 8278,
-   "elapsed_seconds": 39.4196408999851,
+   "elapsed_seconds": 17.295870991998527,
    "flags": [
     "structure"
    ],
@@ -133,11 +179,13 @@
     "budget": null,
     "invalid": null,
     "publish": 48,
+    "reactivation": null,
     "stale": null,
     "structure": 22,
     "upstream": null
    },
    "publications": 687,
+   "refused_changes": 0,
    "removed": "Candidate normalization",
    "runs": 300,
    "runs_publishing": 189,
@@ -146,6 +194,7 @@
     "budget": 0,
     "invalid": 0,
     "publish": 15,
+    "reactivation": 0,
     "stale": 0,
     "structure": 133,
     "upstream": 0
@@ -154,8 +203,8 @@
    "runs_with_api_exception": 0
   },
   "no-context": {
-   "dispatches": 7984,
-   "elapsed_seconds": 42.83485770004336,
+   "dispatches": 8058,
+   "elapsed_seconds": 18.146354782002163,
    "flags": [
     "context"
    ],
@@ -164,29 +213,32 @@
     "budget": null,
     "invalid": null,
     "publish": 70,
+    "reactivation": null,
     "stale": 59,
     "structure": null,
     "upstream": 59
    },
-   "publications": 811,
+   "publications": 816,
+   "refused_changes": 0,
    "removed": "Selected context in footprint",
    "runs": 300,
-   "runs_publishing": 202,
+   "runs_publishing": 203,
    "runs_violating": {
     "authority": 0,
     "budget": 0,
     "invalid": 0,
     "publish": 53,
-    "stale": 130,
+    "reactivation": 0,
+    "stale": 131,
     "structure": 0,
-    "upstream": 115
+    "upstream": 114
    },
-   "runs_with_any_violation": 130,
+   "runs_with_any_violation": 131,
    "runs_with_api_exception": 0
   },
   "no-contract": {
-   "dispatches": 7313,
-   "elapsed_seconds": 36.46416760003194,
+   "dispatches": 7427,
+   "elapsed_seconds": 16.84215586999926,
    "flags": [
     "contract"
    ],
@@ -195,29 +247,32 @@
     "budget": null,
     "invalid": null,
     "publish": 60,
-    "stale": 39,
+    "reactivation": null,
+    "stale": 40,
     "structure": null,
-    "upstream": 48
+    "upstream": 47
    },
-   "publications": 745,
+   "publications": 752,
+   "refused_changes": 0,
    "removed": "Contract identity in signature",
    "runs": 300,
-   "runs_publishing": 197,
+   "runs_publishing": 199,
    "runs_violating": {
     "authority": 0,
     "budget": 0,
     "invalid": 0,
     "publish": 89,
-    "stale": 241,
+    "reactivation": 0,
+    "stale": 243,
     "structure": 0,
-    "upstream": 210
+    "upstream": 209
    },
-   "runs_with_any_violation": 241,
+   "runs_with_any_violation": 243,
    "runs_with_api_exception": 0
   },
   "no-global": {
-   "dispatches": 8280,
-   "elapsed_seconds": 45.67320719995769,
+   "dispatches": 8382,
+   "elapsed_seconds": 21.33763930400164,
    "flags": [
     "global"
    ],
@@ -226,29 +281,32 @@
     "budget": null,
     "invalid": null,
     "publish": 30,
+    "reactivation": null,
     "stale": null,
     "structure": null,
     "upstream": null
    },
-   "publications": 1040,
+   "publications": 1056,
+   "refused_changes": 0,
    "removed": "Global publication predicate",
    "runs": 300,
-   "runs_publishing": 234,
+   "runs_publishing": 236,
    "runs_violating": {
     "authority": 0,
     "budget": 0,
     "invalid": 0,
-    "publish": 102,
+    "publish": 105,
+    "reactivation": 0,
     "stale": 0,
     "structure": 0,
     "upstream": 0
    },
-   "runs_with_any_violation": 102,
+   "runs_with_any_violation": 105,
    "runs_with_api_exception": 0
   },
   "no-obsolete": {
-   "dispatches": 8253,
-   "elapsed_seconds": 47.79597679997096,
+   "dispatches": 8364,
+   "elapsed_seconds": 18.552897863999533,
    "flags": [
     "cancel",
     "recheck"
@@ -258,29 +316,32 @@
     "budget": null,
     "invalid": 50,
     "publish": 60,
-    "stale": 53,
+    "reactivation": null,
+    "stale": 51,
     "structure": null,
     "upstream": 65
    },
-   "publications": 779,
+   "publications": 787,
+   "refused_changes": 0,
    "removed": "Both obsolete-response defences",
    "runs": 300,
-   "runs_publishing": 204,
+   "runs_publishing": 206,
    "runs_violating": {
     "authority": 0,
     "budget": 0,
     "invalid": 74,
-    "publish": 36,
-    "stale": 106,
+    "publish": 37,
+    "reactivation": 0,
+    "stale": 105,
     "structure": 0,
     "upstream": 79
    },
-   "runs_with_any_violation": 106,
+   "runs_with_any_violation": 105,
    "runs_with_api_exception": 0
   },
   "no-recheck": {
-   "dispatches": 8280,
-   "elapsed_seconds": 50.26494439999806,
+   "dispatches": 8382,
+   "elapsed_seconds": 18.616095811994455,
    "flags": [
     "recheck"
    ],
@@ -289,19 +350,22 @@
     "budget": null,
     "invalid": null,
     "publish": null,
+    "reactivation": null,
     "stale": null,
     "structure": null,
     "upstream": null
    },
-   "publications": 769,
+   "publications": 776,
+   "refused_changes": 0,
    "removed": "Commit-time signature recheck",
    "runs": 300,
-   "runs_publishing": 205,
+   "runs_publishing": 206,
    "runs_violating": {
     "authority": 0,
     "budget": 0,
     "invalid": 0,
     "publish": 0,
+    "reactivation": 0,
     "stale": 0,
     "structure": 0,
     "upstream": 0
@@ -310,8 +374,8 @@
    "runs_with_api_exception": 0
   },
   "no-upstream": {
-   "dispatches": 10210,
-   "elapsed_seconds": 55.60625309997704,
+   "dispatches": 10525,
+   "elapsed_seconds": 26.02195444300014,
    "flags": [
     "upstream"
    ],
@@ -319,25 +383,28 @@
     "authority": null,
     "budget": null,
     "invalid": null,
-    "publish": 46,
+    "publish": 48,
+    "reactivation": null,
     "stale": 25,
     "structure": null,
     "upstream": 19
    },
-   "publications": 1177,
+   "publications": 1206,
+   "refused_changes": 0,
    "removed": "Upstream usability gate",
    "runs": 300,
-   "runs_publishing": 228,
+   "runs_publishing": 236,
    "runs_violating": {
     "authority": 0,
     "budget": 0,
     "invalid": 0,
-    "publish": 172,
-    "stale": 260,
+    "publish": 181,
+    "reactivation": 0,
+    "stale": 268,
     "structure": 0,
-    "upstream": 297
+    "upstream": 296
    },
-   "runs_with_any_violation": 298,
+   "runs_with_any_violation": 297,
    "runs_with_api_exception": 0
   }
  },
@@ -5577,23 +5644,25 @@
    }
   }
  },
- "elapsed_seconds": 1280.5417568000266,
- "platform": "Windows-11-10.0.26100-SP0",
+ "elapsed_seconds": 543.0484570240005,
+ "platform": "Linux-6.17.0-1029-nvidia-aarch64-with-glibc2.39",
  "properties": {
   "authority": "Value from a revoked owner exposed",
   "budget": "More than k requests in one dependency episode",
   "invalid": "Value invalid for its current observation exposed",
   "publish": "Snapshot published that violates the barrier",
+  "reactivation": "Authorized change refused by a committed generated value",
   "stale": "Obsolete or unavailable input exposed as usable",
   "structure": "Ill-typed structure installed",
   "upstream": "Value exposed while a prerequisite is unusable"
  },
- "python": "3.13.14",
+ "python": "3.12.3",
  "quick": false,
  "source_sha256": {
-  "experiments/tse_campaign.py": "302f8068a667ecc23d15d1816b55965ab32778255201c4a6bb41680620b36b32",
+  "experiments/scientific_campaign.py": "f15c1fec41496f844f04d411db457481bf9d21c8e1e9b194522b7b030f444c8a",
   "src/vgc/__init__.py": "78e18666013b59a6bfb5b3c0347eb24f76b111c6a2f74349d4c79ce720f27832",
-  "src/vgc/controller.py": "85c05658addcbaef40367c663c59a0d8a2cc3587fdf9bb649a54237cac16ad21",
+  "src/vgc/controller.py": "a4a3963f48c2f372adf6f1e55e12da4383b27f09be8e36d4cd9a3f5b2e268765",
+  "src/vgc/graph.py": "ae43fa3ca2b20687f1921fc6326966b06553b55908567802f1157b7cf109bb6c",
   "src/vgc/observations.py": "6d2275784a1e472bc00f7d60a705a91d488647e2e2a4eaa68ef698e15ce42506",
   "src/vgc/providers/__init__.py": "783240a1b80efb464cb9de29e633335269c178f7dc54ce5080e82a17d33d637f",
   "src/vgc/providers/scripted.py": "b2ca5e8123282dc84e13142b967b2564724928c722ab076992accb729f450911",

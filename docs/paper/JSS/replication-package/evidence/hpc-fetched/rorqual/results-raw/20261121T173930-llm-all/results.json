@@ -1,0 +1,1910 @@
+{
+ "completion": [
+  {
+   "accepted_ids": {
+    "design/d1": "string",
+    "design/d2": "string",
+    "design/d3": "string",
+    "design/d4": "string"
+   },
+   "barrier_conflict": false,
+   "calls": 19,
+   "documents": 4,
+   "epoch_outcomes": [],
+   "failed": [],
+   "feedback_epoch": false,
+   "implementation_forms": [
+    "a11ec6f86c6b",
+    "a3fb975f7103",
+    "c78d5136bb90",
+    "cd4dfc43ff11"
+   ],
+   "model": "mistral-small:24b",
+   "model_seconds": 127.57384439278394,
+   "outcomes": [
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d4",
+     "outcome": "rejected",
+     "request": "[\"design/d4\",4,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d1",
+     "outcome": "rejected",
+     "request": "[\"design/d1\",1,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d3",
+     "outcome": "rejected",
+     "request": "[\"design/d3\",3,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d2",
+     "outcome": "rejected",
+     "request": "[\"design/d2\",2,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d4",
+     "outcome": "committed",
+     "request": "[\"design/d4\",4,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d1",
+     "outcome": "committed",
+     "request": "[\"design/d1\",1,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d3",
+     "outcome": "committed",
+     "request": "[\"design/d3\",3,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d2",
+     "outcome": "committed",
+     "request": "[\"design/d2\",2,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d2",
+     "outcome": "committed",
+     "request": "[\"implementation/d2\",8,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d4",
+     "outcome": "committed",
+     "request": "[\"implementation/d4\",5,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d1",
+     "outcome": "committed",
+     "request": "[\"implementation/d1\",6,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after list() the result must be [] but was \"raised TypeError: unsupported operand type(s) for +: 'dict_keys' and 'list'\"",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",7,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "implementation/d3",
+     "outcome": "committed",
+     "request": "[\"implementation/d3\",7,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d1",
+     "outcome": "committed",
+     "request": "[\"verification/d1\",11,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d4",
+     "outcome": "committed",
+     "request": "[\"verification/d4\",10,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "test test_archive fails on a store that satisfies the requirements: TypeError: cannot unpack non-iterable int object",
+     "job": "verification/d2",
+     "outcome": "rejected",
+     "request": "[\"verification/d2\",9,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d3",
+     "outcome": "committed",
+     "request": "[\"verification/d3\",12,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "test test_create fails on a store that satisfies the requirements: AssertionError: ",
+     "job": "verification/d2",
+     "outcome": "rejected",
+     "request": "[\"verification/d2\",9,2]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": null,
+     "job": "verification/d2",
+     "outcome": "committed",
+     "request": "[\"verification/d2\",9,3]"
+    }
+   ],
+   "output_tokens": 5409,
+   "prompt_tokens": 11461,
+   "published": true,
+   "seconds": 47.72640070784837,
+   "suspended": [],
+   "trial": 0
+  },
+  {
+   "accepted_ids": {
+    "design/d1": "string",
+    "design/d2": "string",
+    "design/d3": "string",
+    "design/d4": "string"
+   },
+   "barrier_conflict": false,
+   "calls": 20,
+   "documents": 4,
+   "epoch_outcomes": [],
+   "failed": [],
+   "feedback_epoch": false,
+   "implementation_forms": [
+    "31da1cc4e7ae",
+    "38aa680388d7",
+    "767056b3df20",
+    "c78d5136bb90"
+   ],
+   "model": "mistral-small:24b",
+   "model_seconds": 134.54283808427863,
+   "outcomes": [
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d4",
+     "outcome": "rejected",
+     "request": "[\"design/d4\",4,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d3",
+     "outcome": "rejected",
+     "request": "[\"design/d3\",3,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d2",
+     "outcome": "rejected",
+     "request": "[\"design/d2\",2,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d1",
+     "outcome": "rejected",
+     "request": "[\"design/d1\",1,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d4",
+     "outcome": "committed",
+     "request": "[\"design/d4\",4,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d2",
+     "outcome": "committed",
+     "request": "[\"design/d2\",2,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d3",
+     "outcome": "committed",
+     "request": "[\"design/d3\",3,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d1",
+     "outcome": "committed",
+     "request": "[\"design/d1\",1,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",7,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d4",
+     "outcome": "committed",
+     "request": "[\"implementation/d4\",5,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read('c') the result must be (404, None) but was 404",
+     "job": "implementation/d1",
+     "outcome": "rejected",
+     "request": "[\"implementation/d1\",8,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d2",
+     "outcome": "committed",
+     "request": "[\"implementation/d2\",6,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "implementation/d3",
+     "outcome": "committed",
+     "request": "[\"implementation/d3\",7,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "on a fresh store, after put('b', 'body1') the result must be 404 but was 200",
+     "job": "implementation/d1",
+     "outcome": "rejected",
+     "request": "[\"implementation/d1\",8,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d4",
+     "outcome": "committed",
+     "request": "[\"verification/d4\",9,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "test test_archive fails on a store that satisfies the requirements: AttributeError: 'SpecStore' object has no attribute 'archived'",
+     "job": "verification/d3",
+     "outcome": "rejected",
+     "request": "[\"verification/d3\",11,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d2",
+     "outcome": "committed",
+     "request": "[\"verification/d2\",10,1]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": null,
+     "job": "implementation/d1",
+     "outcome": "committed",
+     "request": "[\"implementation/d1\",8,3]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "verification/d3",
+     "outcome": "committed",
+     "request": "[\"verification/d3\",11,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d1",
+     "outcome": "committed",
+     "request": "[\"verification/d1\",12,1]"
+    }
+   ],
+   "output_tokens": 5237,
+   "prompt_tokens": 12004,
+   "published": true,
+   "seconds": 44.794701335951686,
+   "suspended": [],
+   "trial": 1
+  },
+  {
+   "accepted_ids": {
+    "design/d1": "string",
+    "design/d2": "string",
+    "design/d3": "string",
+    "design/d4": "string"
+   },
+   "barrier_conflict": false,
+   "calls": 18,
+   "documents": 4,
+   "epoch_outcomes": [],
+   "failed": [],
+   "feedback_epoch": false,
+   "implementation_forms": [
+    "c78d5136bb90",
+    "e50ba5f10ae9",
+    "f21c9f1d700b",
+    "f606f3db7a60"
+   ],
+   "model": "mistral-small:24b",
+   "model_seconds": 109.72542699566111,
+   "outcomes": [
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d1",
+     "outcome": "rejected",
+     "request": "[\"design/d1\",1,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d3",
+     "outcome": "rejected",
+     "request": "[\"design/d3\",3,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d2",
+     "outcome": "rejected",
+     "request": "[\"design/d2\",2,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d4",
+     "outcome": "rejected",
+     "request": "[\"design/d4\",4,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d1",
+     "outcome": "committed",
+     "request": "[\"design/d1\",1,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d2",
+     "outcome": "committed",
+     "request": "[\"design/d2\",2,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d3",
+     "outcome": "committed",
+     "request": "[\"design/d3\",3,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d4",
+     "outcome": "committed",
+     "request": "[\"design/d4\",4,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d2",
+     "outcome": "rejected",
+     "request": "[\"implementation/d2\",6,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d3",
+     "outcome": "committed",
+     "request": "[\"implementation/d3\",7,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d4",
+     "outcome": "rejected",
+     "request": "[\"implementation/d4\",8,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d1",
+     "outcome": "committed",
+     "request": "[\"implementation/d1\",5,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "implementation/d2",
+     "outcome": "committed",
+     "request": "[\"implementation/d2\",6,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "implementation/d4",
+     "outcome": "committed",
+     "request": "[\"implementation/d4\",8,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d4",
+     "outcome": "committed",
+     "request": "[\"verification/d4\",12,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d3",
+     "outcome": "committed",
+     "request": "[\"verification/d3\",9,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d1",
+     "outcome": "committed",
+     "request": "[\"verification/d1\",10,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d2",
+     "outcome": "committed",
+     "request": "[\"verification/d2\",11,1]"
+    }
+   ],
+   "output_tokens": 4294,
+   "prompt_tokens": 10121,
+   "published": true,
+   "seconds": 29.71564265410416,
+   "suspended": [],
+   "trial": 2
+  },
+  {
+   "accepted_ids": {
+    "design/d1": "string",
+    "design/d2": "string",
+    "design/d3": "string",
+    "design/d4": "string"
+   },
+   "barrier_conflict": false,
+   "calls": 17,
+   "documents": 4,
+   "epoch_outcomes": [],
+   "failed": [],
+   "feedback_epoch": false,
+   "implementation_forms": [
+    "6828df6ae307",
+    "767056b3df20",
+    "7a72929f521c",
+    "a61cdee49278"
+   ],
+   "model": "mistral-small:24b",
+   "model_seconds": 117.91941987164319,
+   "outcomes": [
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d2",
+     "outcome": "rejected",
+     "request": "[\"design/d2\",2,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d4",
+     "outcome": "rejected",
+     "request": "[\"design/d4\",4,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d1",
+     "outcome": "rejected",
+     "request": "[\"design/d1\",1,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d3",
+     "outcome": "rejected",
+     "request": "[\"design/d3\",3,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d2",
+     "outcome": "committed",
+     "request": "[\"design/d2\",2,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d4",
+     "outcome": "committed",
+     "request": "[\"design/d4\",4,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d3",
+     "outcome": "committed",
+     "request": "[\"design/d3\",3,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d1",
+     "outcome": "committed",
+     "request": "[\"design/d1\",1,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d3",
+     "outcome": "committed",
+     "request": "[\"implementation/d3\",7,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d4",
+     "outcome": "rejected",
+     "request": "[\"implementation/d4\",6,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d1",
+     "outcome": "committed",
+     "request": "[\"implementation/d1\",8,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d2",
+     "outcome": "committed",
+     "request": "[\"implementation/d2\",5,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "implementation/d4",
+     "outcome": "committed",
+     "request": "[\"implementation/d4\",6,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d3",
+     "outcome": "committed",
+     "request": "[\"verification/d3\",9,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d4",
+     "outcome": "committed",
+     "request": "[\"verification/d4\",12,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d1",
+     "outcome": "committed",
+     "request": "[\"verification/d1\",10,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d2",
+     "outcome": "committed",
+     "request": "[\"verification/d2\",11,1]"
+    }
+   ],
+   "output_tokens": 4511,
+   "prompt_tokens": 9857,
+   "published": true,
+   "seconds": 31.89196933596395,
+   "suspended": [],
+   "trial": 3
+  },
+  {
+   "accepted_ids": {
+    "design/d1": "string",
+    "design/d2": "string",
+    "design/d3": "string",
+    "design/d4": "string"
+   },
+   "barrier_conflict": false,
+   "calls": 21,
+   "documents": 4,
+   "epoch_outcomes": [],
+   "failed": [
+    "implementation/d3"
+   ],
+   "feedback_epoch": false,
+   "implementation_forms": [
+    "a7531c070f74",
+    "c78d5136bb90",
+    "e1c45f3afc87"
+   ],
+   "model": "mistral-small:24b",
+   "model_seconds": 127.74638128979132,
+   "outcomes": [
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d2",
+     "outcome": "rejected",
+     "request": "[\"design/d2\",2,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d3",
+     "outcome": "rejected",
+     "request": "[\"design/d3\",3,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d4",
+     "outcome": "rejected",
+     "request": "[\"design/d4\",4,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d1",
+     "outcome": "rejected",
+     "request": "[\"design/d1\",1,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d2",
+     "outcome": "committed",
+     "request": "[\"design/d2\",2,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d4",
+     "outcome": "committed",
+     "request": "[\"design/d4\",4,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d1",
+     "outcome": "committed",
+     "request": "[\"design/d1\",1,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d3",
+     "outcome": "committed",
+     "request": "[\"design/d3\",3,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d2",
+     "outcome": "rejected",
+     "request": "[\"implementation/d2\",5,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d1",
+     "outcome": "rejected",
+     "request": "[\"implementation/d1\",7,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",8,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d4",
+     "outcome": "committed",
+     "request": "[\"implementation/d4\",6,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "implementation/d2",
+     "outcome": "committed",
+     "request": "[\"implementation/d2\",5,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d1",
+     "outcome": "rejected",
+     "request": "[\"implementation/d1\",7,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": "on a fresh store, after put('b', 'body1') the result must be 404 but was 200",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",8,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d4",
+     "outcome": "committed",
+     "request": "[\"verification/d4\",9,1]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": null,
+     "job": "implementation/d1",
+     "outcome": "committed",
+     "request": "[\"implementation/d1\",7,3]"
+    },
+    {
+     "attempt": 3,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",8,3]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "test test_read_put fails on a store that satisfies the requirements: AssertionError: ",
+     "job": "verification/d2",
+     "outcome": "rejected",
+     "request": "[\"verification/d2\",10,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d1",
+     "outcome": "committed",
+     "request": "[\"verification/d1\",11,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "verification/d2",
+     "outcome": "committed",
+     "request": "[\"verification/d2\",10,2]"
+    }
+   ],
+   "output_tokens": 5012,
+   "prompt_tokens": 11859,
+   "published": false,
+   "seconds": 40.078592034988105,
+   "suspended": [
+    "verification/d3"
+   ],
+   "trial": 4
+  },
+  {
+   "accepted_ids": {
+    "design/d1": "string",
+    "design/d2": "string",
+    "design/d3": "string",
+    "design/d4": "string"
+   },
+   "barrier_conflict": false,
+   "calls": 18,
+   "documents": 4,
+   "epoch_outcomes": [],
+   "failed": [],
+   "feedback_epoch": false,
+   "implementation_forms": [
+    "1ed0096c2c5b",
+    "20029bf56ad2",
+    "7a72929f521c",
+    "c78d5136bb90"
+   ],
+   "model": "mistral-small:24b",
+   "model_seconds": 118.65180869912729,
+   "outcomes": [
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d3",
+     "outcome": "rejected",
+     "request": "[\"design/d3\",3,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d2",
+     "outcome": "rejected",
+     "request": "[\"design/d2\",2,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d1",
+     "outcome": "rejected",
+     "request": "[\"design/d1\",1,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "operations must be exactly ['archive', 'create', 'list', 'put', 'read']",
+     "job": "design/d4",
+     "outcome": "rejected",
+     "request": "[\"design/d4\",4,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d3",
+     "outcome": "committed",
+     "request": "[\"design/d3\",3,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d2",
+     "outcome": "committed",
+     "request": "[\"design/d2\",2,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d1",
+     "outcome": "committed",
+     "request": "[\"design/d1\",1,2]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "design/d4",
+     "outcome": "committed",
+     "request": "[\"design/d4\",4,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d4",
+     "outcome": "committed",
+     "request": "[\"implementation/d4\",8,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d2",
+     "outcome": "committed",
+     "request": "[\"implementation/d2\",6,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "implementation/d1",
+     "outcome": "committed",
+     "request": "[\"implementation/d1\",7,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+     "job": "implementation/d3",
+     "outcome": "rejected",
+     "request": "[\"implementation/d3\",5,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "implementation/d3",
+     "outcome": "committed",
+     "request": "[\"implementation/d3\",5,2]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d4",
+     "outcome": "committed",
+     "request": "[\"verification/d4\",9,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d2",
+     "outcome": "committed",
+     "request": "[\"verification/d2\",10,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": "test test_create_documents fails on a store that satisfies the requirements: TypeError: cannot unpack non-iterable int object",
+     "job": "verification/d1",
+     "outcome": "rejected",
+     "request": "[\"verification/d1\",11,1]"
+    },
+    {
+     "attempt": 1,
+     "diagnostic": null,
+     "job": "verification/d3",
+     "outcome": "committed",
+     "request": "[\"verification/d3\",12,1]"
+    },
+    {
+     "attempt": 2,
+     "diagnostic": null,
+     "job": "verification/d1",
+     "outcome": "committed",
+     "request": "[\"verification/d1\",11,2]"
+    }
+   ],
+   "output_tokens": 4794,
+   "prompt_tokens": 10847,
+   "published": true,
+   "seconds": 35.018909696955234,
+   "suspended": [],
+   "trial": 5
+  }
+ ],
+ "contracts": {
+  "design-v1": "You are the software architect. From the requirements, decide the service interface. Return ONLY a JSON object with keys: \"id_type\" (\"string\" or \"integer\": the type of document identifiers), \"operations\" (list of operation names), and \"status\" (an object mapping each situation to an HTTP status code: \"created\", \"exists\", \"missing\", \"invalid_id\", \"archived_put\").",
+  "design-v2": "Act as the architect of this service. Read the requirements and specify its interface as a single JSON object (no prose) containing \"id_type\" (either \"string\" or \"integer\"), \"operations\" (the operation names) and \"status\" (HTTP status code for each of the situations \"created\", \"exists\", \"missing\", \"invalid_id\", \"archived_put\").",
+  "impl-v1": "You are the programmer. Implement the service as one Python class named DocumentStore, in memory, standard library only, no input/output. Methods: create(doc_id, body) -> int; read(doc_id) -> always a 2-tuple (status, body or None); put(doc_id, body) -> int; archive(doc_id) -> int; list() -> sorted list of all identifiers, archived ones included. Use exactly the status codes of the design. Identifiers of the wrong type are invalid. Return ONLY one ```python code block.",
+  "impl-v2": "Write the implementation: a single Python class DocumentStore kept in memory (standard library only, no I/O) with create(doc_id, body) -> int, read(doc_id) -> always a 2-tuple (status, body or None), put(doc_id, body) -> int, archive(doc_id) -> int and list() -> sorted list of all identifiers (archived included). Status codes must be those of the design; identifiers of the wrong type are invalid. Answer with one ```python code block only.",
+  "tests-v1": "You are the test engineer. Write a Python test suite for the service: at least three functions named test_<something>(make), where make() returns a fresh DocumentStore. Use plain assert statements, no imports, no I/O, and only the public methods create, read, put, archive and list(). Cover every requirement, including the archived-document rule, duplicate creation, missing documents and that put changes the body. Return ONLY one ```python code block."
+ },
+ "cost": [
+  {
+   "changes": [
+    {
+     "change": "source",
+     "failed": [
+      "verification/d4"
+     ],
+     "output_tokens": 1546,
+     "prompt_tokens": 2955,
+     "publishable": false,
+     "requests": 5,
+     "seconds": 28.520733713870868,
+     "target": "d1"
+    },
+    {
+     "change": "finding-add",
+     "failed": [
+      "verification/d4"
+     ],
+     "output_tokens": 1422,
+     "prompt_tokens": 2507,
+     "publishable": false,
+     "requests": 3,
+     "seconds": 20.445332898991182,
+     "target": "d2"
+    },
+    {
+     "change": "finding-outside",
+     "failed": [
+      "verification/d4"
+     ],
+     "output_tokens": 0,
+     "prompt_tokens": 0,
+     "publishable": false,
+     "requests": 0,
+     "seconds": 0.00034980406053364277,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [],
+     "output_tokens": 1744,
+     "prompt_tokens": 5289,
+     "publishable": true,
+     "requests": 10,
+     "seconds": 21.804261113051325,
+     "target": "design"
+    },
+    {
+     "change": "source",
+     "failed": [],
+     "output_tokens": 907,
+     "prompt_tokens": 2322,
+     "publishable": true,
+     "requests": 4,
+     "seconds": 17.003470831084996,
+     "target": "d3"
+    },
+    {
+     "change": "finding-remove",
+     "failed": [],
+     "output_tokens": 957,
+     "prompt_tokens": 1974,
+     "publishable": true,
+     "requests": 3,
+     "seconds": 16.06990680610761,
+     "target": "d2"
+    },
+    {
+     "change": "context-equal",
+     "failed": [],
+     "output_tokens": 0,
+     "prompt_tokens": 0,
+     "publishable": true,
+     "requests": 0,
+     "seconds": 0.0003335201181471348,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [],
+     "output_tokens": 3601,
+     "prompt_tokens": 6220,
+     "publishable": true,
+     "requests": 9,
+     "seconds": 24.611261470941827,
+     "target": "impl"
+    }
+   ],
+   "mode": "exact",
+   "model": "mistral-small:24b",
+   "output_tokens": 16250,
+   "prompt_tokens": 34878,
+   "seconds": 177.92873523407616,
+   "total_calls": 56
+  },
+  {
+   "changes": [
+    {
+     "change": "source",
+     "failed": [
+      "implementation/d2"
+     ],
+     "output_tokens": 1163,
+     "prompt_tokens": 2384,
+     "publishable": false,
+     "requests": 4,
+     "seconds": 19.64684250811115,
+     "target": "d1"
+    },
+    {
+     "change": "finding-add",
+     "failed": [],
+     "output_tokens": 1422,
+     "prompt_tokens": 2157,
+     "publishable": true,
+     "requests": 3,
+     "seconds": 23.851398936007172,
+     "target": "d2"
+    },
+    {
+     "change": "finding-outside",
+     "failed": [],
+     "output_tokens": 0,
+     "prompt_tokens": 0,
+     "publishable": true,
+     "requests": 0,
+     "seconds": 0.000367926899343729,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [],
+     "output_tokens": 5491,
+     "prompt_tokens": 11532,
+     "publishable": true,
+     "requests": 19,
+     "seconds": 36.96278742211871,
+     "target": "design"
+    },
+    {
+     "change": "source",
+     "failed": [],
+     "output_tokens": 920,
+     "prompt_tokens": 2314,
+     "publishable": true,
+     "requests": 4,
+     "seconds": 17.043800272978842,
+     "target": "d3"
+    },
+    {
+     "change": "finding-remove",
+     "failed": [],
+     "output_tokens": 713,
+     "prompt_tokens": 1429,
+     "publishable": true,
+     "requests": 2,
+     "seconds": 11.72230459493585,
+     "target": "d2"
+    },
+    {
+     "change": "context-equal",
+     "failed": [],
+     "output_tokens": 0,
+     "prompt_tokens": 0,
+     "publishable": true,
+     "requests": 0,
+     "seconds": 0.00035636196844279766,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [],
+     "output_tokens": 3791,
+     "prompt_tokens": 7968,
+     "publishable": true,
+     "requests": 12,
+     "seconds": 26.842645986005664,
+     "target": "impl"
+    }
+   ],
+   "mode": "no-cutoff",
+   "model": "mistral-small:24b",
+   "output_tokens": 18081,
+   "prompt_tokens": 38391,
+   "seconds": 169.8351314519532,
+   "total_calls": 62
+  },
+  {
+   "changes": [
+    {
+     "change": "source",
+     "failed": [
+      "implementation/d3"
+     ],
+     "output_tokens": 5458,
+     "prompt_tokens": 28499,
+     "publishable": false,
+     "requests": 20,
+     "seconds": 57.20556944212876,
+     "target": "d1"
+    },
+    {
+     "change": "finding-add",
+     "failed": [],
+     "output_tokens": 4085,
+     "prompt_tokens": 27023,
+     "publishable": true,
+     "requests": 18,
+     "seconds": 35.59749460197054,
+     "target": "d2"
+    },
+    {
+     "change": "finding-outside",
+     "failed": [
+      "implementation/d1"
+     ],
+     "output_tokens": 4259,
+     "prompt_tokens": 27432,
+     "publishable": false,
+     "requests": 18,
+     "seconds": 39.89139343914576,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [
+      "implementation/d1"
+     ],
+     "output_tokens": 1589,
+     "prompt_tokens": 15827,
+     "publishable": false,
+     "requests": 11,
+     "seconds": 19.86079955007881,
+     "target": "design"
+    },
+    {
+     "change": "source",
+     "failed": [],
+     "output_tokens": 4368,
+     "prompt_tokens": 28963,
+     "publishable": true,
+     "requests": 19,
+     "seconds": 38.48546595801599,
+     "target": "d3"
+    },
+    {
+     "change": "finding-remove",
+     "failed": [
+      "implementation/d1"
+     ],
+     "output_tokens": 5221,
+     "prompt_tokens": 30532,
+     "publishable": false,
+     "requests": 21,
+     "seconds": 54.007373677100986,
+     "target": "d2"
+    },
+    {
+     "change": "context-equal",
+     "failed": [
+      "implementation/d1"
+     ],
+     "output_tokens": 0,
+     "prompt_tokens": 0,
+     "publishable": false,
+     "requests": 0,
+     "seconds": 0.0006237439811229706,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [],
+     "output_tokens": 3533,
+     "prompt_tokens": 15690,
+     "publishable": true,
+     "requests": 10,
+     "seconds": 43.08360717492178,
+     "target": "impl"
+    }
+   ],
+   "mode": "workspace",
+   "model": "mistral-small:24b",
+   "output_tokens": 33968,
+   "prompt_tokens": 205331,
+   "seconds": 343.46473757899366,
+   "total_calls": 139
+  },
+  {
+   "changes": [
+    {
+     "change": "source",
+     "failed": [],
+     "output_tokens": 6604,
+     "prompt_tokens": 14706,
+     "publishable": true,
+     "requests": 24,
+     "seconds": 70.92863870901056,
+     "target": "d1"
+    },
+    {
+     "change": "finding-add",
+     "failed": [],
+     "output_tokens": 4564,
+     "prompt_tokens": 11586,
+     "publishable": true,
+     "requests": 19,
+     "seconds": 46.53986364789307,
+     "target": "d2"
+    },
+    {
+     "change": "finding-outside",
+     "failed": [],
+     "output_tokens": 6349,
+     "prompt_tokens": 14046,
+     "publishable": true,
+     "requests": 23,
+     "seconds": 62.797441052040085,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [],
+     "output_tokens": 5162,
+     "prompt_tokens": 11122,
+     "publishable": true,
+     "requests": 18,
+     "seconds": 47.23535512317903,
+     "target": "design"
+    },
+    {
+     "change": "source",
+     "failed": [],
+     "output_tokens": 5248,
+     "prompt_tokens": 11088,
+     "publishable": true,
+     "requests": 19,
+     "seconds": 52.943915609037504,
+     "target": "d3"
+    },
+    {
+     "change": "finding-remove",
+     "failed": [],
+     "output_tokens": 4163,
+     "prompt_tokens": 10256,
+     "publishable": true,
+     "requests": 18,
+     "seconds": 41.62392202904448,
+     "target": "d2"
+    },
+    {
+     "change": "context-equal",
+     "failed": [
+      "implementation/d1",
+      "implementation/d2"
+     ],
+     "output_tokens": 4871,
+     "prompt_tokens": 11254,
+     "publishable": false,
+     "requests": 20,
+     "seconds": 52.91984364599921,
+     "target": null
+    },
+    {
+     "change": "contract",
+     "failed": [],
+     "output_tokens": 4763,
+     "prompt_tokens": 10730,
+     "publishable": true,
+     "requests": 18,
+     "seconds": 44.29457976599224,
+     "target": "impl"
+    }
+   ],
+   "mode": "full",
+   "model": "mistral-small:24b",
+   "output_tokens": 47888,
+   "prompt_tokens": 108973,
+   "seconds": 483.82085409690626,
+   "total_calls": 182
+  }
+ ],
+ "cost_models": "mistral-small:24b",
+ "cutoff": [
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 0,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 0,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 1,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": true,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 1,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 1,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 2,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": true,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 1,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 2,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 3,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": true,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 1,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 3,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 4,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": true,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 4,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 3,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 5,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 3,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 5,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 6,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 3,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 6,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.0,
+   "trial": 7,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.0,
+   "trial": 7,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 0,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": true,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 3,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 0,
+   "usable_after": false,
+   "value_equal": true
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 1,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 1,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 3,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 2,
+   "usable_after": false,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 2,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 3,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 3,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 3,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 4,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 3,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 4,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 5,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": false,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 4,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 5,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 6,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": true,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 6,
+   "usable_after": true,
+   "value_equal": false
+  },
+  {
+   "ast_equal": null,
+   "model": "mistral-small:24b",
+   "raw_equal": false,
+   "requests": 2,
+   "semantic_equal": true,
+   "stage": "design",
+   "temperature": 0.7,
+   "trial": 7,
+   "usable_after": true,
+   "value_equal": true
+  },
+  {
+   "ast_equal": true,
+   "model": "mistral-small:24b",
+   "raw_equal": true,
+   "requests": 3,
+   "semantic_equal": null,
+   "stage": "impl",
+   "temperature": 0.7,
+   "trial": 7,
+   "usable_after": false,
+   "value_equal": true
+  }
+ ],
+ "elapsed_seconds": 2410.1716146541294,
+ "host": "rg31604",
+ "model_digests": {
+  "mistral-small:24b": "8039dd90c1138d772437a0779a33b7349efd5d9cca71edcd26e4dd463f90439d"
+ },
+ "models": [
+  "mistral-small:24b"
+ ],
+ "ollama": "http://127.0.0.1:22854",
+ "part": "all",
+ "platform": "Linux-5.14.0-687.61.1.el9_8.x86_64-x86_64-Intel-R-_Xeon-R-_Gold_6448Y-with-glibc2.37",
+ "python": "3.12.4",
+ "quick": false,
+ "run": "20261121T173930-llm-all",
+ "source_sha256": {
+  "experiments/llm/sandbox_runner.py": "bc288af77ab32e471fbee756d4421fa012f909a4be4c8b65ed13c3f6563b9d99",
+  "experiments/llm/workflow.py": "c98636ce5efef4a78f6c8de016f3c35a7efb6af76e1fae50a167a35dc6ecd610",
+  "experiments/llm_study.py": "a26b461cfb64cdddbf3fd398ab9aa7dfee030a467a35c43dcbc3455a53cf3c57",
+  "src/vgc/graph.py": "ae43fa3ca2b20687f1921fc6326966b06553b55908567802f1157b7cf109bb6c"
+ },
+ "stale": [
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after create('b', 'body3'); archive('b'); put('b', 'body2') the result must be 200 but was 409",
+   "design_usable_after_edit": false,
+   "from_refused": true,
+   "model": "mistral-small:24b",
+   "old_diagnostic": null,
+   "trial": 0,
+   "valid_for_current_question": false,
+   "valid_for_old_question": true
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after create('b', 'body3'); archive('b'); put('b', 'body2') the result must be 409 but was 200",
+   "design_usable_after_edit": false,
+   "from_refused": false,
+   "model": "mistral-small:24b",
+   "old_diagnostic": null,
+   "trial": 1,
+   "valid_for_current_question": false,
+   "valid_for_old_question": true
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after create('b', 'body3'); archive('b'); put('b', 'body2') the result must be 200 but was 409",
+   "design_usable_after_edit": false,
+   "from_refused": true,
+   "model": "mistral-small:24b",
+   "old_diagnostic": null,
+   "trial": 2,
+   "valid_for_current_question": false,
+   "valid_for_old_question": true
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "design_usable_after_edit": false,
+   "from_refused": false,
+   "model": "mistral-small:24b",
+   "old_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "trial": 3,
+   "valid_for_current_question": false,
+   "valid_for_old_question": false
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "design_usable_after_edit": false,
+   "from_refused": true,
+   "model": "mistral-small:24b",
+   "old_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "trial": 4,
+   "valid_for_current_question": false,
+   "valid_for_old_question": false
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after create('b', 'body3'); archive('b'); put('b', 'body2') the result must be 409 but was 200",
+   "design_usable_after_edit": false,
+   "from_refused": false,
+   "model": "mistral-small:24b",
+   "old_diagnostic": null,
+   "trial": 5,
+   "valid_for_current_question": false,
+   "valid_for_old_question": true
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after create('b', 'body3'); archive('b'); put('b', 'body2') the result must be 200 but was 409",
+   "design_usable_after_edit": false,
+   "from_refused": true,
+   "model": "mistral-small:24b",
+   "old_diagnostic": null,
+   "trial": 6,
+   "valid_for_current_question": false,
+   "valid_for_old_question": true
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "design_usable_after_edit": false,
+   "from_refused": false,
+   "model": "mistral-small:24b",
+   "old_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "trial": 7,
+   "valid_for_current_question": false,
+   "valid_for_old_question": false
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after put('b', 'body1') the result must be 404 but was 201",
+   "design_usable_after_edit": false,
+   "from_refused": true,
+   "model": "mistral-small:24b",
+   "old_diagnostic": "on a fresh store, after put('b', 'body1') the result must be 404 but was 201",
+   "trial": 8,
+   "valid_for_current_question": false,
+   "valid_for_old_question": false
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after create('b', 'body3'); archive('b'); put('b', 'body2') the result must be 409 but was 200",
+   "design_usable_after_edit": false,
+   "from_refused": false,
+   "model": "mistral-small:24b",
+   "old_diagnostic": null,
+   "trial": 9,
+   "valid_for_current_question": false,
+   "valid_for_old_question": true
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "design_usable_after_edit": false,
+   "from_refused": true,
+   "model": "mistral-small:24b",
+   "old_diagnostic": "on a fresh store, after read(7) the result must be (400, None) but was 400",
+   "trial": 10,
+   "valid_for_current_question": false,
+   "valid_for_old_question": false
+  },
+  {
+   "controller_outcome": "discarded",
+   "current_diagnostic": "on a fresh store, after create('b', 'body3'); archive('b'); put('b', 'body2') the result must be 409 but was 200",
+   "design_usable_after_edit": false,
+   "from_refused": false,
+   "model": "mistral-small:24b",
+   "old_diagnostic": null,
+   "trial": 11,
+   "valid_for_current_question": false,
+   "valid_for_old_question": true
+  }
+ ],
+ "trials": null
+}

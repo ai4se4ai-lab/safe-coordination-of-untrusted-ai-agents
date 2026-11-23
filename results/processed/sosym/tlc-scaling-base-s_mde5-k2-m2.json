@@ -1,0 +1,35 @@
+{
+ "results": [
+  {
+   "id": "base-s_mde5-k2-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 42035622,
+   "generated_states": 669411948,
+   "diameter": 62,
+   "trace_states": null,
+   "seconds": 12480.4,
+   "log_tail": null,
+   "topology": "s_mde5",
+   "jobs": 5,
+   "k": 2,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  }
+ ],
+ "all_met": true,
+ "tla2tools_sha256": "fdffef247f563ef6edbfd44958d2a82db79e7564e07cb673262d896353fa6713",
+ "tlc_version": "TLC2 Version 2026.11.19.180144 (rev: bc1b506)",
+ "workers": 62,
+ "heap_gb": 260,
+ "timeout_s": 85000,
+ "host_cpus": 192
+}

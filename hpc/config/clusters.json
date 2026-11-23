@@ -1,0 +1,16 @@
+{
+  "project": "safe-coordination-of-untrusted-ai-agents",
+  "username": "mbabaei",
+  "clusters": {
+    "rorqual": {"host": "rorqual.alliancecan.ca", "gpu_account": "def-mbabaei_gpu", "gres": "gpu:h100:1",
+                "work": "/scratch/mbabaei/vgc"},
+    "narval":  {"host": "narval.alliancecan.ca",  "gpu_account": "def-mbabaei_gpu", "gres": "gpu:a100:1",
+                "work": "/scratch/mbabaei/vgc"},
+    "fir":     {"host": "fir.alliancecan.ca",     "gpu_account": "def-mbabaei_gpu", "gres": "gpu:h100:1",
+                "work": "/scratch/mbabaei/vgc"}
+  },
+  "_comment": "Everything this project runs lives under <work>. Ollama runtimes and model blobs found elsewhere on the cluster are only COPIED into <work>/ollama by 'fleet.py setup'; nothing outside <work> is written.",
+  "ollama_runtime_candidates": ["/scratch/mbabaei/heartness-work/ollama", "/scratch/mbabaei/ssevoh/ollama"],
+  "model_store_candidates": ["/scratch/mbabaei/ssevoh/models", "/scratch/mbabaei/heartness-work/ollama-models"],
+  "models": ["gemma2:9b", "qwen2.5-coder:7b", "llama3.1:8b", "phi4:14b", "mistral-small:24b"]
+}

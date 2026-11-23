@@ -1,0 +1,16 @@
+{
+  "fragments": {
+    "fig-ablation.tex": "59abf3ccc587502cb8daaa4bb336ec66b25256be3c631ceb62d35201fc802bd6",
+    "fig-cost.tex": "1a98becfdb2a81dc9312de3b255744eada41946dac8e17f6d5b285a0759c6606",
+    "numbers.tex": "8de67ccab8da85a3c75c727fc4d8a76ba6be53df299fa3587b6eef6156e6bda3",
+    "tab-assurance.tex": "bac4afd5d9af3259100227a5488ceb3aff73bc1dd3bc52c428b278a7442052c9",
+    "tab-cost.tex": "45bc062a3a697b4c35310dfe8fde7803bc682234a2a0d4fb88a61a0ae565d908",
+    "tab-scenarios.tex": "0a9c957faee42cc9b6adba1b34ab08320dffa6524fe6d8d6fc982a25ad9c8958",
+    "tab-tlc.tex": "78fe2152112e436f9a6e89bf416416e858af8c220f61e5f4b164071d0ac2bdf7"
+  },
+  "generator_sha256": "3785254498de3822e6fa82fb7136a11e0f90fcf61193930a0d728c99e59f20d6",
+  "inputs": {
+    "results/processed/document-service-v1/detailed-results.json": "28412edfdbc81138c8caf76bf276e8a01d7c4f8bd50a8e6c5a024c1471350109",
+    "results/processed/tse/campaign.json": "db45e82fc7bacbdd5285a29c9b621230439d969b47a69f1e6d115c6c27d65332"
+  }
+}

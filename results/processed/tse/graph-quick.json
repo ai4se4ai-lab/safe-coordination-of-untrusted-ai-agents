@@ -1,0 +1,1090 @@
+{
+ "config": {
+  "coupled_changes": 20,
+  "coupled_seeds": 1,
+  "depths": [
+   2,
+   4
+  ],
+  "diff_changes": 10,
+  "diff_seeds": 1,
+  "diff_sizes": [
+   1,
+   4
+  ],
+  "fanouts": [
+   0,
+   1,
+   2
+  ],
+  "modules": 8,
+  "sched_seeds": 3,
+  "shared": 4,
+  "widths": [
+   1,
+   2
+  ]
+ },
+ "coupled": {
+  "runs": [
+   {
+    "fanout": 0,
+    "jobs": 40,
+    "modules": 8,
+    "per_kind": {
+     "exact": {
+      "context-selected": [
+       2,
+       4,
+       4
+      ],
+      "context-unselected": [
+       2,
+       0,
+       0
+      ],
+      "contract": [
+       4,
+       32,
+       32
+      ],
+      "module": [
+       5,
+       20,
+       20
+      ],
+      "shared-cosmetic": [
+       4,
+       8,
+       8
+      ],
+      "shared-semantic": [
+       3,
+       6,
+       6
+      ]
+     },
+     "full": {
+      "context-selected": [
+       2,
+       80,
+       80
+      ],
+      "context-unselected": [
+       2,
+       80,
+       80
+      ],
+      "contract": [
+       4,
+       160,
+       160
+      ],
+      "module": [
+       5,
+       200,
+       200
+      ],
+      "shared-cosmetic": [
+       4,
+       160,
+       160
+      ],
+      "shared-semantic": [
+       3,
+       120,
+       120
+      ]
+     },
+     "no-cutoff": {
+      "context-selected": [
+       2,
+       4,
+       4
+      ],
+      "context-unselected": [
+       2,
+       0,
+       0
+      ],
+      "contract": [
+       4,
+       112,
+       112
+      ],
+      "module": [
+       5,
+       20,
+       20
+      ],
+      "shared-cosmetic": [
+       4,
+       8,
+       8
+      ],
+      "shared-semantic": [
+       3,
+       6,
+       6
+      ]
+     },
+     "workspace": {
+      "context-selected": [
+       2,
+       80,
+       80
+      ],
+      "context-unselected": [
+       2,
+       80,
+       80
+      ],
+      "contract": [
+       4,
+       32,
+       32
+      ],
+      "module": [
+       5,
+       200,
+       200
+      ],
+      "shared-cosmetic": [
+       4,
+       160,
+       160
+      ],
+      "shared-semantic": [
+       3,
+       120,
+       120
+      ]
+     }
+    },
+    "seed": 9100,
+    "shared": 4
+   },
+   {
+    "fanout": 1,
+    "jobs": 40,
+    "modules": 8,
+    "per_kind": {
+     "exact": {
+      "context-selected": [
+       2,
+       4,
+       4
+      ],
+      "context-unselected": [
+       1,
+       0,
+       0
+      ],
+      "contract": [
+       4,
+       32,
+       32
+      ],
+      "module": [
+       8,
+       32,
+       32
+      ],
+      "shared-cosmetic": [
+       2,
+       4,
+       4
+      ],
+      "shared-semantic": [
+       3,
+       42,
+       42
+      ]
+     },
+     "full": {
+      "context-selected": [
+       2,
+       80,
+       80
+      ],
+      "context-unselected": [
+       1,
+       40,
+       40
+      ],
+      "contract": [
+       4,
+       160,
+       160
+      ],
+      "module": [
+       8,
+       320,
+       320
+      ],
+      "shared-cosmetic": [
+       2,
+       80,
+       80
+      ],
+      "shared-semantic": [
+       3,
+       120,
+       120
+      ]
+     },
+     "no-cutoff": {
+      "context-selected": [
+       2,
+       4,
+       4
+      ],
+      "context-unselected": [
+       1,
+       0,
+       0
+      ],
+      "contract": [
+       4,
+       80,
+       80
+      ],
+      "module": [
+       8,
+       32,
+       32
+      ],
+      "shared-cosmetic": [
+       2,
+       25,
+       25
+      ],
+      "shared-semantic": [
+       3,
+       42,
+       42
+      ]
+     },
+     "workspace": {
+      "context-selected": [
+       2,
+       80,
+       80
+      ],
+      "context-unselected": [
+       1,
+       40,
+       40
+      ],
+      "contract": [
+       4,
+       32,
+       32
+      ],
+      "module": [
+       8,
+       320,
+       320
+      ],
+      "shared-cosmetic": [
+       2,
+       80,
+       80
+      ],
+      "shared-semantic": [
+       3,
+       120,
+       120
+      ]
+     }
+    },
+    "seed": 9131,
+    "shared": 4
+   },
+   {
+    "fanout": 2,
+    "jobs": 40,
+    "modules": 8,
+    "per_kind": {
+     "exact": {
+      "context-selected": [
+       4,
+       8,
+       8
+      ],
+      "context-unselected": [
+       1,
+       0,
+       0
+      ],
+      "contract": [
+       8,
+       64,
+       64
+      ],
+      "module": [
+       3,
+       12,
+       12
+      ],
+      "shared-cosmetic": [
+       2,
+       4,
+       4
+      ],
+      "shared-semantic": [
+       2,
+       25,
+       25
+      ]
+     },
+     "full": {
+      "context-selected": [
+       4,
+       160,
+       160
+      ],
+      "context-unselected": [
+       1,
+       40,
+       40
+      ],
+      "contract": [
+       8,
+       320,
+       320
+      ],
+      "module": [
+       3,
+       120,
+       120
+      ],
+      "shared-cosmetic": [
+       2,
+       80,
+       80
+      ],
+      "shared-semantic": [
+       2,
+       80,
+       80
+      ]
+     },
+     "no-cutoff": {
+      "context-selected": [
+       4,
+       8,
+       8
+      ],
+      "context-unselected": [
+       1,
+       0,
+       0
+      ],
+      "contract": [
+       8,
+       192,
+       192
+      ],
+      "module": [
+       3,
+       12,
+       12
+      ],
+      "shared-cosmetic": [
+       2,
+       31,
+       31
+      ],
+      "shared-semantic": [
+       2,
+       25,
+       25
+      ]
+     },
+     "workspace": {
+      "context-selected": [
+       4,
+       160,
+       160
+      ],
+      "context-unselected": [
+       1,
+       40,
+       40
+      ],
+      "contract": [
+       8,
+       64,
+       64
+      ],
+      "module": [
+       3,
+       120,
+       120
+      ],
+      "shared-cosmetic": [
+       2,
+       80,
+       80
+      ],
+      "shared-semantic": [
+       2,
+       80,
+       80
+      ]
+     }
+    },
+    "seed": 9162,
+    "shared": 4
+   }
+  ],
+  "summary": {
+   "0": {
+    "exact": {
+     "by_kind": {
+      "context-selected": 2.0,
+      "context-unselected": 0.0,
+      "contract": 8.0,
+      "module": 4.0,
+      "shared-cosmetic": 2.0,
+      "shared-semantic": 2.0
+     },
+     "requests_equal_affected": true,
+     "requests_per_change": 3.5
+    },
+    "full": {
+     "by_kind": {
+      "context-selected": 40.0,
+      "context-unselected": 40.0,
+      "contract": 40.0,
+      "module": 40.0,
+      "shared-cosmetic": 40.0,
+      "shared-semantic": 40.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 40.0
+    },
+    "no-cutoff": {
+     "by_kind": {
+      "context-selected": 2.0,
+      "context-unselected": 0.0,
+      "contract": 28.0,
+      "module": 4.0,
+      "shared-cosmetic": 2.0,
+      "shared-semantic": 2.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 7.5
+    },
+    "workspace": {
+     "by_kind": {
+      "context-selected": 40.0,
+      "context-unselected": 40.0,
+      "contract": 8.0,
+      "module": 40.0,
+      "shared-cosmetic": 40.0,
+      "shared-semantic": 40.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 33.6
+    }
+   },
+   "1": {
+    "exact": {
+     "by_kind": {
+      "context-selected": 2.0,
+      "context-unselected": 0.0,
+      "contract": 8.0,
+      "module": 4.0,
+      "shared-cosmetic": 2.0,
+      "shared-semantic": 14.0
+     },
+     "requests_equal_affected": true,
+     "requests_per_change": 5.7
+    },
+    "full": {
+     "by_kind": {
+      "context-selected": 40.0,
+      "context-unselected": 40.0,
+      "contract": 40.0,
+      "module": 40.0,
+      "shared-cosmetic": 40.0,
+      "shared-semantic": 40.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 40.0
+    },
+    "no-cutoff": {
+     "by_kind": {
+      "context-selected": 2.0,
+      "context-unselected": 0.0,
+      "contract": 20.0,
+      "module": 4.0,
+      "shared-cosmetic": 12.5,
+      "shared-semantic": 14.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 9.15
+    },
+    "workspace": {
+     "by_kind": {
+      "context-selected": 40.0,
+      "context-unselected": 40.0,
+      "contract": 8.0,
+      "module": 40.0,
+      "shared-cosmetic": 40.0,
+      "shared-semantic": 40.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 33.6
+    }
+   },
+   "2": {
+    "exact": {
+     "by_kind": {
+      "context-selected": 2.0,
+      "context-unselected": 0.0,
+      "contract": 8.0,
+      "module": 4.0,
+      "shared-cosmetic": 2.0,
+      "shared-semantic": 12.5
+     },
+     "requests_equal_affected": true,
+     "requests_per_change": 5.65
+    },
+    "full": {
+     "by_kind": {
+      "context-selected": 40.0,
+      "context-unselected": 40.0,
+      "contract": 40.0,
+      "module": 40.0,
+      "shared-cosmetic": 40.0,
+      "shared-semantic": 40.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 40.0
+    },
+    "no-cutoff": {
+     "by_kind": {
+      "context-selected": 2.0,
+      "context-unselected": 0.0,
+      "contract": 24.0,
+      "module": 4.0,
+      "shared-cosmetic": 15.5,
+      "shared-semantic": 12.5
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 13.4
+    },
+    "workspace": {
+     "by_kind": {
+      "context-selected": 40.0,
+      "context-unselected": 40.0,
+      "contract": 8.0,
+      "module": 40.0,
+      "shared-cosmetic": 40.0,
+      "shared-semantic": 40.0
+     },
+     "requests_equal_affected": null,
+     "requests_per_change": 27.2
+    }
+   }
+  }
+ },
+ "differential": {
+  "all_equal": true,
+  "runs": [
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "exact",
+    "n": 1,
+    "requests_generic": 15,
+    "requests_reference": 15,
+    "seed": 7101
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "no-cutoff",
+    "n": 1,
+    "requests_generic": 23,
+    "requests_reference": 23,
+    "seed": 7101
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "version",
+    "n": 1,
+    "requests_generic": 21,
+    "requests_reference": 21,
+    "seed": 7101
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "workspace",
+    "n": 1,
+    "requests_generic": 25,
+    "requests_reference": 25,
+    "seed": 7101
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "full",
+    "n": 1,
+    "requests_generic": 44,
+    "requests_reference": 44,
+    "seed": 7101
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "exact",
+    "n": 4,
+    "requests_generic": 48,
+    "requests_reference": 48,
+    "seed": 7404
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "no-cutoff",
+    "n": 4,
+    "requests_generic": 60,
+    "requests_reference": 60,
+    "seed": 7404
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "version",
+    "n": 4,
+    "requests_generic": 72,
+    "requests_reference": 72,
+    "seed": 7404
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "workspace",
+    "n": 4,
+    "requests_generic": 140,
+    "requests_reference": 140,
+    "seed": 7404
+   },
+   {
+    "changes": 10,
+    "mismatching_changes": 0,
+    "mode": "full",
+    "n": 4,
+    "requests_generic": 176,
+    "requests_reference": 176,
+    "seed": 7404
+   }
+  ]
+ },
+ "elapsed_seconds": 2.675204229002702,
+ "platform": "Linux-6.17.0-1029-nvidia-aarch64-with-glibc2.39",
+ "python": "3.12.3",
+ "scheduling": {
+  "gated_requests_equal_jobs": true,
+  "gated_single_episode": true,
+  "runs": [
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 2,
+    "makespan": 3.908006196584596,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 2,
+    "seed": 0,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 2,
+    "makespan": 3.405390978490689,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 2,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 2,
+    "makespan": 4.910301251480366,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 2,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": false,
+    "jobs": 2,
+    "makespan": 3.908006196584596,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 2,
+    "seed": 0,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": false,
+    "jobs": 2,
+    "makespan": 3.405390978490689,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 2,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": false,
+    "jobs": 2,
+    "makespan": 4.910301251480366,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 2,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 4,
+    "makespan": 4.168435845144707,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 0,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 4,
+    "makespan": 4.745349823902266,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 4,
+    "makespan": 2.999325819533738,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 2,
+    "discarded": 0,
+    "gated": false,
+    "jobs": 4,
+    "makespan": 4.993185503606535,
+    "max_episodes": 2,
+    "mean_episodes": 1.5,
+    "requests": 6,
+    "seed": 0,
+    "stale_commits": 2,
+    "width": 2
+   },
+   {
+    "depth": 2,
+    "discarded": 2,
+    "gated": false,
+    "jobs": 4,
+    "makespan": 3.8829759414999763,
+    "max_episodes": 2,
+    "mean_episodes": 1.5,
+    "requests": 6,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 2,
+    "discarded": 2,
+    "gated": false,
+    "jobs": 4,
+    "makespan": 4.142906149350548,
+    "max_episodes": 2,
+    "mean_episodes": 1.5,
+    "requests": 6,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 4,
+    "makespan": 8.333018774564415,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 0,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 4,
+    "makespan": 6.972110639690269,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 4,
+    "makespan": 8.087872469357276,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": false,
+    "jobs": 4,
+    "makespan": 8.333018774564415,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 0,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": false,
+    "jobs": 4,
+    "makespan": 6.972110639690269,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": false,
+    "jobs": 4,
+    "makespan": 8.087872469357276,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 4,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 1
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 8,
+    "makespan": 10.342703440353272,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 8,
+    "seed": 0,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 8,
+    "makespan": 7.559996776436428,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 8,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 4,
+    "discarded": 0,
+    "gated": true,
+    "jobs": 8,
+    "makespan": 10.18197416738344,
+    "max_episodes": 1,
+    "mean_episodes": 1.0,
+    "requests": 8,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 4,
+    "discarded": 6,
+    "gated": false,
+    "jobs": 8,
+    "makespan": 10.143195163277769,
+    "max_episodes": 2,
+    "mean_episodes": 1.75,
+    "requests": 14,
+    "seed": 0,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 4,
+    "discarded": 6,
+    "gated": false,
+    "jobs": 8,
+    "makespan": 8.903661890009753,
+    "max_episodes": 2,
+    "mean_episodes": 1.75,
+    "requests": 14,
+    "seed": 1,
+    "stale_commits": 0,
+    "width": 2
+   },
+   {
+    "depth": 4,
+    "discarded": 6,
+    "gated": false,
+    "jobs": 8,
+    "makespan": 10.060721151141719,
+    "max_episodes": 2,
+    "mean_episodes": 1.75,
+    "requests": 14,
+    "seed": 2,
+    "stale_commits": 0,
+    "width": 2
+   }
+  ],
+  "summary": {
+   "2/1/eager": {
+    "discarded": 0.0,
+    "makespan": 4.074566142185216,
+    "max_episodes": 1.0,
+    "mean_episodes": 1.0,
+    "requests": 2.0,
+    "stale_commits": 0.0,
+    "worst_max_episodes": 1
+   },
+   "2/1/gated": {
+    "discarded": 0.0,
+    "makespan": 4.074566142185216,
+    "max_episodes": 1.0,
+    "mean_episodes": 1.0,
+    "requests": 2.0,
+    "stale_commits": 0.0,
+    "worst_max_episodes": 1
+   },
+   "2/2/eager": {
+    "discarded": 1.3333333333333333,
+    "makespan": 4.339689198152353,
+    "max_episodes": 2.0,
+    "mean_episodes": 1.5,
+    "requests": 6.0,
+    "stale_commits": 0.6666666666666666,
+    "worst_max_episodes": 2
+   },
+   "2/2/gated": {
+    "discarded": 0.0,
+    "makespan": 3.971037162860237,
+    "max_episodes": 1.0,
+    "mean_episodes": 1.0,
+    "requests": 4.0,
+    "stale_commits": 0.0,
+    "worst_max_episodes": 1
+   },
+   "4/1/eager": {
+    "discarded": 0.0,
+    "makespan": 7.7976672945373195,
+    "max_episodes": 1.0,
+    "mean_episodes": 1.0,
+    "requests": 4.0,
+    "stale_commits": 0.0,
+    "worst_max_episodes": 1
+   },
+   "4/1/gated": {
+    "discarded": 0.0,
+    "makespan": 7.7976672945373195,
+    "max_episodes": 1.0,
+    "mean_episodes": 1.0,
+    "requests": 4.0,
+    "stale_commits": 0.0,
+    "worst_max_episodes": 1
+   },
+   "4/2/eager": {
+    "discarded": 6.0,
+    "makespan": 9.70252606814308,
+    "max_episodes": 2.0,
+    "mean_episodes": 1.75,
+    "requests": 14.0,
+    "stale_commits": 0.0,
+    "worst_max_episodes": 2
+   },
+   "4/2/gated": {
+    "discarded": 0.0,
+    "makespan": 9.361558128057714,
+    "max_episodes": 1.0,
+    "mean_episodes": 1.0,
+    "requests": 8.0,
+    "stale_commits": 0.0,
+    "worst_max_episodes": 1
+   }
+  }
+ },
+ "source_sha256": {
+  "experiments/graph_experiments.py": "3b629b35b79c554959320eda9c9ef14ce60536219524eb65d5be8e8a9eb52671",
+  "experiments/scientific_campaign.py": "f15c1fec41496f844f04d411db457481bf9d21c8e1e9b194522b7b030f444c8a",
+  "src/vgc/graph.py": "ae43fa3ca2b20687f1921fc6326966b06553b55908567802f1157b7cf109bb6c"
+ }
+}

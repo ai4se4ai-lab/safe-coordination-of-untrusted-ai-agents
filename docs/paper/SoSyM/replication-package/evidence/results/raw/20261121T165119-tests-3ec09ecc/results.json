@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": ".",
+  "elapsed_seconds": 0.05786487200384727,
+  "exit_code": 0,
+  "log": "tests.log",
+  "status": "passed",
+  "timeout_seconds": 90
+}

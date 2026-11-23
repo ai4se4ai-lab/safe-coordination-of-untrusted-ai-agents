@@ -38,39 +38,39 @@
   "scoped_proved_obligations": 25,
   "sources": {
     "case-study": {
-      "manifest_sha256": "071234875eba4ad18c291800b2ea902e46a4cea5b6f3fdd739cbc67586602104",
-      "results_sha256": "bebb8474c942fb5f5ab46e7edea986e4dbe84e3246787d67bface607a2aae6d6",
-      "run": "20261027T031145-case-study-297e8db0"
+      "manifest_sha256": "82cdc9d04c4d8587ea12a8e65c95ff0b13290185ad50de032188abf6b1f485e0",
+      "results_sha256": "c7a6b36c2b8ef33c028bd5e956b825c14102ec3946cafb72d886d729c6c20f14",
+      "run": "20261121T165119-case-study-ca32d414"
     },
     "conformance": {
-      "manifest_sha256": "200495f98509afac9dbaea972fe32f436070795a33d3efbca0eb7bc3c1a117fe",
-      "results_sha256": "17ed7ccd1d0d448d8210cdbbd33152a6bc56c9b1f7580f8b352275a8229d0ec8",
-      "run": "20261027T031147-conformance-7b46d0cb"
+      "manifest_sha256": "e4633c26481084dfcf49e68f114e6e5d0143d1e191161b20f725817377fabdb7",
+      "results_sha256": "8069332a792b4b238cfa0b5a1ed2aea0a8518f97a5d4b49a2d5ef5c4abc39317",
+      "run": "20261121T165120-conformance-1a5f2e1c"
     },
     "models": {
-      "manifest_sha256": "d8057ff57ecef03c2953d2bd276b330e3cde0d2af4b436ca8e3638c6af61d23b",
-      "results_sha256": "69ce37001f9973fb4eddda2e56a09cace38c334a2a81094a49992d7926f90a7f",
-      "run": "20261027T014915-models-7772dfa1"
+      "manifest_sha256": "d87d0c0b7149101c6fc3f02fe89b8fe65d4e513aa0771ff33e8bdd006a8a72f0",
+      "results_sha256": "8fc227747dac347d0f43990641692727376dd9b95edb10f33c052e1c389a9b97",
+      "run": "20261121T171707-models-a84a2c48"
     },
     "mutations": {
-      "manifest_sha256": "d1339ace3ee2b9846364e150aaf82e1c6b991e96b6b9f67f370909ff78af98bf",
-      "results_sha256": "f7f75889b80094970f3a46fcbfe173e6b493250b94ba98c2a163cada26a14184",
-      "run": "20261027T014959-mutations-3c7a26dd"
+      "manifest_sha256": "df066d70eb1c2fb4b4bb9d164796d6b4e23c0704823e60089481c007df156cb2",
+      "results_sha256": "0f529882afffdd1316bdca5bb0462af6e6aa1c24f1ed1c7b70bd43b9b26f0d12",
+      "run": "20261121T171720-mutations-23b42a2a"
     },
     "proofs": {
-      "manifest_sha256": "94fd2a62165f71196b431263e930f04781c80494f621b38cb5943af701519ff0",
-      "results_sha256": "f9d2a4644cfa9491e2b16184abdec3b1b13a248ce56922f9fc3a0b72e05dceee",
+      "manifest_sha256": "64c0c201867174f431acd57a5a46f2621875b65f7da8576d2a3eb60b7619b17d",
+      "results_sha256": "01d888f4c63e2a78655d3cde8f219e6a2a4165b72d6bdb25c651e797d72289c0",
       "run": "20261027T014850-proofs-3137953d"
     },
     "tests": {
-      "manifest_sha256": "faeb43837a1d9971085c9fd8b34162f1696d47e3a5175f8d219b4244ab7803a7",
-      "results_sha256": "9721fa97e63e5abd7c963aa2967189bc7b228fee300cf5443eb220a5913eb053",
-      "run": "20261027T031142-tests-ebe9cd99"
+      "manifest_sha256": "81ed5b597baa4c6c5d18bcdfb14ae002734e6dc6d903c341fc1e5768619d4067",
+      "results_sha256": "281d4b4f5ae2e0312b2313b9ff67873820a83b63f106025f5e7de47dfb812053",
+      "run": "20261121T165119-tests-3ec09ecc"
     },
     "witnesses": {
-      "manifest_sha256": "1e0f073666eca02866d86007ae595eda8d7c54d9649de2f3c9ea2e01ef740658",
-      "results_sha256": "c9bd7400ec7c79ab951641ad24297f468f702881648207722f5254a20c720521",
-      "run": "20261027T015043-witnesses-b0b032df"
+      "manifest_sha256": "9eab7fc1dc72b9e1384d7ff4238dee7458249014d94f7c3ca5a40c2b9a3cdbed",
+      "results_sha256": "35dccb09d4eb7b9e8706676a021c2042d41bc6b05f5a8db09c2f6987dc5938be",
+      "run": "20261121T171743-witnesses-e5e0752e"
     }
   },
   "trace_passes": 28

@@ -1,0 +1,3382 @@
+{
+ "sim": {
+  "exact": {
+   "runs": 500,
+   "requests_mean": 51.35,
+   "releases": 1709,
+   "wrong_releases": 0,
+   "runs_with_wrong_release": 0,
+   "final_released": 465,
+   "final_wrong": 0,
+   "violation_runs": {},
+   "max_episodes": 1,
+   "runs_multi_episode": 0,
+   "bound_ok": 500,
+   "discarded": 3768,
+   "obsolete_installed": 0,
+   "issue_kinds": {},
+   "issue_views": {},
+   "wrong_share_run_mean": 0.0,
+   "wrong_share_run_ci": [
+    0.0,
+    0.0
+   ],
+   "requests_sd": 5.634447088044749
+  },
+  "ungated": {
+   "runs": 500,
+   "requests_mean": 55.576,
+   "releases": 1678,
+   "wrong_releases": 0,
+   "runs_with_wrong_release": 0,
+   "final_released": 446,
+   "final_wrong": 0,
+   "violation_runs": {
+    "S3 upstream currency": 500
+   },
+   "max_episodes": 3,
+   "runs_multi_episode": 499,
+   "bound_ok": 499,
+   "discarded": 4375,
+   "obsolete_installed": 0,
+   "issue_kinds": {},
+   "issue_views": {},
+   "wrong_share_run_mean": 0.0,
+   "wrong_share_run_ci": [
+    0.0,
+    0.0
+   ],
+   "requests_sd": 6.335653479320033,
+   "wilcoxon_vs_exact_p": 6.609592761883778e-50,
+   "paired_diff_ci": [
+    3.764,
+    4.684
+   ]
+  },
+  "datakey": {
+   "runs": 500,
+   "requests_mean": 39.232,
+   "releases": 1681,
+   "wrong_releases": 983,
+   "runs_with_wrong_release": 449,
+   "final_released": 447,
+   "final_wrong": 447,
+   "violation_runs": {
+    "S3 current validity": 500,
+    "S2/S4 authorised provenance": 500
+   },
+   "max_episodes": 1,
+   "runs_multi_episode": 0,
+   "bound_ok": 500,
+   "discarded": 2476,
+   "obsolete_installed": 0,
+   "issue_kinds": {
+    "invalid for the current model": 3653,
+    "produced by an unauthorised or replaced agent": 812
+   },
+   "issue_views": {
+    "ocl/Book": 829,
+    "ocl/Loan": 854,
+    "ocl/Member": 899,
+    "api/Loan": 738,
+    "api/Reservation": 333,
+    "sm/Loan": 622,
+    "sm/Reservation": 190
+   },
+   "wrong_share_run_mean": 0.5954812563323202,
+   "wrong_share_run_ci": [
+    0.5741793313069908,
+    0.6162765957446809
+   ],
+   "requests_sd": 4.7652482812928785
+  },
+  "lww": {
+   "runs": 500,
+   "requests_mean": 38.024,
+   "releases": 1627,
+   "wrong_releases": 943,
+   "runs_with_wrong_release": 430,
+   "final_released": 426,
+   "final_wrong": 426,
+   "violation_runs": {
+    "S3 current validity": 500,
+    "S2/S4 authorised provenance": 500
+   },
+   "max_episodes": 2,
+   "runs_multi_episode": 5,
+   "bound_ok": 500,
+   "discarded": 0,
+   "obsolete_installed": 412,
+   "issue_kinds": {
+    "invalid for the current model": 3461,
+    "produced by an unauthorised or replaced agent": 770
+   },
+   "issue_views": {
+    "ocl/Book": 783,
+    "ocl/Loan": 795,
+    "ocl/Member": 842,
+    "api/Loan": 690,
+    "api/Reservation": 315,
+    "sm/Loan": 615,
+    "sm/Reservation": 178,
+    "test/Loan": 12,
+    "test/Reservation": 1
+   },
+   "wrong_share_run_mean": 0.5912100095026924,
+   "wrong_share_run_ci": [
+    0.5693168619997888,
+    0.6139689578713969
+   ],
+   "requests_sd": 5.1711609732847466
+  },
+  "full": {
+   "runs": 500,
+   "requests_mean": 123.764,
+   "releases": 1672,
+   "wrong_releases": 0,
+   "runs_with_wrong_release": 0,
+   "final_released": 463,
+   "final_wrong": 0,
+   "violation_runs": {},
+   "max_episodes": 1,
+   "runs_multi_episode": 0,
+   "bound_ok": 500,
+   "discarded": 14278,
+   "obsolete_installed": 0,
+   "issue_kinds": {},
+   "issue_views": {},
+   "wrong_share_run_mean": 0.0,
+   "wrong_share_run_ci": [
+    0.0,
+    0.0
+   ],
+   "requests_sd": 13.133975278384929,
+   "wilcoxon_vs_exact_p": 1.2251165263619206e-83,
+   "paired_diff_ci": [
+    71.238,
+    73.544
+   ]
+  },
+  "per_change": {
+   "exact": {
+    "initial": [
+     157,
+     0
+    ],
+    "E2": [
+     172,
+     0
+    ],
+    "E3": [
+     167,
+     0
+    ],
+    "E7": [
+     465,
+     0
+    ],
+    "E4": [
+     196,
+     0
+    ],
+    "E5": [
+     169,
+     0
+    ],
+    "E6": [
+     200,
+     0
+    ],
+    "E1": [
+     183,
+     0
+    ]
+   },
+   "ungated": {
+    "initial": [
+     159,
+     0
+    ],
+    "E2": [
+     168,
+     0
+    ],
+    "E3": [
+     164,
+     0
+    ],
+    "E4": [
+     200,
+     0
+    ],
+    "E5": [
+     178,
+     0
+    ],
+    "E7": [
+     446,
+     0
+    ],
+    "E6": [
+     188,
+     0
+    ],
+    "E1": [
+     175,
+     0
+    ]
+   },
+   "datakey": {
+    "initial": [
+     157,
+     0
+    ],
+    "E2": [
+     172,
+     0
+    ],
+    "E3": [
+     167,
+     0
+    ],
+    "E5": [
+     176,
+     172
+    ],
+    "E6": [
+     190,
+     190
+    ],
+    "E7": [
+     447,
+     447
+    ],
+    "E4": [
+     189,
+     174
+    ],
+    "E1": [
+     183,
+     0
+    ]
+   },
+   "lww": {
+    "initial": [
+     157,
+     0
+    ],
+    "E2": [
+     164,
+     2
+    ],
+    "E3": [
+     163,
+     5
+    ],
+    "E5": [
+     166,
+     162
+    ],
+    "E6": [
+     178,
+     178
+    ],
+    "E7": [
+     426,
+     426
+    ],
+    "E4": [
+     185,
+     169
+    ],
+    "E1": [
+     188,
+     1
+    ]
+   },
+   "full": {
+    "initial": [
+     156,
+     0
+    ],
+    "E1": [
+     177,
+     0
+    ],
+    "E5": [
+     165,
+     0
+    ],
+    "E7": [
+     463,
+     0
+    ],
+    "E4": [
+     189,
+     0
+    ],
+    "E2": [
+     184,
+     0
+    ],
+    "E3": [
+     165,
+     0
+    ],
+    "E6": [
+     173,
+     0
+    ]
+   }
+  }
+ },
+ "impact": {
+  "initial": {
+   "exact": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "ungated": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "datakey": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "lww": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    13,
+    13,
+    13,
+    200
+   ]
+  },
+  "FB": {
+   "exact": [
+    7.544041450777202,
+    7.544041450777202,
+    7.544041450777202,
+    193
+   ],
+   "ungated": [
+    7.544041450777202,
+    8.803108808290155,
+    8.803108808290155,
+    193
+   ],
+   "datakey": [
+    7.544041450777202,
+    7.544041450777202,
+    7.544041450777202,
+    193
+   ],
+   "lww": [
+    7.544041450777202,
+    7.544041450777202,
+    7.544041450777202,
+    193
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    9.471502590673575,
+    9.471502590673575,
+    9.471502590673575,
+    193
+   ]
+  },
+  "E1": {
+   "exact": [
+    1.105,
+    1.105,
+    1.105,
+    200
+   ],
+   "ungated": [
+    1.105,
+    1.105,
+    1.105,
+    200
+   ],
+   "datakey": [
+    1.105,
+    1.105,
+    1.105,
+    200
+   ],
+   "lww": [
+    1.105,
+    1.105,
+    1.105,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    1.175,
+    1.175,
+    1.175,
+    200
+   ]
+  },
+  "E2": {
+   "exact": [
+    2.03,
+    2.03,
+    2.03,
+    200
+   ],
+   "ungated": [
+    2.03,
+    3.03,
+    3.91,
+    200
+   ],
+   "datakey": [
+    2.03,
+    2.03,
+    2.03,
+    200
+   ],
+   "lww": [
+    2.03,
+    2.03,
+    2.03,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    4.03,
+    4.03,
+    4.03,
+    200
+   ]
+  },
+  "E3": {
+   "exact": [
+    2,
+    2,
+    2,
+    200
+   ],
+   "ungated": [
+    2,
+    2,
+    2,
+    200
+   ],
+   "datakey": [
+    2,
+    2,
+    2,
+    200
+   ],
+   "lww": [
+    2,
+    2,
+    2,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    3,
+    3,
+    3,
+    200
+   ]
+  },
+  "E4": {
+   "exact": [
+    3,
+    3,
+    3,
+    200
+   ],
+   "ungated": [
+    3,
+    3,
+    3,
+    200
+   ],
+   "datakey": [
+    0,
+    0,
+    0,
+    200
+   ],
+   "lww": [
+    0,
+    0,
+    0,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    3,
+    3,
+    3,
+    200
+   ]
+  },
+  "E5": {
+   "exact": [
+    4,
+    4,
+    4,
+    200
+   ],
+   "ungated": [
+    4,
+    4,
+    4,
+    200
+   ],
+   "datakey": [
+    0,
+    0,
+    0,
+    200
+   ],
+   "lww": [
+    0,
+    0,
+    0,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    4,
+    4,
+    4,
+    200
+   ]
+  },
+  "E6": {
+   "exact": [
+    2,
+    2,
+    2,
+    200
+   ],
+   "ungated": [
+    2,
+    2,
+    2,
+    200
+   ],
+   "datakey": [
+    0,
+    0,
+    0,
+    200
+   ],
+   "lww": [
+    0,
+    0,
+    0,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    2,
+    2,
+    2,
+    200
+   ]
+  },
+  "E7": {
+   "exact": [
+    3,
+    3,
+    3,
+    200
+   ],
+   "ungated": [
+    3,
+    4,
+    4,
+    200
+   ],
+   "datakey": [
+    3,
+    3,
+    3,
+    200
+   ],
+   "lww": [
+    3,
+    3,
+    3,
+    200
+   ],
+   "full": [
+    13,
+    13,
+    13,
+    200
+   ],
+   "coarse": [
+    3,
+    3,
+    3,
+    200
+   ]
+  }
+ },
+ "llm": {
+  "gemma2:9b": {
+   "reps": 10,
+   "distinct_calls": 643,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 529,
+     "tokens": 206005,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 304,
+     "discarded": 82,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "cls/Member": 2,
+      "ocl/Member": 8,
+      "test/Loan": 6,
+      "test/Reservation": 7,
+      "ocl/Loan": 5,
+      "cls/Book": 1
+     }
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 543,
+     "tokens": 199945,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 310,
+     "discarded": 90,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 9
+     },
+     "max_episodes": 2,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "cls/Member": 2,
+      "ocl/Member": 9,
+      "test/Loan": 8,
+      "test/Reservation": 8,
+      "ocl/Loan": 4,
+      "cls/Book": 2,
+      "ocl/Book": 2
+     }
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 381,
+     "tokens": 145337,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 214,
+     "discarded": 48,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "cls/Member": 2,
+      "test/Loan": 6,
+      "test/Reservation": 7,
+      "ocl/Member": 1,
+      "cls/Book": 1
+     }
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 367,
+     "tokens": 136486,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 244,
+     "discarded": 0,
+     "obsolete_installed": 3,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "cls/Member": 3,
+      "test/Loan": 6,
+      "test/Reservation": 6,
+      "ocl/Book": 1,
+      "ocl/Member": 1,
+      "cls/Book": 1
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1215,
+     "tokens": 366961,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 600,
+     "discarded": 306,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "cls/Member": 2,
+      "ocl/Member": 8,
+      "test/Loan": 5,
+      "test/Reservation": 6,
+      "ocl/Loan": 6,
+      "cls/Book": 2
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ]
+    },
+    "lww": {
+     "initial": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ]
+    },
+    "full": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 0,
+   "empty_replies": 0,
+   "max_call_seconds": 16.61
+  },
+  "gpt-oss:20b": {
+   "reps": 10,
+   "distinct_calls": 542,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 467,
+     "tokens": 348101,
+     "releases": 45,
+     "wrong_releases": 0,
+     "final_released": 10,
+     "final_wrong": 0,
+     "rejected": 80,
+     "discarded": 72,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {}
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 509,
+     "tokens": 390661,
+     "releases": 44,
+     "wrong_releases": 0,
+     "final_released": 10,
+     "final_wrong": 0,
+     "rejected": 96,
+     "discarded": 93,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 10
+     },
+     "max_episodes": 3,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {}
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 357,
+     "tokens": 261850,
+     "releases": 41,
+     "wrong_releases": 24,
+     "final_released": 10,
+     "final_wrong": 10,
+     "rejected": 60,
+     "discarded": 57,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {
+      "ocl/Book": 20,
+      "ocl/Loan": 24,
+      "ocl/Member": 22,
+      "api/Loan": 15,
+      "api/Reservation": 7,
+      "sm/Loan": 12,
+      "sm/Reservation": 2
+     },
+     "failed_views": {}
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 338,
+     "tokens": 243107,
+     "releases": 41,
+     "wrong_releases": 25,
+     "final_released": 9,
+     "final_wrong": 9,
+     "rejected": 63,
+     "discarded": 0,
+     "obsolete_installed": 14,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {
+      "ocl/Book": 21,
+      "ocl/Loan": 23,
+      "ocl/Member": 23,
+      "api/Loan": 18,
+      "api/Reservation": 9,
+      "sm/Loan": 17,
+      "sm/Reservation": 4
+     },
+     "failed_views": {
+      "api/Loan": 1
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1069,
+     "tokens": 693896,
+     "releases": 33,
+     "wrong_releases": 0,
+     "final_released": 8,
+     "final_wrong": 0,
+     "rejected": 113,
+     "discarded": 271,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 1,
+      "api/Loan": 1
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      3,
+      0
+     ],
+     "E2": [
+      6,
+      0
+     ],
+     "E4": [
+      5,
+      0
+     ],
+     "E6": [
+      8,
+      0
+     ],
+     "E7": [
+      10,
+      0
+     ],
+     "E3": [
+      5,
+      0
+     ],
+     "E5": [
+      5,
+      0
+     ],
+     "E1": [
+      3,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      3,
+      0
+     ],
+     "E3": [
+      5,
+      0
+     ],
+     "E4": [
+      6,
+      0
+     ],
+     "E5": [
+      6,
+      0
+     ],
+     "E7": [
+      10,
+      0
+     ],
+     "E6": [
+      8,
+      0
+     ],
+     "E1": [
+      3,
+      0
+     ],
+     "E2": [
+      3,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      3,
+      0
+     ],
+     "E2": [
+      6,
+      0
+     ],
+     "E4": [
+      5,
+      5
+     ],
+     "E5": [
+      7,
+      7
+     ],
+     "E7": [
+      10,
+      10
+     ],
+     "E3": [
+      5,
+      0
+     ],
+     "E1": [
+      3,
+      0
+     ],
+     "E6": [
+      2,
+      2
+     ]
+    },
+    "lww": {
+     "initial": [
+      3,
+      0
+     ],
+     "E2": [
+      7,
+      1
+     ],
+     "E4": [
+      5,
+      5
+     ],
+     "E5": [
+      5,
+      5
+     ],
+     "E7": [
+      9,
+      9
+     ],
+     "E3": [
+      5,
+      1
+     ],
+     "E1": [
+      3,
+      0
+     ],
+     "E6": [
+      4,
+      4
+     ]
+    },
+    "full": {
+     "initial": [
+      3,
+      0
+     ],
+     "E1": [
+      5,
+      0
+     ],
+     "E2": [
+      3,
+      0
+     ],
+     "E7": [
+      8,
+      0
+     ],
+     "E3": [
+      4,
+      0
+     ],
+     "E4": [
+      4,
+      0
+     ],
+     "E6": [
+      3,
+      0
+     ],
+     "E5": [
+      3,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 0,
+   "empty_replies": 19,
+   "max_call_seconds": 32.43
+  },
+  "llama3.1:8b": {
+   "reps": 10,
+   "distinct_calls": 611,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 639,
+     "tokens": 335817,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 365,
+     "discarded": 111,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Loan": 10,
+      "test/Reservation": 10,
+      "ocl/Member": 1
+     }
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 536,
+     "tokens": 250684,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 271,
+     "discarded": 99,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 10
+     },
+     "max_episodes": 2,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Loan": 10,
+      "test/Reservation": 10,
+      "sm/Loan": 1,
+      "ocl/Member": 1
+     }
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 435,
+     "tokens": 217521,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 243,
+     "discarded": 73,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "test/Loan": 10,
+      "test/Reservation": 10
+     }
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 422,
+     "tokens": 211500,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 289,
+     "discarded": 0,
+     "obsolete_installed": 13,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "test/Loan": 9,
+      "test/Reservation": 10,
+      "sm/Loan": 1
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1121,
+     "tokens": 435056,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 368,
+     "discarded": 287,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Loan": 9,
+      "test/Reservation": 10,
+      "sm/Loan": 1,
+      "ocl/Member": 1
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ]
+    },
+    "lww": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ]
+    },
+    "full": {
+     "initial": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 7,
+   "empty_replies": 0,
+   "max_call_seconds": 11.36
+  },
+  "mistral-small:24b": {
+   "reps": 10,
+   "distinct_calls": 559,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 423,
+     "tokens": 229668,
+     "releases": 1,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 177,
+     "discarded": 80,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 5,
+      "cls/Book": 4,
+      "cls/Reservation": 1
+     }
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 490,
+     "tokens": 261646,
+     "releases": 1,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 222,
+     "discarded": 75,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 10
+     },
+     "max_episodes": 2,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 9,
+      "cls/Book": 3,
+      "ocl/Book": 3,
+      "test/Loan": 1,
+      "cls/Reservation": 1
+     }
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 332,
+     "tokens": 179489,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 157,
+     "discarded": 57,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 5,
+      "cls/Book": 4,
+      "cls/Reservation": 1
+     }
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 332,
+     "tokens": 180967,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 191,
+     "discarded": 0,
+     "obsolete_installed": 7,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 5,
+      "cls/Book": 4,
+      "ocl/Book": 1,
+      "cls/Reservation": 1
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1197,
+     "tokens": 583441,
+     "releases": 2,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 434,
+     "discarded": 271,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 7,
+      "cls/Book": 3,
+      "test/Loan": 1,
+      "cls/Loan": 1
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E6": [
+      1,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E5": [
+      1,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ]
+    },
+    "lww": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ]
+    },
+    "full": {
+     "initial": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E6": [
+      1,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E5": [
+      1,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 0,
+   "empty_replies": 0,
+   "max_call_seconds": 16.02
+  },
+  "phi4:14b": {
+   "reps": 10,
+   "distinct_calls": 489,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 473,
+     "tokens": 214132,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 264,
+     "discarded": 79,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 10,
+      "test/Reservation": 10
+     }
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 432,
+     "tokens": 182613,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 217,
+     "discarded": 83,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 10
+     },
+     "max_episodes": 2,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 10,
+      "test/Reservation": 10
+     }
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 339,
+     "tokens": 149868,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 185,
+     "discarded": 58,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 10,
+      "test/Reservation": 10
+     }
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 343,
+     "tokens": 151842,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 227,
+     "discarded": 0,
+     "obsolete_installed": 7,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 10,
+      "test/Reservation": 10
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1073,
+     "tokens": 382817,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 383,
+     "discarded": 260,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 10,
+      "test/Reservation": 10
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ]
+    },
+    "lww": {
+     "initial": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ]
+    },
+    "full": {
+     "initial": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 40,
+   "empty_replies": 0,
+   "max_call_seconds": 6.03
+  },
+  "qwen2.5-coder:7b": {
+   "reps": 10,
+   "distinct_calls": 608,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 563,
+     "tokens": 303760,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 328,
+     "discarded": 88,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Reservation": 5,
+      "test/Loan": 6,
+      "sm/Loan": 4,
+      "test/Reservation": 5,
+      "ocl/Member": 2
+     }
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 525,
+     "tokens": 263845,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 281,
+     "discarded": 79,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 10
+     },
+     "max_episodes": 2,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Reservation": 5,
+      "test/Loan": 6,
+      "sm/Loan": 4,
+      "test/Reservation": 9,
+      "ocl/Member": 2
+     }
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 374,
+     "tokens": 194231,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 210,
+     "discarded": 54,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Reservation": 5,
+      "test/Loan": 5,
+      "sm/Loan": 4,
+      "test/Reservation": 5
+     }
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 379,
+     "tokens": 197584,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 258,
+     "discarded": 0,
+     "obsolete_installed": 4,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Reservation": 5,
+      "test/Loan": 6,
+      "sm/Loan": 4,
+      "test/Reservation": 5
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1152,
+     "tokens": 483210,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 435,
+     "discarded": 295,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 5,
+      "sm/Reservation": 4,
+      "test/Reservation": 6,
+      "test/Loan": 5,
+      "ocl/Member": 1
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ]
+    },
+    "lww": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ]
+    },
+    "full": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 34,
+   "empty_replies": 0,
+   "max_call_seconds": 21.92
+  },
+  "qwen2.5:7b": {
+   "reps": 10,
+   "distinct_calls": 520,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 470,
+     "tokens": 198229,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 258,
+     "discarded": 72,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "ocl/Member": 10,
+      "sm/Loan": 10,
+      "test/Reservation": 9,
+      "ocl/Loan": 1
+     }
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 473,
+     "tokens": 197723,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 250,
+     "discarded": 86,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 10
+     },
+     "max_episodes": 3,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "ocl/Member": 10,
+      "sm/Loan": 10,
+      "test/Reservation": 9
+     }
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 328,
+     "tokens": 140716,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 161,
+     "discarded": 53,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 9,
+      "test/Reservation": 9,
+      "test/Loan": 1
+     }
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 321,
+     "tokens": 136990,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 185,
+     "discarded": 0,
+     "obsolete_installed": 8,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {},
+     "failed_views": {
+      "sm/Loan": 10,
+      "test/Reservation": 9
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1077,
+     "tokens": 380334,
+     "releases": 0,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 390,
+     "discarded": 286,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "ocl/Member": 10,
+      "sm/Loan": 10,
+      "test/Reservation": 9
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ]
+    },
+    "lww": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ]
+    },
+    "full": {
+     "initial": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E2": [
+      0,
+      0
+     ],
+     "E3": [
+      0,
+      0
+     ],
+     "E4": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 9,
+   "empty_replies": 0,
+   "max_call_seconds": 17.76
+  },
+  "qwen3-coder:30b": {
+   "reps": 10,
+   "distinct_calls": 577,
+   "first_attempt_accept": null,
+   "strategies": {
+    "exact": {
+     "reps": 10,
+     "requests": 507,
+     "tokens": 246336,
+     "releases": 6,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 210,
+     "discarded": 89,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 10
+     }
+    },
+    "ungated": {
+     "reps": 10,
+     "requests": 491,
+     "tokens": 227871,
+     "releases": 7,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 190,
+     "discarded": 90,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 upstream currency": 10
+     },
+     "max_episodes": 2,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 10,
+      "test/Loan": 3
+     }
+    },
+    "datakey": {
+     "reps": 10,
+     "requests": 347,
+     "tokens": 160650,
+     "releases": 7,
+     "wrong_releases": 3,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 143,
+     "discarded": 57,
+     "obsolete_installed": 0,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {
+      "ocl/Book": 2,
+      "ocl/Loan": 3,
+      "ocl/Member": 3,
+      "sm/Loan": 1,
+      "sm/Reservation": 1,
+      "api/Loan": 1,
+      "api/Reservation": 1
+     },
+     "failed_views": {
+      "test/Reservation": 10,
+      "test/Loan": 2
+     }
+    },
+    "lww": {
+     "reps": 10,
+     "requests": 354,
+     "tokens": 163533,
+     "releases": 10,
+     "wrong_releases": 5,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 181,
+     "discarded": 0,
+     "obsolete_installed": 10,
+     "violation_runs": {
+      "S3 current validity": 10,
+      "S2/S4 authorised provenance": 10
+     },
+     "max_episodes": 1,
+     "stale_runs": 10,
+     "issue_views": {
+      "ocl/Book": 4,
+      "ocl/Loan": 5,
+      "ocl/Member": 5,
+      "sm/Loan": 2,
+      "sm/Reservation": 2,
+      "api/Loan": 2,
+      "api/Reservation": 2
+     },
+     "failed_views": {
+      "test/Reservation": 10,
+      "test/Loan": 2
+     }
+    },
+    "full": {
+     "reps": 10,
+     "requests": 1108,
+     "tokens": 412977,
+     "releases": 8,
+     "wrong_releases": 0,
+     "final_released": 0,
+     "final_wrong": 0,
+     "rejected": 248,
+     "discarded": 256,
+     "obsolete_installed": 0,
+     "violation_runs": {},
+     "max_episodes": 1,
+     "stale_runs": 0,
+     "issue_views": {},
+     "failed_views": {
+      "test/Reservation": 10,
+      "test/Loan": 1
+     }
+    }
+   },
+   "per_change": {
+    "exact": {
+     "initial": [
+      2,
+      0
+     ],
+     "E2": [
+      1,
+      0
+     ],
+     "E4": [
+      2,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E3": [
+      1,
+      0
+     ]
+    },
+    "ungated": {
+     "initial": [
+      2,
+      0
+     ],
+     "E2": [
+      1,
+      0
+     ],
+     "E4": [
+      3,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E3": [
+      1,
+      0
+     ]
+    },
+    "datakey": {
+     "initial": [
+      2,
+      0
+     ],
+     "E2": [
+      1,
+      0
+     ],
+     "E4": [
+      2,
+      2
+     ],
+     "E6": [
+      1,
+      1
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E3": [
+      1,
+      0
+     ]
+    },
+    "lww": {
+     "initial": [
+      2,
+      0
+     ],
+     "E2": [
+      2,
+      0
+     ],
+     "E4": [
+      3,
+      3
+     ],
+     "E6": [
+      2,
+      2
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      0,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E3": [
+      1,
+      0
+     ]
+    },
+    "full": {
+     "initial": [
+      2,
+      0
+     ],
+     "E2": [
+      1,
+      0
+     ],
+     "E3": [
+      2,
+      0
+     ],
+     "E4": [
+      2,
+      0
+     ],
+     "E5": [
+      0,
+      0
+     ],
+     "E6": [
+      0,
+      0
+     ],
+     "E7": [
+      0,
+      0
+     ],
+     "E1": [
+      1,
+      0
+     ]
+    }
+   },
+   "sm_other_calls": 0,
+   "empty_replies": 0,
+   "max_call_seconds": 7.44
+  }
+ },
+ "excluded": {
+  "deepseek-coder-v2_16b": {
+   "calls": 14,
+   "max_seconds": 862.32,
+   "min_seconds": 74.0
+  }
+ },
+ "sweep": {
+  "p_mid=0.0": {
+   "exact": {
+    "runs": 100,
+    "releases": 735,
+    "wrong": 0,
+    "requests": 52.71,
+    "final_released": 95
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 739,
+    "wrong": 372,
+    "requests": 39.77,
+    "final_released": 93
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 739,
+    "wrong": 372,
+    "requests": 39.77,
+    "final_released": 93
+   },
+   "full": {
+    "runs": 100,
+    "releases": 729,
+    "wrong": 0,
+    "requests": 160.64,
+    "final_released": 89
+   }
+  },
+  "p_mid=0.3": {
+   "exact": {
+    "runs": 100,
+    "releases": 564,
+    "wrong": 0,
+    "requests": 53.01,
+    "final_released": 98
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 553,
+    "wrong": 293,
+    "requests": 39.7,
+    "final_released": 95
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 549,
+    "wrong": 292,
+    "requests": 39.19,
+    "final_released": 93
+   },
+   "full": {
+    "runs": 100,
+    "releases": 524,
+    "wrong": 0,
+    "requests": 142.23,
+    "final_released": 91
+   }
+  },
+  "p_mid=0.6": {
+   "exact": {
+    "runs": 100,
+    "releases": 334,
+    "wrong": 0,
+    "requests": 51.95,
+    "final_released": 92
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 328,
+    "wrong": 181,
+    "requests": 39.06,
+    "final_released": 88
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 318,
+    "wrong": 178,
+    "requests": 38.1,
+    "final_released": 86
+   },
+   "full": {
+    "runs": 100,
+    "releases": 353,
+    "wrong": 0,
+    "requests": 127.11,
+    "final_released": 90
+   }
+  },
+  "p_mid=0.9": {
+   "exact": {
+    "runs": 100,
+    "releases": 154,
+    "wrong": 0,
+    "requests": 48.4,
+    "final_released": 91
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 142,
+    "wrong": 105,
+    "requests": 38.43,
+    "final_released": 86
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 123,
+    "wrong": 90,
+    "requests": 36.1,
+    "final_released": 74
+   },
+   "full": {
+    "runs": 100,
+    "releases": 132,
+    "wrong": 0,
+    "requests": 104.62,
+    "final_released": 83
+   }
+  },
+  "p_err=0.1": {
+   "exact": {
+    "runs": 100,
+    "releases": 377,
+    "wrong": 0,
+    "requests": 43.5,
+    "final_released": 100
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 381,
+    "wrong": 216,
+    "requests": 33.07,
+    "final_released": 99
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 388,
+    "wrong": 222,
+    "requests": 32.39,
+    "final_released": 97
+   },
+   "full": {
+    "runs": 100,
+    "releases": 374,
+    "wrong": 0,
+    "requests": 111.21,
+    "final_released": 100
+   }
+  },
+  "p_err=0.25": {
+   "exact": {
+    "runs": 100,
+    "releases": 334,
+    "wrong": 0,
+    "requests": 51.95,
+    "final_released": 92
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 328,
+    "wrong": 181,
+    "requests": 39.06,
+    "final_released": 88
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 318,
+    "wrong": 178,
+    "requests": 38.1,
+    "final_released": 86
+   },
+   "full": {
+    "runs": 100,
+    "releases": 353,
+    "wrong": 0,
+    "requests": 127.11,
+    "final_released": 90
+   }
+  },
+  "p_err=0.5": {
+   "exact": {
+    "runs": 100,
+    "releases": 128,
+    "wrong": 0,
+    "requests": 63.04,
+    "final_released": 38
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 127,
+    "wrong": 74,
+    "requests": 47.3,
+    "final_released": 34
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 113,
+    "wrong": 63,
+    "requests": 45.84,
+    "final_released": 30
+   },
+   "full": {
+    "runs": 100,
+    "releases": 100,
+    "wrong": 0,
+    "requests": 148.39,
+    "final_released": 30
+   }
+  },
+  "budget=2": {
+   "exact": {
+    "runs": 100,
+    "releases": 102,
+    "wrong": 0,
+    "requests": 41.63,
+    "final_released": 24
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 99,
+    "wrong": 58,
+    "requests": 31.28,
+    "final_released": 29
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 92,
+    "wrong": 57,
+    "requests": 30.12,
+    "final_released": 28
+   },
+   "full": {
+    "runs": 100,
+    "releases": 81,
+    "wrong": 0,
+    "requests": 106.16,
+    "final_released": 20
+   }
+  },
+  "budget=4": {
+   "exact": {
+    "runs": 100,
+    "releases": 334,
+    "wrong": 0,
+    "requests": 51.95,
+    "final_released": 92
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 328,
+    "wrong": 181,
+    "requests": 39.06,
+    "final_released": 88
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 318,
+    "wrong": 178,
+    "requests": 38.1,
+    "final_released": 86
+   },
+   "full": {
+    "runs": 100,
+    "releases": 353,
+    "wrong": 0,
+    "requests": 127.11,
+    "final_released": 90
+   }
+  },
+  "budget=8": {
+   "exact": {
+    "runs": 100,
+    "releases": 370,
+    "wrong": 0,
+    "requests": 52.69,
+    "final_released": 100
+   },
+   "datakey": {
+    "runs": 100,
+    "releases": 370,
+    "wrong": 204,
+    "requests": 40.05,
+    "final_released": 99
+   },
+   "lww": {
+    "runs": 100,
+    "releases": 351,
+    "wrong": 196,
+    "requests": 38.88,
+    "final_released": 93
+   },
+   "full": {
+    "runs": 100,
+    "releases": 399,
+    "wrong": 0,
+    "requests": 128.86,
+    "final_released": 100
+   }
+  }
+ }
+}

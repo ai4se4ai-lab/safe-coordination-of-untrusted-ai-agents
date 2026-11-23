@@ -1,0 +1,77 @@
+{
+  "central_proof_gate": "incomplete",
+  "corruptions_rejected": 9,
+  "interpretation": "Deterministic checks; no measured LLM performance or statistical sample claims",
+  "model_configurations": 9,
+  "model_nonpasses": [],
+  "model_passes": 9,
+  "mutant_configurations": 9,
+  "mutant_counterexamples": 7,
+  "mutant_survivors": [
+    "no-cancel",
+    "no-recheck"
+  ],
+  "policy_event_words": 1093,
+  "policy_tables_enumerated": 8192,
+  "reachability_witnesses": 5,
+  "recorded_traces": 28,
+  "scenario_passes": 28,
+  "scenarios": 28,
+  "scoped_proof_modules": [
+    {
+      "module": "Budget",
+      "status": "passed"
+    },
+    {
+      "module": "ControllerSafety",
+      "status": "passed"
+    },
+    {
+      "module": "StructuralKernelProofs",
+      "status": "passed"
+    },
+    {
+      "module": "DocumentPolicyProofs",
+      "status": "passed"
+    }
+  ],
+  "scoped_proved_obligations": 25,
+  "sources": {
+    "case-study": {
+      "manifest_sha256": "82cdc9d04c4d8587ea12a8e65c95ff0b13290185ad50de032188abf6b1f485e0",
+      "results_sha256": "c7a6b36c2b8ef33c028bd5e956b825c14102ec3946cafb72d886d729c6c20f14",
+      "run": "20261121T165119-case-study-ca32d414"
+    },
+    "conformance": {
+      "manifest_sha256": "e4633c26481084dfcf49e68f114e6e5d0143d1e191161b20f725817377fabdb7",
+      "results_sha256": "8069332a792b4b238cfa0b5a1ed2aea0a8518f97a5d4b49a2d5ef5c4abc39317",
+      "run": "20261121T165120-conformance-1a5f2e1c"
+    },
+    "models": {
+      "manifest_sha256": "d87d0c0b7149101c6fc3f02fe89b8fe65d4e513aa0771ff33e8bdd006a8a72f0",
+      "results_sha256": "8fc227747dac347d0f43990641692727376dd9b95edb10f33c052e1c389a9b97",
+      "run": "20261121T171707-models-a84a2c48"
+    },
+    "mutations": {
+      "manifest_sha256": "df066d70eb1c2fb4b4bb9d164796d6b4e23c0704823e60089481c007df156cb2",
+      "results_sha256": "0f529882afffdd1316bdca5bb0462af6e6aa1c24f1ed1c7b70bd43b9b26f0d12",
+      "run": "20261121T171720-mutations-23b42a2a"
+    },
+    "proofs": {
+      "manifest_sha256": "64c0c201867174f431acd57a5a46f2621875b65f7da8576d2a3eb60b7619b17d",
+      "results_sha256": "01d888f4c63e2a78655d3cde8f219e6a2a4165b72d6bdb25c651e797d72289c0",
+      "run": "20261027T014850-proofs-3137953d"
+    },
+    "tests": {
+      "manifest_sha256": "81ed5b597baa4c6c5d18bcdfb14ae002734e6dc6d903c341fc1e5768619d4067",
+      "results_sha256": "281d4b4f5ae2e0312b2313b9ff67873820a83b63f106025f5e7de47dfb812053",
+      "run": "20261121T165119-tests-3ec09ecc"
+    },
+    "witnesses": {
+      "manifest_sha256": "9eab7fc1dc72b9e1384d7ff4238dee7458249014d94f7c3ca5a40c2b9a3cdbed",
+      "results_sha256": "35dccb09d4eb7b9e8706676a021c2042d41bc6b05f5a8db09c2f6987dc5938be",
+      "run": "20261121T171743-witnesses-e5e0752e"
+    }
+  },
+  "trace_passes": 28
+}
