@@ -1,0 +1,939 @@
+{
+ "results": [
+  {
+   "id": "base-x_one-k2-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 4107,
+   "generated_states": 24095,
+   "trace_states": null,
+   "seconds": 1.3,
+   "log_tail": null,
+   "topology": "x_one",
+   "jobs": 1,
+   "k": 2,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain2-k2-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 1563,
+   "generated_states": 10073,
+   "trace_states": null,
+   "seconds": 1.3,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 2,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain2-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 7740,
+   "generated_states": 42520,
+   "trace_states": null,
+   "seconds": 2.6,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain3-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 634,
+   "generated_states": 3343,
+   "trace_states": null,
+   "seconds": 1.3,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain3-k2-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 6735,
+   "generated_states": 54814,
+   "trace_states": null,
+   "seconds": 3.5,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 2,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_fanout3-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 1327,
+   "generated_states": 7856,
+   "trace_states": null,
+   "seconds": 1.7,
+   "log_tail": null,
+   "topology": "x_fanout3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_fanout3-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 64932,
+   "generated_states": 465720,
+   "trace_states": null,
+   "seconds": 12.0,
+   "log_tail": null,
+   "topology": "x_fanout3",
+   "jobs": 3,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_diamond4-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 1976,
+   "generated_states": 12489,
+   "trace_states": null,
+   "seconds": 3.1,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_diamond4-k2-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 42623,
+   "generated_states": 440879,
+   "trace_states": null,
+   "seconds": 22.7,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 2,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_diamond4-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 128215,
+   "generated_states": 1000134,
+   "trace_states": null,
+   "seconds": 45.0,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain4-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 1132,
+   "generated_states": 6832,
+   "trace_states": null,
+   "seconds": 2.2,
+   "log_tail": null,
+   "topology": "x_chain4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain4-k1-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 69840,
+   "generated_states": 525121,
+   "trace_states": null,
+   "seconds": 26.5,
+   "log_tail": null,
+   "topology": "x_chain4",
+   "jobs": 4,
+   "k": 1,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain5-k1-m1",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 1804,
+   "generated_states": 12233,
+   "trace_states": null,
+   "seconds": 4.7,
+   "log_tail": null,
+   "topology": "x_chain5",
+   "jobs": 5,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "base-x_chain3-k2-m2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 718672,
+   "generated_states": 7483518,
+   "trace_states": null,
+   "seconds": 148.5,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 2,
+   "m": 2,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-cancel-x_chain2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 319,
+   "generated_states": 1400,
+   "trace_states": null,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-cancel-x_chain3",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 700,
+   "generated_states": 3637,
+   "trace_states": null,
+   "seconds": 1.0,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-cancel-x_diamond4",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 2267,
+   "generated_states": 14082,
+   "trace_states": null,
+   "seconds": 1.3,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-recheck-x_chain2",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 292,
+   "generated_states": 1487,
+   "trace_states": null,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-recheck-x_chain3",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 634,
+   "generated_states": 3778,
+   "trace_states": null,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-no-recheck-x_diamond4",
+   "status": "passed",
+   "violated": null,
+   "distinct_states": 1976,
+   "generated_states": 14643,
+   "trace_states": null,
+   "seconds": 1.2,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "passed",
+   "target": null,
+   "invariants": [
+    "Safety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-obsolete-both-x_chain2",
+   "status": "counterexample",
+   "violated": "CurrentCommit",
+   "distinct_states": 321,
+   "generated_states": 1482,
+   "trace_states": 4,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "CurrentCommit",
+   "invariants": [
+    "CurrentCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-obsolete-both-x_chain3",
+   "status": "counterexample",
+   "violated": "CurrentCommit",
+   "distinct_states": 535,
+   "generated_states": 2489,
+   "trace_states": 4,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "CurrentCommit",
+   "invariants": [
+    "CurrentCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-obsolete-both-x_diamond4",
+   "status": "counterexample",
+   "violated": "CurrentCommit",
+   "distinct_states": 513,
+   "generated_states": 2553,
+   "trace_states": 4,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "CurrentCommit",
+   "invariants": [
+    "CurrentCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-budget-reset-x_chain2",
+   "status": "counterexample",
+   "violated": "BudgetSafety",
+   "distinct_states": 102,
+   "generated_states": 240,
+   "trace_states": 5,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "BudgetSafety",
+   "invariants": [
+    "BudgetSafety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-budget-reset-x_chain3",
+   "status": "counterexample",
+   "violated": "BudgetSafety",
+   "distinct_states": 114,
+   "generated_states": 238,
+   "trace_states": 5,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "BudgetSafety",
+   "invariants": [
+    "BudgetSafety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-budget-reset-x_diamond4",
+   "status": "counterexample",
+   "violated": "BudgetSafety",
+   "distinct_states": 122,
+   "generated_states": 256,
+   "trace_states": 5,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "BudgetSafety",
+   "invariants": [
+    "BudgetSafety"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-publish-suspended-x_chain2",
+   "status": "counterexample",
+   "violated": "SuspensionPublication",
+   "distinct_states": 173,
+   "generated_states": 529,
+   "trace_states": 3,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "SuspensionPublication",
+   "invariants": [
+    "SuspensionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-publish-suspended-x_chain3",
+   "status": "counterexample",
+   "violated": "SuspensionPublication",
+   "distinct_states": 206,
+   "generated_states": 710,
+   "trace_states": 3,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "SuspensionPublication",
+   "invariants": [
+    "SuspensionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-publish-suspended-x_diamond4",
+   "status": "counterexample",
+   "violated": "SuspensionPublication",
+   "distinct_states": 322,
+   "generated_states": 1061,
+   "trace_states": 3,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "SuspensionPublication",
+   "invariants": [
+    "SuspensionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-revoked-authority-x_chain2",
+   "status": "counterexample",
+   "violated": "AuthorityCommit",
+   "distinct_states": 283,
+   "generated_states": 1815,
+   "trace_states": 4,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "AuthorityCommit",
+   "invariants": [
+    "AuthorityCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-revoked-authority-x_chain3",
+   "status": "counterexample",
+   "violated": "AuthorityCommit",
+   "distinct_states": 250,
+   "generated_states": 2011,
+   "trace_states": 4,
+   "seconds": 1.0,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "AuthorityCommit",
+   "invariants": [
+    "AuthorityCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-revoked-authority-x_diamond4",
+   "status": "counterexample",
+   "violated": "AuthorityCommit",
+   "distinct_states": 309,
+   "generated_states": 3254,
+   "trace_states": 4,
+   "seconds": 1.0,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "AuthorityCommit",
+   "invariants": [
+    "AuthorityCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-stale-publication-x_chain2",
+   "status": "counterexample",
+   "violated": "RevisionPublication",
+   "distinct_states": 161,
+   "generated_states": 459,
+   "trace_states": 7,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "RevisionPublication",
+   "invariants": [
+    "RevisionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-stale-publication-x_chain3",
+   "status": "counterexample",
+   "violated": "RevisionPublication",
+   "distinct_states": 268,
+   "generated_states": 922,
+   "trace_states": 9,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "RevisionPublication",
+   "invariants": [
+    "RevisionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-stale-publication-x_diamond4",
+   "status": "counterexample",
+   "violated": "RevisionPublication",
+   "distinct_states": 857,
+   "generated_states": 3574,
+   "trace_states": 11,
+   "seconds": 1.1,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "RevisionPublication",
+   "invariants": [
+    "RevisionPublication"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-contract-omitted-x_chain2",
+   "status": "counterexample",
+   "violated": "ContractCommit",
+   "distinct_states": 252,
+   "generated_states": 1094,
+   "trace_states": 4,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContractCommit",
+   "invariants": [
+    "ContractCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-contract-omitted-x_chain3",
+   "status": "counterexample",
+   "violated": "ContractCommit",
+   "distinct_states": 350,
+   "generated_states": 1557,
+   "trace_states": 4,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContractCommit",
+   "invariants": [
+    "ContractCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-contract-omitted-x_diamond4",
+   "status": "counterexample",
+   "violated": "ContractCommit",
+   "distinct_states": 953,
+   "generated_states": 4612,
+   "trace_states": 4,
+   "seconds": 1.1,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContractCommit",
+   "invariants": [
+    "ContractCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-membership-omitted-x_chain2",
+   "status": "counterexample",
+   "violated": "ContextCommit",
+   "distinct_states": 252,
+   "generated_states": 1094,
+   "trace_states": 4,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContextCommit",
+   "invariants": [
+    "ContextCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-membership-omitted-x_chain3",
+   "status": "counterexample",
+   "violated": "ContextCommit",
+   "distinct_states": 436,
+   "generated_states": 1947,
+   "trace_states": 4,
+   "seconds": 0.9,
+   "log_tail": null,
+   "topology": "x_chain3",
+   "jobs": 3,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContextCommit",
+   "invariants": [
+    "ContextCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "mut-membership-omitted-x_diamond4",
+   "status": "counterexample",
+   "violated": "ContextCommit",
+   "distinct_states": 711,
+   "generated_states": 3175,
+   "trace_states": 4,
+   "seconds": 1.1,
+   "log_tail": null,
+   "topology": "x_diamond4",
+   "jobs": 4,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "ContextCommit",
+   "invariants": [
+    "ContextCommit"
+   ],
+   "properties": [],
+   "expectation_met": true
+  },
+  {
+   "id": "refine-obsolete-both-x_one",
+   "status": "counterexample",
+   "violated": "refinement",
+   "distinct_states": 96,
+   "generated_states": 367,
+   "trace_states": 4,
+   "seconds": 0.7,
+   "log_tail": null,
+   "topology": "x_one",
+   "jobs": 1,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "refinement",
+   "invariants": [],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  },
+  {
+   "id": "refine-obsolete-both-x_chain2",
+   "status": "counterexample",
+   "violated": "refinement",
+   "distinct_states": 120,
+   "generated_states": 424,
+   "trace_states": 4,
+   "seconds": 0.8,
+   "log_tail": null,
+   "topology": "x_chain2",
+   "jobs": 2,
+   "k": 1,
+   "m": 1,
+   "expected": "counterexample",
+   "target": "refinement",
+   "invariants": [],
+   "properties": [
+    "AtomicRefinement"
+   ],
+   "expectation_met": true
+  }
+ ],
+ "all_met": true,
+ "tla2tools_sha256": "fdffef247f563ef6edbfd44958d2a82db79e7564e07cb673262d896353fa6713",
+ "tlc_version": "TLC2 Version 2026.11.19.180144 (rev: bc1b506)",
+ "workers": 16
+}

@@ -1,0 +1,149 @@
+macro,value,used_in_sections,evidence,generator (experiments/),evidence produced by
+\AblRuns,300,Procedures; RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\AblSteps,120,Procedures,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\AblVariants,11,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\AblTotalRuns,"3,600",Abstract; Procedures; Conclusion,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\AblDetected,9,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\AblMasked,2,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\FullViolRuns,0,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\FullPubRuns,206,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\FullPublications,776,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\FullDispatches,"8,382",(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\FullApiExceptionRuns,0,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\GlobalPublishPct,35,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\ObsoleteStalePct,35,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\ObsoleteInvalidPct,25,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\ContractStalePct,81,RQ1: Necessity of Each Mechanism; What the Evidence Adds,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\ContextStalePct,44,RQ1: Necessity of Each Mechanism; What the Evidence Adds,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\BudgetPct,28,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\CandidatePct,44,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\UpstreamPct,99,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\AuthorityPct,93,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\CostMaxN,32,Abstract; Procedures; RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\CostSizes,6,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\CostSeeds,5,Procedures,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\CostChanges,40,Procedures,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\ExactReqMaxN,10.8,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\FullReqMaxN,128.0,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\RatioFull,11.9,Abstract; RQ2: Cost and Scheduling; Conclusion,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\RatioWorkspace,8.1,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\RatioVersion,3.0,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\RatioCutoff,2.3,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\BytesRatioWorkspace,52,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\BytesRatioFull,9,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\ExactReqMinN,1.8,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\CostEquivalent,all,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\CampaignMinutes,9,(not used in the JSS text),results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\TLCMaxStates,"1,028",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCMutants,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCMutantsCaught,7,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCBaselines,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCWitnesses,5,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\Scenarios,28,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\ScenarioPasses,28,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\Corruptions,9,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\ProvedObligations,25,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\PolicyTables,"8,192",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\EventWords,"1,093",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\RegressionTests,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\PythonVersion,3.12.3,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\EnabledOnlyRuns,14,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\EnabledOnlyRefusals,22,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\FullRefusals,0,RQ1: Necessity of Each Mechanism,results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\ExactKBMaxN,3.4,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\WorkspaceKBMaxN,177.7,RQ2: Cost and Scheduling,results/processed/tse/campaign.json [cost],tse_paper.py,experiments/tse_campaign.py
+\FullKBMaxN,30.8,(not used in the JSS text),results/processed/tse/campaign.json [ablation],tse_paper.py,experiments/tse_campaign.py
+\PreFixApiRuns,7,RQ1: Necessity of Each Mechanism,results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
+\PreFixApiExceptions,10,(not used in the JSS text),results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
+\PreFixRuns,300,RQ1: Necessity of Each Mechanism,results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
+\PreFixViolRuns,0,(not used in the JSS text),results/processed/tse/prefix-defect.json,tse_paper.py,experiments/tse_campaign.py run on the pre-fix controller
+\BenchAcceptedPct,84,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchAcceptedWrongCI,12--14,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchAcceptedWrongHE,7.1,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchAcceptedWrongMBPP,15.5,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchAcceptedWrongPct,12.9,Abstract; RQ4: Validator Strength on Standard Benchmarks; Conclusion,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchAstEqualPct,46,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchBehEqualCI,93--95,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchBehEqualPct,94,RQ4: Validator Strength on Standard Benchmarks; What the Evidence Adds,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchByteEqualPct,26,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchCalls,"14,069",Introduction; RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchDeclLines,17,"Who Specifies What, and Implementation",hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchFinalCorrectPct,72.7,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchFirstBaseWrongPct,12.3,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchFirstCorrectPct,69.1,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchMaxPlus,200,Subjects,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchModelsN,5,Abstract; Introduction; RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchRegenN,"2,193",RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchRetryGainPts,3.6,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchTasks,542,Abstract; Introduction; Procedures; RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchTestsRegenPct,72,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchValueEqualCI,26--30,RQ4: Validator Strength on Standard Benchmarks,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\BenchValueEqualPct,28,RQ4: Validator Strength on Standard Benchmarks; What the Evidence Adds,hpc-fetched/rorqual/outputs/full/benchmark/*/results-*.json,revision_paper.py,experiments/benchmark_study.py (hpc/slurm/vgc_llm.sbatch on HPC)
+\CoupledCosmeticExact,2.0,RQ2: Cost and Scheduling; What the Evidence Adds,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledCosmeticNoCut,98.0,RQ2: Cost and Scheduling; What the Evidence Adds,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledExactFmax,22.1,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledExactFzero,9.5,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledFmax,8,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledFullFmax,144.0,(not used in the JSS text),results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledModules,32,Procedures,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledRatioCutoffFmax,1.9,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledRatioFullFmax,6.5,Abstract; RQ2: Cost and Scheduling; Conclusion,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledRatioWorkspaceFmax,5.5,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledSemanticFmax,98.0,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\CoupledShared,8,Procedures,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\DiffChanges,"6,000","Who Specifies What, and Implementation",results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\DiffRuns,150,"Who Specifies What, and Implementation",results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\GraphLines,258,"Who Specifies What, and Implementation","source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"
+\LlmBarrierConflicts,0,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCallsTotal,"3,437",Introduction; RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCostExactReq,121,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCostFullReq,483,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCostRatio,4.0,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCostTokenRatio,3.6,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCutoffDesignRawPct,44,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCutoffDesignSemPct,100,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCutoffDesignValuePct,94,RQ3: Real LLM Proposers; What the Evidence Adds,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCutoffImplAstPct,17,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmCutoffImplValuePct,15,RQ3: Real LLM Proposers; What the Evidence Adds,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmDesignFirstRejects,704,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmDesignNameRejectPct,100,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmDesignNameRejects,701,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmDesignParsed,638,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmDesignUpdateNamed,620,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmEpochRepairs,0,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmFeedbackRecoveredCI,68--78,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmFeedbackRecoveredPct,73,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmImplAccepted,107,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmImplForms,90,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmJobsFailedPct,15,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmModelsN,7,Abstract; Introduction; RQ3: Real LLM Proposers; Conclusion,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmModelsNeverPublished,3,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmPublished,16,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmPublishedPct,38,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmStaleDiscardedPct,100,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmStaleOldValid,47,Abstract; RQ3: Real LLM Proposers; What the Evidence Adds,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmStaleTrials,77,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmStaleWrong,47,(not used in the JSS text),runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmStaleWrongCI,92--100,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmStaleWrongPct,100,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\LlmTrials,42,RQ3: Real LLM Proposers,runs listed in results/processed/tse/llm-runs.json (results.json + calls.jsonl),revision_paper.py,experiments/llm_study.py --part all (hpc/slurm/vgc_llm.sbatch on HPC)
+\SandboxLines,183,"Who Specifies What, and Implementation","source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"
+\SchedEagerMaxEpisodes,7,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\SchedEagerReqRatioMax,3.6,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\SchedMakespanDiffPct,5,RQ2: Cost and Scheduling,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\SchedMaxDepth,6,Procedures,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\SchedMaxWidth,4,Procedures,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\SchedSeeds,30,Procedures,results/processed/tse/graph.json,revision_paper.py,experiments/graph_experiments.py
+\TLALines,186,(not used in the JSS text),"source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"
+\TLCExtBaselines,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMaxGenerated,"7,483,518",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMaxJobs,5,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMaxStates,"718,672",(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMutants,27,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtMutantsCaught,21,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtRuns,43,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtSeconds,303,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCExtVersion,2026.11.19.180144 (rev: bc1b506),(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\TLCRefineConfigs,14,(not used in the JSS text),"results/processed/document-service-v1/detailed-results.json, tse/tlc-extended.json",tse_paper.py / revision_paper.py,formal companion paper (not cited in the JSS text)
+\WorkflowDeclLines,22,"Who Specifies What, and Implementation","source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"
+\WorkflowValidatorLines,43,"Who Specifies What, and Implementation","source code (src/vgc/graph.py, experiments/llm/*.py, experiments/benchmark_study.py)",revision_paper.py,"non-blank, non-comment line count"

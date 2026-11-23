@@ -1,0 +1,11 @@
+{
+ "note": "Full (non-quick) RQ5 runs used in the paper. Excluded: 20261121T173345 (one-trial smoke run).",
+ "runs": [
+  "results/raw/20261121T172800-llm-all/results.json",
+  "hpc/fetched/narval/results-raw/20261121T173526-llm-all/results.json",
+  "hpc/fetched/narval/results-raw/20261121T173530-llm-all/results.json",
+  "hpc/fetched/narval/results-raw/20261121T174731-llm-all/results.json",
+  "hpc/fetched/rorqual/results-raw/20261121T173759-llm-all/results.json",
+  "hpc/fetched/rorqual/results-raw/20261121T173930-llm-all/results.json"
+ ]
+}
